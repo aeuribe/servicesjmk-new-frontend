@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
         width={24}
         height={24}
       />
-      <button onClick={toggleDropdown}>
+      <button className="text-sm" onClick={toggleDropdown}>
         {language === "en" ? "English" : "Español"}
       </button>
 
@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
       >
         <ul>
           <li
-            className="px-4 py-2 hover:bg-white/10 cursor-pointer"
+            className="px-4 py-2 text-sm hover:bg-white/10 cursor-pointer"
             onClick={() => {
               setLanguage("en");
               setOpen(false);
@@ -40,7 +40,7 @@ const LanguageSwitcher = () => {
             English
           </li>
           <li
-            className="px-4 py-2 hover:bg-white/10 cursor-pointer"
+            className="px-4 py-2 text-sm hover:bg-white/10 cursor-pointer"
             onClick={() => {
               setLanguage("es");
               setOpen(false);
