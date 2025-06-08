@@ -35,7 +35,7 @@ const Navbar = () => {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={`relative pb-3 text-white transition-all duration-300 ${
+                className={`relative pb-3 text-white text-sm transition-all duration-300 ${
                   isActive ? "text-[#FFAE34]" : "hover:text-[#FFAE34]"
                 } group`}
               >
