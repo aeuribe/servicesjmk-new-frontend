@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import Hero from "./components/HeroSection/Hero";
 import ServicesSection from "./components/ServiceSection/ServicesSection";
 import ProductsCTA from "./components/CTASection/ProductsCTA";
+import WhyUsSection from "./components/WhyUsSection/WhyUsSection";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
 
       <ServicesSection />
       <ProductsCTA />
+      <WhyUsSection />
     </div>
   );
 };
