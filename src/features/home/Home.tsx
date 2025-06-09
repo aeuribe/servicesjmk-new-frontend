@@ -2,11 +2,11 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Hero from "./components/HeroSection/Hero";
 import ServicesSection from "./components/ServiceSection/ServicesSection";
+import ProductsCTA from "./components/CTASection/ProductsCTA";
 
 const Home = () => {
   return (
     <div>
-      {/* Sección con fondo */}
       <div
         className="relative bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background-hero.jpg')" }}
@@ -15,8 +15,8 @@ const Home = () => {
         <Hero />
       </div>
 
-      {/* Sección sin fondo */}
       <ServicesSection />
+      <ProductsCTA />
     </div>
   );
 };
