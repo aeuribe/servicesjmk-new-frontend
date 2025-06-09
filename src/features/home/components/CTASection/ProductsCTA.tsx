@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductsCTA = () => {
   return (
-    <div className="bg-[#F5F8F9] flex justify-center items-center py-16 font-main">
+    <div className="bg-[#F5F8F9] flex justify-center items-center pt-16 font-main">
       <div
         className="relative bg-cover bg-center bg-no-repeat w-full max-w-7xl h-80 px-12 py-16"
         style={{ backgroundImage: "url('/product-cta-image.jpg')" }}
