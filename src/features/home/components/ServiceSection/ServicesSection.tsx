@@ -56,7 +56,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <div className="bg-[#F5F8F9] py-32 font-main">
+    <div className="bg-[#F5F8F9] pt-32 font-main">
       <div className="flex flex-col items-center justify-center">
         <h2 className="text-center font-medium text-6xl">
           Industrial Solutions
@@ -68,7 +68,7 @@ const ServicesSection = () => {
           <br /> maintenance, and technical consultancy across all industries.
         </p>
       </div>
-      <div className="flex items-center justify-center my-24">
+      <div className="flex items-center justify-center mt-20">
         <div className="grid grid-cols-3 gap-7 w-7xl">
           {services.map((services) => (
             <ServiceCard
