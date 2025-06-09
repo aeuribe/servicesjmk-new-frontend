@@ -18,7 +18,7 @@ const LanguageSwitcher = () => {
         width={24}
         height={24}
       />
-      <button className="text-sm" onClick={toggleDropdown}>
+      <button className="text-sm hover: cursor-pointer" onClick={toggleDropdown}>
         {language === "en" ? "English" : "Español"}
       </button>
 
