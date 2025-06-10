@@ -10,7 +10,7 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="max-w-7xl mx-auto pt-1 font-main text-white">
+    <header className="max-w-7xl mx-auto pt-3 font-main text-white">
       <div className="grid grid-cols-3 items-center ">
         <Navbar />
         <div className="flex flex-row items-center justify-center gap-3.5 ">
