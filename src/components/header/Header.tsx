@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Navbar from "./Navbar";
+import Link from "next/link";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 type HeaderProps = {
@@ -19,12 +20,12 @@ const Header: React.FC<HeaderProps> = () => {
             width={45}
             height={45}
           />
-          <a
+          <Link
             href="/"
             className="font-medium text-3xl select-none cursor-pointer"
           >
             Services JMK
-          </a>
+          </Link>
         </div>
 
         <LanguageSwitcher />
