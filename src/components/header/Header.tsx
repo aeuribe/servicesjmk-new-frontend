@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
-import Navbar from "./Navbar";
-import Link from "next/link";
-import LanguageSwitcher from "./LanguageSwitcher";
+import HeaderDesktop from "./components/HeaderDesktop";
+import HeaderMobile from "./components/HeaderMobile";
 
 type HeaderProps = {
   title?: string;
@@ -10,27 +8,10 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="max-w-7xl mx-auto pt-3 font-main text-white">
-      <div className="grid grid-cols-3 items-center ">
-        <Navbar />
-        <div className="flex flex-row items-center justify-center gap-3.5 ">
-          <Image
-            src="/isotipo.svg"
-            alt="Logo Services JMK"
-            width={45}
-            height={45}
-          />
-          <Link
-            href="/"
-            className="font-medium text-3xl select-none cursor-pointer"
-          >
-            Services JMK
-          </Link>
-        </div>
-
-        <LanguageSwitcher />
-      </div>
-    </header>
+    <>
+      <HeaderDesktop />
+      <HeaderMobile />
+    </>
   );
 };
 
