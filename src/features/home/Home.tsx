@@ -8,9 +8,9 @@ import Footer from "@/components/footer/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-w-[320px]">
       <div
-        className="relative bg-cover bg-center bg-no-repeat"
+        className="relative bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: "url('/background-hero.jpg')" }}
       >
         <Header title="Header" />
