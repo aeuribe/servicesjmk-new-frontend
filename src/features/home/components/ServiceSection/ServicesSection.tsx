@@ -56,20 +56,20 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <div className="bg-[#F5F8F9] pt-32 font-main">
+    <div className="bg-[#F5F8F9] lg:pt-32 md:pt-20 sm:pt-18 pt-10 font-main md:px-0 px-10">
       <div className="flex flex-col items-center justify-center">
-        <h2 className="text-center font-medium text-6xl">
+        <h2 className="text-center font-medium text-2xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-3xl">
           Industrial Solutions
           <br />
           Tailored to Your Operations
         </h2>
-        <p className="text-xl text-black/70 mt-8">
+        <p className="lg:text-xl sm:text-sm text-xs text-center xl:max-w-5xl lg:max-w-4xl md:max-w-2xl sm:max-w-xl max-w-sm text-black/70 lg:mt-8 sm:mt-3 mt-2">
           We offer end-to-end support for machinery installation, assembly,
-          <br /> maintenance, and technical consultancy across all industries.
+           maintenance, and technical consultancy across all industries.
         </p>
       </div>
-      <div className="flex items-center justify-center mt-20">
-        <div className="grid grid-cols-3 gap-7 w-7xl">
+      <div className="flex items-center justify-center lg:mt-20 md:mt-10 mt-7">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-7 lg:max-w-7xl md:max-w-3xl sm:max-w-4xl max-w-xs sm:px-10">
           {services.map((services) => (
             <ServiceCard
               key={services.id}
