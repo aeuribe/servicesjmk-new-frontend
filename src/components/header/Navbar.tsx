@@ -1,8 +1,10 @@
 "use client";
-
+import { useState } from "react";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import NavbarMobile from "./components/NavbarMobile";
 
 const links = [
   {
@@ -19,16 +21,18 @@ const links = [
   },
   {
     href: "/about",
-    label: "About Us",
+    label: "About",
   },
 ];
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav>
-      <ul className="flex flex-row justify-start items-center gap-12">
+      {/* Desktop Menu */}
+      <ul className="hidden lg:flex flex-row justify-start items-center gap-12">
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
@@ -36,14 +40,14 @@ const Navbar = () => {
               <Link
                 href={link.href}
                 className={`relative pb-3 text-white text-sm transition-all duration-300 ${
-                  isActive ? "text-[#FFAE34]" : "hover:text-[#FFAE34]"
+                  isActive ? "text-[#FFAE34]"  : "hover:text-[#FFAE34]"
                 } group`}
               >
                 {link.label}
                 <span
                   className={`absolute left-0 -bottom-1 h-[2px] w-full transition-transform duration-300 transform ${
                     isActive
-                      ? "bg-[#FFAE34] scale-x-100"
+                      ? "bg-[#FFAE34] scale-x-100 h-[2px]"
                       : "bg-[#FFAE34] scale-x-0 group-hover:scale-x-100"
                   } origin-center`}
                 />
@@ -52,6 +56,9 @@ const Navbar = () => {
           );
         })}
       </ul>
+
+      {/* Mobile Menu Button */}
+      <NavbarMobile />
     </nav>
   );
 };
