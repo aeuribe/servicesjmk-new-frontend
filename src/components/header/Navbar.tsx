@@ -26,7 +26,6 @@ const links = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav>
