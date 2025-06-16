@@ -26,6 +26,7 @@ export default function RootLayout({
         className={`${plusJakartaSans.variable} font-sans antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
