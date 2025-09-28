@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const ContactCard = () => {
   return (
@@ -28,11 +28,22 @@ const ContactCard = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h4 className="text-base sm:text-lg text-white mb-1">Call Us</h4>
+                  <h4 className="text-base sm:text-lg text-white mb-1">
+                    Call Us
+                  </h4>
                   <p className="text-white/60 text-xs sm:text-sm leading-relaxed">
-                    <span className="break-all sm:break-normal">+1 (786) 258-7335</span>
+                    <a
+                      href="https://wa.me/17862587335"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white transition-colors break-all sm:break-normal"
+                    >
+                      +1 (786) 258-7335
+                    </a>
                     <br />
-                    <span className="text-xs sm:text-sm">Professional Support</span>
+                    <span className="text-xs sm:text-sm">
+                      Professional Support
+                    </span>
                   </p>
                 </div>
               </div>
@@ -55,9 +66,16 @@ const ContactCard = () => {
                   </svg>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h4 className="text-base sm:text-lg text-white mb-1">Email Us</h4>
+                  <h4 className="text-base sm:text-lg text-white mb-1">
+                    Email Us
+                  </h4>
                   <p className="text-white/60 text-xs sm:text-sm leading-relaxed break-all sm:break-normal">
-                    info@servicesjmk.com
+                    <a
+                      href="mailto:info@servicesjmk.com"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      info@servicesjmk.com
+                    </a>
                   </p>
                 </div>
               </div>
@@ -66,7 +84,9 @@ const ContactCard = () => {
 
           {/* Services Section */}
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-3 sm:p-4 rounded-sm">
-            <h4 className="text-base sm:text-lg text-white mb-2 sm:mb-3">Our Services</h4>
+            <h4 className="text-base sm:text-lg text-white mb-2 sm:mb-3">
+              Our Services
+            </h4>
             <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-white/60">
               <li className="flex items-center gap-2 sm:gap-3">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FF9500] rounded-full flex-shrink-0"></div>
@@ -85,7 +105,7 @@ const ContactCard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactCard
+export default ContactCard;
