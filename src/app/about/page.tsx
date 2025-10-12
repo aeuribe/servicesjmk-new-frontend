@@ -1,12 +1,21 @@
-import React from 'react'
-import Header from '@/components/header/Header'
+"use client";
 
-const page = () => {
+import React from "react";
+import Header from "@/components/header/Header";
+import About from "@/features/about/About";
+import { useRouter } from "next/navigation";
+
+const Page = () => {
+  const router = useRouter();
+
   return (
-    <div className='bg-[#19165F] min-h-screen'>
-      <Header/>
-    </div>
-  )
-}
+    <>
+      <main>
+        <Header />
+        <About onNavigateToContact={() => router.push("/contact")} />
+      </main>
+    </>
+  );
+};
 
-export default page
+export default Page;

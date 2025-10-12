@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
-import HeaderDesktop from "./components/HeaderDesktop";
-import HeaderMobile from "./components/HeaderMobile";
+import Navigation from "./components/Navigation";
 
 type HeaderProps = {
   title?: string;
@@ -9,8 +10,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = () => {
   return (
     <>
-      <HeaderDesktop />
-      <HeaderMobile />
+      <Navigation currentPage="home" onPageChange={() => {}} />
     </>
   );
 };

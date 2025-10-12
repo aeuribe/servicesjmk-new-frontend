@@ -1,102 +1,253 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#19165F] font-main text-white flex flex-col items-center px-4 md:px-8 py-12">
-      <div className="w-full max-w-7xl border-b border-white md:pb-5 sm:pb-4 pb-2 flex flex-row md:flex-row justify-between items-center gap-6">
-        <div className="flex items-center md:gap-3.5 gap-2">
-          <Image
-            src="/isotipo.svg"
-            alt="Logo Services JMK"
-            width={30}
-            height={30}
-            className="md:max-w-8 sm:max-w-7 max-w-5"
-          />
-          <Link
-            href="/"
-            className="font-medium md:text-2xl sm:text-xl text-sm select-none cursor-pointer"
-          >
-            Services JMK
-          </Link>
-        </div>
-        <nav className="flex sm:gap-8 gap-2 sm:text-[10px] md:text-sm text-[8px] font-medium flex-wrap justify-center">
-          <Link href="/">Home</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/about">About</Link>
-        </nav>
-      </div>
-      <div className="w-full max-w-7xl mt-10 flex justify-between lg:text-sm md:text-sm sm:text-[10px] text-[8px] text-white">
-        {/* Columna izquierda */}
-        <div>
-          <h4 className="font-semibold mb-2">Products</h4>
-          <ul className="space-y-1">
-            <li>
-              <Link className="text-white/40" href="/">
-                Filling Machine
-              </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/">
-                Labeling Machine
-              </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/">
-                Packing Machine
-              </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/">
-                Sealing Machine
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Columna central */}
-        <div>
-          <h4 className="font-semibold mb-2">Services</h4>
-          <ul className="space-y-1">
-            <li>
-              <Link className="text-white/40" href="/">
-                Maintenance
-              </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/">
-                Installation
-              </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/">
-                Consultancy
-              </Link>
-            </li>
-          </ul>
+    <footer className="bg-[#19165F] font-main text-white relative overflow-hidden">
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#E53E3E]/5 to-transparent pointer-events-none"></div>
+      
+      {/* Animated particles */}
+      <div className="absolute top-10 left-10 w-32 h-32 bg-[#E53E3E]/5 rounded-full blur-3xl footer-particle-float-1"></div>
+      <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-3xl footer-particle-float-2"></div>
+      
+      <div className="relative z-10 flex flex-col items-center px-4 md:px-8 py-12">
+        {/* Top Section - Logo and Nav */}
+        <div className="w-full max-w-7xl border-b border-white/20 md:pb-8 sm:pb-6 pb-4 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center md:gap-4 gap-3 group">
+            {/* Logo SVG */}
+            <div className="md:w-10 md:h-10 w-8 h-8 relative transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <Image
+                src="/isotipo.svg"
+                alt="Logo Services JMK"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <Link
+              href="home"
+              className="md:text-2xl sm:text-xl text-lg select-none cursor-pointer transition-all duration-300 hover:text-[#E53E3E] relative group"
+            >
+              Services JMK
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </div>
+          
+          <nav className="flex sm:gap-8 gap-4 sm:text-sm text-xs flex-wrap justify-center">
+            <Link
+              href="home"
+              className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
+            >
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="services"
+              className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
+            >
+              Services
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="about"
+              className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
+            >
+              About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+            <Link
+              href="contact"
+              className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
+            >
+              Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </nav>
         </div>
 
-        {/* Columna derecha */}
-        <div>
-          <h4 className="font-semibold mb-2">Company</h4>
-          <ul className="space-y-1">
-            <li>
-              <Link className="text-white/40" href="/about">
-                About Us
+        {/* Middle Section - Content Columns */}
+        <div className="w-full max-w-7xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+          {/* Services Column */}
+          <div className="footer-column-animate" style={{ animationDelay: '0ms' }}>
+            <h4 className="mb-4 relative inline-block">
+              Our Services
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Equipment Installation
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Preventive Maintenance
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Technical Repair
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Industrial Consulting
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    System Optimization
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="services"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    View All Services
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div className="footer-column-animate" style={{ animationDelay: '100ms' }}>
+            <h4 className="mb-4 relative inline-block">
+              Company
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
+            </h4>
+            <ul className="space-y-2.5">
+              <li>
+                <Link
+                  href="home"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Home
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="about"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    About Us
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="contact"
+                  className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
+                >
+                  <span className="relative">
+                    Contact Us
+                    <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                </Link>
+              </li>
+              <li>
+              </li>
+            </ul>
+
+            {/* Call to Action Button */}
+            <div className="mt-8">
+              <Link
+                href="contact"
+                className="bg-[#E53E3E] text-white px-6 py-2.5 text-sm hover:bg-white hover:text-[#19165F] transition-all duration-300 relative group overflow-hidden inline-block"
+              >
+                <span className="relative z-10">Request a Services</span>
+                <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
-            </li>
-            <li>
-              <Link className="text-white/40" href="/contact">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
+            </div>
+          </div>
+
+          {/* Contact Column */}
+          <div className="footer-column-animate" style={{ animationDelay: '200ms' }}>
+            <h4 className="mb-4 relative inline-block">
+              Get in Touch
+              <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
+            </h4>
+            <div className="space-y-4 text-white/60 text-sm">
+              <p className="flex items-start gap-3">
+                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href="mailto:info@servicesjmk.com" className="hover:text-white transition-colors duration-300">
+                  info@servicesjmk.com
+                </a>
+              </p>
+              <p className="flex items-start gap-3">
+                <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+17862587335" className="hover:text-white transition-colors duration-300">
+                  +1 (786) 258-7335
+                </a>
+              </p>
+            </div>
+            
+            {/* Business Hours */}
+            <div className="mt-6 pt-6 border-t border-white/10">
+              <p className="text-xs text-white/40 mb-2">Business Hours</p>
+              <p className="text-sm text-white/60">Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p className="text-sm text-white/60">Saturday: 10:00 AM - 4:00 PM</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="mt-12 sm:text-[10px] md:text-sm  text-xs text-white/70 text-center">
-        © {new Date().getFullYear()} Services JMK, LLC. All rights reserved.
+
+        {/* Bottom Section - Copyright */}
+        <div className="w-full max-w-7xl mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-sm text-white/50 text-center md:text-left">
+            © {new Date().getFullYear()} Services JMK, LLC. All rights reserved.
+          </div>
+          <div className="flex gap-6 text-xs text-white/40">
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">Terms of Service</a>
+            <span className="text-white/20">|</span>
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">Privacy Policy</a>
+            <span className="text-white/20">|</span>
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">Cookie Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import Header from "@/components/header/Header";
-import { ContactForm } from "@/features/contact/ContactForm";
+import Contact from "@/features/contact/Contact";
 import React from "react";
 
 const ContactPage = () => {
@@ -10,7 +10,7 @@ const ContactPage = () => {
         style={{ backgroundImage: "url('/background-hero.jpg')" }}
       >
         <Header />
-        <ContactForm />
+        <Contact />
       </div>
     </div>
   );
