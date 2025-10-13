@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const WhyUsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations('WhyUsSection');
 
   React.useEffect(() => {
     setIsVisible(true);
@@ -21,13 +23,13 @@ const WhyUsSection = () => {
           >
             <div>
               <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-                Why Choose Us
+                {t("pretitle")}
               </span>
               <div className="h-px bg-[#E53E3E] mt-3 w-20"></div>
             </div>
 
             <h2 className="text-[#19165F] leading-tight">
-              Industry-Leading Service Standards
+              {t("title")}
             </h2>
 
             <div className="space-y-6">
@@ -50,10 +52,9 @@ const WhyUsSection = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#19165F] mb-2">Certified Expertise</h4>
+                  <h4 className="text-[#19165F] mb-2">{t("points.point1Title")}</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    Our team holds industry-recognized certifications and brings
-                    decades of combined experience.
+                    {t("points.point1Desc")}
                   </p>
                 </div>
               </div>
@@ -77,10 +78,9 @@ const WhyUsSection = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#19165F] mb-2">Rapid Response</h4>
+                  <h4 className="text-[#19165F] mb-2">{t("points.point2Title")}</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    24/7 emergency support ensures minimal downtime for critical
-                    operations.
+                    {t("points.point2Desc")}
                   </p>
                 </div>
               </div>
@@ -104,10 +104,9 @@ const WhyUsSection = () => {
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#19165F] mb-2">Proven Results</h4>
+                  <h4 className="text-[#19165F] mb-2">{t("points.point3Title")}</h4>
                   <p className="text-gray-600 leading-relaxed">
-                    Track record of measurable improvements in efficiency and
-                    cost reduction.
+                    {t("points.point3Desc")}
                   </p>
                 </div>
               </div>
@@ -124,9 +123,9 @@ const WhyUsSection = () => {
             <div className="bg-gradient-to-br from-[#19165F] to-[#19165F]/90 p-8 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#E53E3E] opacity-10 rounded-full -mr-12 -mt-12"></div>
               <div className="relative z-10">
-                <div className="text-4xl lg:text-5xl mb-2">99%</div>
+                <div className="text-4xl lg:text-5xl mb-2">{t("stats.stat1Value")}</div>
                 <div className="text-white/80 text-sm uppercase tracking-wide">
-                  Completion Rate
+                  {t("stats.stat1Label")}
                 </div>
               </div>
             </div>
@@ -134,10 +133,10 @@ const WhyUsSection = () => {
             <div className="bg-white border-2 border-[#E53E3E] p-8 relative overflow-hidden">
               <div className="relative z-10">
                 <div className="text-[#19165F] text-4xl lg:text-5xl mb-2">
-                  25+
+                  {t("stats.stat2Value")}
                 </div>
                 <div className="text-gray-600 text-sm uppercase tracking-wide">
-                  Years Experience
+                  {t("stats.stat2Label")}
                 </div>
               </div>
             </div>
@@ -145,10 +144,10 @@ const WhyUsSection = () => {
             <div className="bg-white border-2 border-[#19165F] p-8 relative overflow-hidden">
               <div className="relative z-10">
                 <div className="text-[#19165F] text-4xl lg:text-5xl mb-2">
-                  24/7
+                  {t("stats.stat3Value")}
                 </div>
                 <div className="text-gray-600 text-sm uppercase tracking-wide">
-                  Support Available
+                  {t("stats.stat3Label")}
                 </div>
               </div>
             </div>
@@ -158,7 +157,7 @@ const WhyUsSection = () => {
               <div className="relative z-10">
                 <div className="text-4xl lg:text-5xl mb-2">100%</div>
                 <div className="text-white/90 text-sm uppercase tracking-wide">
-                  Custom Solutions
+                  {t("stats.stat4Label")}
                 </div>
               </div>
             </div>

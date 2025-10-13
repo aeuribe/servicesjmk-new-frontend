@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
   return (
     <footer className="bg-[#19165F] font-main text-white relative overflow-hidden">
       {/* Decorative gradient overlay */}
@@ -40,28 +42,28 @@ const Footer: React.FC = () => {
               href="home"
               className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
             >
-              Home
+              {t("nav.home")}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="services"
               className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
             >
-              Services
+              {t("nav.services")}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="about"
               className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
             >
-              About
+              {t("nav.about")}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="contact"
               className="relative group transition-colors duration-300 hover:text-[#E53E3E]"
             >
-              Contact
+              {t("nav.contact")}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </nav>
@@ -72,7 +74,7 @@ const Footer: React.FC = () => {
           {/* Services Column */}
           <div className="footer-column-animate" style={{ animationDelay: '0ms' }}>
             <h4 className="mb-4 relative inline-block">
-              Our Services
+              {t("columns.services.title")}
               <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
             </h4>
             <ul className="space-y-2.5">
@@ -82,7 +84,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Equipment Installation
+                    {t("columns.services.item1")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -93,7 +95,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Preventive Maintenance
+                    {t("columns.services.item2")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -104,7 +106,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Technical Repair
+                    {t("columns.services.item3")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -115,7 +117,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Industrial Consulting
+                    {t("columns.services.item4")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -126,7 +128,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    System Optimization
+                    {t("columns.services.item5")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -137,7 +139,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    View All Services
+                    {t("columns.services.item6")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -148,7 +150,7 @@ const Footer: React.FC = () => {
           {/* Company Column */}
           <div className="footer-column-animate" style={{ animationDelay: '100ms' }}>
             <h4 className="mb-4 relative inline-block">
-              Company
+              {t("columns.company.title")}
               <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
             </h4>
             <ul className="space-y-2.5">
@@ -158,7 +160,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Home
+                    {t("columns.company.item1")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -169,7 +171,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    About Us
+                    {t("columns.company.item2")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -180,7 +182,7 @@ const Footer: React.FC = () => {
                   className="text-white/60 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block group relative text-left"
                 >
                   <span className="relative">
-                    Contact Us
+                    {t("columns.company.item3")}
                     <span className="absolute left-0 bottom-0 w-0 h-px bg-[#E53E3E] transition-all duration-300 group-hover:w-full"></span>
                   </span>
                 </Link>
@@ -195,7 +197,7 @@ const Footer: React.FC = () => {
                 href="contact"
                 className="bg-[#E53E3E] text-white px-6 py-2.5 text-sm hover:bg-white hover:text-[#19165F] transition-all duration-300 relative group overflow-hidden inline-block"
               >
-                <span className="relative z-10">Request a Services</span>
+                <span className="relative z-10">{t("columns.company.cta")}</span>
                 <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             </div>
@@ -204,7 +206,7 @@ const Footer: React.FC = () => {
           {/* Contact Column */}
           <div className="footer-column-animate" style={{ animationDelay: '200ms' }}>
             <h4 className="mb-4 relative inline-block">
-              Get in Touch
+              {t("columns.contact.title")}
               <span className="absolute -bottom-1 left-0 w-10 h-0.5 bg-gradient-to-r from-[#E53E3E] to-transparent"></span>
             </h4>
             <div className="space-y-4 text-white/60 text-sm">
@@ -228,9 +230,9 @@ const Footer: React.FC = () => {
             
             {/* Business Hours */}
             <div className="mt-6 pt-6 border-t border-white/10">
-              <p className="text-xs text-white/40 mb-2">Business Hours</p>
-              <p className="text-sm text-white/60">Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p className="text-sm text-white/60">Saturday: 10:00 AM - 4:00 PM</p>
+              <p className="text-xs text-white/40 mb-2">{t("columns.contact.hoursTitle")}</p>
+              <p className="text-sm text-white/60">{t("columns.contact.hour1")}</p>
+              <p className="text-sm text-white/60">{t("columns.contact.hour2")}</p>
             </div>
           </div>
         </div>
@@ -238,14 +240,14 @@ const Footer: React.FC = () => {
         {/* Bottom Section - Copyright */}
         <div className="w-full max-w-7xl mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-white/50 text-center md:text-left">
-            © {new Date().getFullYear()} Services JMK, LLC. All rights reserved.
+            © {new Date().getFullYear()} {t("bottom.copyright")}
           </div>
           <div className="flex gap-6 text-xs text-white/40">
-            <a href="#" className="hover:text-white/70 transition-colors duration-300">Terms of Service</a>
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">{t("bottom.terms")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white/70 transition-colors duration-300">Privacy Policy</a>
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">{t("bottom.privacy")}</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-white/70 transition-colors duration-300">Cookie Policy</a>
+            <a href="#" className="hover:text-white/70 transition-colors duration-300">{t("bottom.cookies")}</a>
           </div>
         </div>
       </div>

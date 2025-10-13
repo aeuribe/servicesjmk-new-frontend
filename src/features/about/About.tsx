@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface AboutUsProps {
   onNavigateToContact: () => void;
@@ -118,41 +119,42 @@ const CheckCircleIcon = ({ className }: { className?: string }) => (
 
 export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
   const [isVisible, setIsVisible] = React.useState(false);
+  const t = useTranslations("About");
 
   React.useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const stats = [
-    { value: "99%", label: "Project Completion Effectiveness" },
-    { value: "25+", label: "Industrial Experience Behind Our Team" },
-    { value: "100%", label: "Tailored Solutions for Each Client" },
+    { value: "99%", label: t("heroStat1Label") },
+    { value: "25+", label: t("heroStat2Label") },
+    { value: "100%", label: t("heroStat3Label")},
   ];
 
   const values = [
     {
       icon: TargetIcon,
-      title: "Precision & Excellence",
+      title: t("values1Title"),
       description:
-        "Every project is executed with the highest standards of quality and technical precision.",
+         t("values1Description"),
     },
     {
       icon: AwardIcon,
-      title: "Certified Experience",
+      title: t("values2Title"),
       description:
-        "Our team holds internationally recognized industrial certifications.",
+        t("values2Description"),
     },
     {
       icon: UsersIcon,
-      title: "Client-Focused Approach",
+      title: t("values3Title"),
       description:
-        "We develop customized solutions tailored to each client's specific needs.",
+        t("values3Description"),
     },
     {
       icon: CheckCircleIcon,
-      title: "Proven Results",
+      title: t("values4Title"),
       description:
-        "Demonstrated track record of significant improvements in operational efficiency and cost reduction.",
+        t("values4Description"),
     },
   ];
 
@@ -190,7 +192,7 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
               style={{ animationDelay: "0.1s" }}
             >
               <span className="text-white text-4xl sm:text-5xl lg:text-7xl block">
-                About Us
+                {t("heroTitle")}
               </span>
               <div className="h-px bg-[#E53E3E] mt-3"></div>
             </div>
@@ -208,21 +210,16 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
               <div className="space-y-6">
                 <div>
                   <span className="text-[#E53E3E] tracking-[0.3em] uppercase text-xs block mb-2">
-                    INDUSTRIAL EXCELLENCE SINCE 2023
+                    {t("heroSubtitle")}
                   </span>
                 </div>
 
                 <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                  Services JMK LLC specializes in providing cutting-edge
-                  industrial solutions, combining technical expertise with
-                  advanced technology to optimize our clients&apos; operations.
+                  {t("heroParagraph1")}
                 </p>
 
                 <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                  We deliver comprehensive automation, maintenance, and
-                  technical support services designed to enhance operational
-                  efficiency, reduce downtime, and drive sustainable growth for
-                  industrial facilities across multiple sectors.
+                  {t("heroParagraph2")}
                 </p>
               </div>
 
@@ -244,7 +241,7 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 text-white/80 text-sm">
                   <div className="w-1.5 h-1.5 bg-[#E53E3E]"></div>
-                  <span>Nationwide Service</span>
+                  <span>{t("heroExtra")}</span>
                 </div>
               </div>
             </div>
@@ -259,28 +256,22 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
             <div className="space-y-8">
               <div>
                 <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-                  Our Mission
+                  {t("missionSubtitle")}
                 </span>
                 <div className="h-px bg-[#E53E3E] mt-3 w-20"></div>
               </div>
 
-              <h2 className="text-[#19165F] leading-tight">
-                Transforming Industry Through Innovation
-              </h2>
+              {/* <h2 className="text-[#19165F] leading-tight">
+                {t("missionTitle")}
+              </h2> */}
 
-              <div className="space-y-6 text-gray-700">
+              <div className="space-y-6 text-gray-700 ">
                 <p className="leading-relaxed">
-                  At{" "} 
-                  <span className="font-bold text-[#19165F]">Services JMK</span>, we are dedicated to revolutionizing the way
-                  industrial companies operate. Our mission is to provide
-                  automation, maintenance, and technical support solutions that
-                  not only meet but exceed the expectations of modern industry.
+                  {t("at")}{" "} 
+                  <span className="font-bold text-[#19165F]">Services JMK</span>, {t("missionParagraph1")}
                 </p>
                 <p className="leading-relaxed">
-                  With over 25 years of experience in the sector, we have
-                  developed a proven methodology that integrates the latest
-                  technologies with optimized processes, ensuring measurable and
-                  sustainable results for our clients.
+                  {t("missionParagraph2")}
                 </p>
               </div>
 
@@ -289,7 +280,7 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
                   onClick={onNavigateToContact}
                   className="bg-[#19165F] text-white px-8 py-4 hover:bg-[#19165F]/90 transition-all duration-300 inline-flex items-center gap-3 group"
                 >
-                  <span>Start a Conversation</span>
+                  <span>{t("missionButton")}</span>
                   <svg
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -327,15 +318,14 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-              Our Values
+              {t("valuesSubtitle")}
             </span>
             <div className="h-px bg-[#E53E3E] mt-3 w-20 mx-auto mb-8"></div>
-            <h2 className="text-[#19165F] leading-tight mb-6">
-              What Sets Us Apart
-            </h2>
+            {/* <h2 className="text-[#19165F] leading-tight mb-6">
+              {t("valuesTitle")}
+            </h2> */}
             <p className="text-gray-700 leading-relaxed">
-              Our commitment to excellence is reflected in every aspect of our
-              work
+              {t("valuesParagraph")}
             </p>
           </div>
 
@@ -386,23 +376,19 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
             <div className="space-y-8 order-1 lg:order-2">
               <div>
                 <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-                  Technical Expertise
+                  {t("expertiseSubtitle")}
                 </span>
                 <div className="h-px bg-[#E53E3E] mt-3 w-20"></div>
               </div>
 
-              <h2 className="text-[#19165F] leading-tight">
-                Specialized Solutions for Every Industry
-              </h2>
-
               <div className="space-y-4">
                 {[
-                  "Advanced industrial automation and robotics",
-                  "Preventive and predictive maintenance",
-                  "Production process optimization",
-                  "Control systems integration",
-                  "Specialized technical consulting",
-                  "24/7 technical support",
+                  t("expertiseItem1"),
+                  t("expertiseItem2"),
+                  t("expertiseItem3"),
+                  t("expertiseItem4"),
+                  t("expertiseItem5"),
+                  t("expertiseItem6"),
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-1">
@@ -424,13 +410,11 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-white leading-tight">
-              Ready to Optimize Your Operations?
+              {t("ctaTitle")}
             </h2>
 
             <p className="text-white/90 leading-relaxed max-w-2xl mx-auto text-lg">
-              Contact us today to discuss how Services JMK can help transform
-              your industrial operation with proven solutions and measurable
-              results.
+              {t("ctaParagraph")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
@@ -438,7 +422,7 @@ export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
                 onClick={onNavigateToContact}
                 className="bg-[#E53E3E] text-white px-10 py-4 hover:bg-[#E53E3E]/90 transition-all duration-300 inline-flex items-center gap-3"
               >
-                <span>Contact Now</span>
+                <span>{t("ctaButton")}</span>
               </button>
 
               <a

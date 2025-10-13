@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -28,6 +29,7 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const t = useTranslations("contact");
 
   React.useEffect(() => {
     setIsVisible(true);
@@ -269,18 +271,17 @@ export default function Contact() {
               <div>
                 <div className="inline-block mb-4">
                   <span className="text-[#E53E3E] tracking-[0.3em] uppercase text-xs">
-                    Get In Touch
+                    {t("heroSection.getInTouch")}
                   </span>
                   <div className="h-px bg-gradient-to-r from-[#E53E3E] to-transparent mt-2"></div>
                 </div>
                 <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl mb-6 leading-tight">
-                  Let&apos;s Start a<br />Conversation
+                  {t("heroSection.headline")}
                 </h1>
               </div>
               
               <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-                Share your industrial challenges with us. Our team of experts is ready to provide 
-                customized solutions that drive real results.
+                {t("heroSection.description")}
               </p>
             </div>
           </div>
@@ -306,7 +307,7 @@ export default function Contact() {
                       <svg className="w-4 h-4 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
-                      Full Name *
+                      {t("form.fullName")}
                     </label>
                     <div className="relative">
                       <input
@@ -320,7 +321,7 @@ export default function Contact() {
                         className={`w-full px-5 py-4 border-2 bg-gray-50/50 ${
                           errors.name ? 'border-[#E53E3E]' : focusedField === 'name' ? 'border-[#19165F]' : 'border-gray-200'
                         } focus:border-[#19165F] focus:outline-none focus:bg-white transition-all duration-300 text-gray-900`}
-                        placeholder="John Smith"
+                        placeholder={t("form.fullNamePlaceholder")}
                       />
                       <div className="input-focus-line"></div>
                     </div>
@@ -340,7 +341,7 @@ export default function Contact() {
                       <svg className="w-4 h-4 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      Email Address *
+                      {t("form.email")}
                     </label>
                     <div className="relative">
                       <input
@@ -354,7 +355,7 @@ export default function Contact() {
                         className={`w-full px-5 py-4 border-2 bg-gray-50/50 ${
                           errors.email ? 'border-[#E53E3E]' : focusedField === 'email' ? 'border-[#19165F]' : 'border-gray-200'
                         } focus:border-[#19165F] focus:outline-none focus:bg-white transition-all duration-300 text-gray-900`}
-                        placeholder="john@company.com"
+                        placeholder={t("form.emailPlaceholder")}
                       />
                       <div className="input-focus-line"></div>
                     </div>
@@ -374,8 +375,8 @@ export default function Contact() {
                       <svg className="w-4 h-4 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      Phone Number
-                      <span className="text-gray-400 text-sm">(Optional)</span>
+                      {t("form.phone")}
+                      <span className="text-gray-400 text-sm">{t("form.phoneOptional")}</span>
                     </label>
                     <div className="relative">
                       <input
@@ -401,7 +402,7 @@ export default function Contact() {
                       <svg className="w-4 h-4 text-[#E53E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                       </svg>
-                      Tell Us About Your Project *
+                     {t("form.message")}
                     </label>
                     <div className="relative">
                       <textarea
@@ -415,7 +416,7 @@ export default function Contact() {
                         className={`w-full px-5 py-4 border-2 bg-gray-50/50 ${
                           errors.message ? 'border-[#E53E3E]' : focusedField === 'message' ? 'border-[#19165F]' : 'border-gray-200'
                         } focus:border-[#19165F] focus:outline-none focus:bg-white transition-all duration-300 resize-none text-gray-900`}
-                        placeholder="Describe your industrial automation needs, technical challenges, or any questions you have for our team..."
+                        placeholder={t("form.messagePlaceholder")}
                       />
                       <div className="input-focus-line"></div>
                     </div>
@@ -428,7 +429,7 @@ export default function Contact() {
                       </p>
                     )}
                     <div className="mt-2 text-sm text-gray-500">
-                      {formData.message.length} / 10 characters minimum
+                      {formData.message.length} / 10 {t("form.messageMinChars")}
                     </div>
                   </div>
 
@@ -445,11 +446,11 @@ export default function Contact() {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          <span className="relative z-10">Sending Message...</span>
+                          <span className="relative z-10">{t("form.sendingMessage")}</span>
                         </>
                       ) : (
                         <>
-                          <span className="relative z-10">Send Message</span>
+                          <span className="relative z-10">{t("form.sendMessage")}</span>
                           <svg
                             className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10"
                             fill="none"
@@ -476,9 +477,9 @@ export default function Contact() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       <div>
-                        <h4 className="text-[#19165F] mb-1">Unable to Send Message</h4>
+                        <h4 className="text-[#19165F] mb-1">{t("form.errorTitle")}</h4>
                         <p className="text-gray-600 text-sm">
-                          We encountered an error. Please try again or contact us directly at{' '}
+                         {t("form.errorDescription")}{' '}
                           <a href="mailto:info@servicesjmk.com" className="text-[#E53E3E] hover:underline">
                             info@servicesjmk.com
                           </a>
@@ -501,7 +502,7 @@ export default function Contact() {
                 
                 <div className="relative z-10 space-y-6">
                   <div>
-                    <h3 className="text-white mb-2">Direct Contact</h3>
+                    <h3 className="text-white mb-2">{t("contactInfo.directContact")}</h3>
                     <div className="h-px bg-gradient-to-r from-[#E53E3E] to-transparent w-20"></div>
                   </div>
 
@@ -516,7 +517,7 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-white/70 text-sm">Call Us</div>
+                        <div className="text-white/70 text-sm">{t("contactInfo.callUs")}</div>
                         <div className="text-white">+1 (786) 258-7335</div>
                       </div>
                     </a>
@@ -531,7 +532,7 @@ export default function Contact() {
                         </svg>
                       </div>
                       <div>
-                        <div className="text-white/70 text-sm">Email Us</div>
+                        <div className="text-white/70 text-sm">{t("contactInfo.emailUs")}</div>
                         <div className="text-white">info@servicesjmk.com</div>
                       </div>
                     </a>
@@ -549,8 +550,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-[#19165F] mb-1">Response Time</h4>
-                      <p className="text-gray-600 text-sm">We typically respond within 24 hours during business days</p>
+                      <h4 className="text-[#19165F] mb-1">{t("contactInfo.responseTime")}</h4>
+                      <p className="text-gray-600 text-sm">{t("contactInfo.responseTimeDescription")}</p>
                     </div>
                   </div>
                 </div>
@@ -563,8 +564,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-[#19165F] mb-1">Business Hours</h4>
-                      <p className="text-gray-600 text-sm">Monday - Saturday<br />9:00 AM - 6:00 PM EST</p>
+                      <h4 className="text-[#19165F] mb-1">{t("contactInfo.businessHours")}</h4>
+                      <p className="text-gray-600 text-sm">{t("contactInfo.businessHoursDescription")}</p>
                     </div>
                   </div>
                 </div>
@@ -577,8 +578,8 @@ export default function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-[#19165F] mb-1">Emergency Support</h4>
-                      <p className="text-gray-600 text-sm">24/7 availability for critical industrial emergencies</p>
+                      <h4 className="text-[#19165F] mb-1">{t("contactInfo.emergencySupport")}</h4>
+                      <p className="text-gray-600 text-sm">{t("contactInfo.emergencySupportDescription")}</p>
                     </div>
                   </div>
                 </div>
@@ -592,10 +593,10 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h4 className="text-[#19165F]">Confidential & Secure</h4>
+                  <h4 className="text-[#19165F]">{t("contactInfo.trustBadgeTitle")}</h4>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  Your information is encrypted and protected. We respect your privacy and will never share your data.
+                  {t("contactInfo.trustBadgeDescription")}
                 </p>
               </div>
             </div>

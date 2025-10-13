@@ -3,25 +3,36 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 interface NavigationProps {
   currentPage: "home" | "services" | "about" | "contact";
   onPageChange: (page: "home" | "services" | "about" | "contact") => void;
 }
 
-export default function Navigation({
-  onPageChange,
-}: NavigationProps) {
+export default function Navigation({ onPageChange }: NavigationProps) {
   const [language, setLanguage] = useState("English");
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("header");
+  const router = useRouter();
 
+  // Detect current locale from pathname
+  const currentLocale = pathname.split("/")[1];
+  
   // Close mobile menu on page change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+  const localeFromPath = pathname.split("/")[1];
+  if (localeFromPath === "es") setLanguage("Español");
+  else setLanguage("English");
+}, [pathname]);
+
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -39,9 +50,9 @@ export default function Navigation({
   }, []);
 
   const navigationItems = [
-    { key: "home", label: "Home", href: "/" },
-    { key: "services", label: "Services", href: "/services" },
-    { key: "about", label: "About", href: "/about" },
+    { key: "home", label: t("home"), href: "/" },
+    { key: "services", label: t("services"), href: "/services" },
+    { key: "about", label: t("about"), href: "/about" },
   ] as const;
 
   const handleLanguageToggle = (e: React.MouseEvent) => {
@@ -52,6 +63,17 @@ export default function Navigation({
   const handleLanguageSelect = (lang: string) => {
     setLanguage(lang);
     setIsLanguageOpen(false);
+
+    const locale = lang === "English" ? "en" : "es";
+    const segments = pathname.split("/");
+
+    // Detect if first path segment is locale
+    const supportedLocales = ["en", "es"];
+    const currentPath = supportedLocales.includes(segments[1])
+      ? "/" + segments.slice(2).join("/")
+      : pathname;
+
+    router.push(`/${locale}${currentPath}`);
   };
 
   return (
@@ -177,7 +199,7 @@ export default function Navigation({
               onClick={() => onPageChange("contact")}
               className="ml-6 pl-6 border-l border-gray-200 bg-[#19165F] text-white px-5 py-2 text-sm hover:bg-[#19165F]/90 transition-all duration-200 relative group overflow-hidden"
             >
-              <span className="relative z-10">Contact Us</span>
+              <span className="relative z-10">{t("contact")}</span>
               <div className="absolute inset-0 bg-[#E53E3E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           </div>

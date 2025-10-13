@@ -2,14 +2,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+  const t = useTranslations("Hero");
   const slides = [
-    "Excellence in industrial solutions",
-    "Precision engineering services", 
-    "Your trusted industrial partner"
+    t("slides.slide1"),
+    t("slides.slide2"), 
+    t("slides.slide3"),
   ];
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Hero = () => {
     <section className="flex flex-col items-center justify-center xl:pt-10 lg:mt-15 md:mt-10 pt-15 mt-5 px-10 font-main ">
       <div className="xl:max-w-7xl lg:max-w-6xl md:max-w-2xl sm:max-w-xl max-w-sm mt-10 ">
         <h2 className="text-white text-4xl xl:text-7xl lg:text-6xl md:text-4xl md:text-start lg:mt-0 text-justify  leading-tight lg:px-0">
-          We provide, install and maintain your industrial machinery
+          {t("headline")}
         </h2>
       </div>
 
@@ -86,7 +87,7 @@ const Hero = () => {
             </div>
             <Link href="/services" passHref>
               <button className="bg-[#E53E3E] text-white xl:text-base lg:text-sm md:text-sm sm:text-xs xl:px-7 lg:px-5 md:px-3 sm:px-3 xl:py-2 lg:py-2 md:py-1 sm:py-1 py-1 px-3 text-xs transition duration-300 hover:bg-white hover:text-[#19165F] cursor-pointer">
-                Learn More
+                {t("button")}
               </button>
             </Link>
           </div>

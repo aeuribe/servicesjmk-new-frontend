@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 // Custom SVG Icons
 const WrenchHammerIcon = ({ className }: { className?: string }) => (
@@ -184,6 +185,7 @@ const ServiceCard = ({ service, index, isVisible }: ServiceCardProps) => {
 
 export default function ServicesShowcase() {
   const [isVisible, setIsVisible] = useState(false);
+  const t = useTranslations("ServicesSection");
 
   React.useEffect(() => {
     setIsVisible(true);
@@ -192,40 +194,40 @@ export default function ServicesShowcase() {
   const services: Service[] = [
     {
       id: 1,
-      title: "Equipment Assembly",
+      title: t("title1"),
       description:
-        "We assemble industrial machinery to meet operational requirements.",
+        t("description1"),
       icon: WrenchHammerIcon,
     },
     {
       id: 2,
-      title: "Maintenance",
-      description: "Scheduled maintenance to avoid unexpected downtime.",
+      title: t("title2"),
+      description: t("description2"),
       icon: SettingsIcon,
     },
     {
       id: 3,
-      title: "Technical Inspection",
+      title: t("title3"),
       description:
-        "Diagnosing potential issues and ensuring optimal equipment performance.",
+        t("description3"),
       icon: SearchIcon,
     },
     {
       id: 4,
-      title: "Corrective Repairs",
-      description: "Fast and effective solutions when equipment fails.",
+      title: t("title4"),
+      description: t("description4"),
       icon: RepairServiceIcon,
     },
     {
       id: 5,
-      title: "Custom Design",
-      description: "Tailored equipment layouts and installation plans.",
+      title: t("title5"),
+      description: t("description5"),
       icon: PencilRulerIcon,
     },
     {
       id: 6,
-      title: "Consulting Services",
-      description: "Pre-project planning and operational advisory.",
+      title: t("title6"),
+      description: t("description6"),
       icon: BriefcaseIcon,
     },
   ];
@@ -258,7 +260,7 @@ export default function ServicesShowcase() {
             style={{ animationDelay: "0.1s" }}
           >
             <span className="text-[#19165F]/60 tracking-[0.2em] sm:tracking-[0.3em] uppercase text-xs">
-              What We Do
+              {t("pretitle")}
             </span>
             <div className="h-px bg-gradient-to-r from-transparent via-[#E53E3E] to-transparent mt-3"></div>
           </div>
@@ -270,13 +272,12 @@ export default function ServicesShowcase() {
             style={{ animationDelay: "0.2s" }}
           >
             <h2 className="text-[#19165F] text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mx-auto max-w-4xl px-4">
-              Industrial Solutions
+              {t("titleLine1")}
               <br />
-              Tailored to Your Operations
+              {t("titleLine2")}
             </h2>
             <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-4xl mx-auto leading-relaxed px-4">
-              We offer end-to-end support for machinery installation, assembly,
-              maintenance, and technical consultancy across all industries.
+              {t("description")}
             </p>
           </div>
         </div>
@@ -302,11 +303,11 @@ export default function ServicesShowcase() {
         >
           <div className="inline-block">
             <p className="text-gray-700 mb-6 text-sm sm:text-base">
-              Need a customized solution for your industrial operation?
+              {t("ctaText")}
             </p>
             <a href="/services">
               <button className="bg-[#19165F] text-white px-8 sm:px-10 py-4 sm:py-5 hover:bg-[#19165F]/90 transition-all duration-300 inline-flex items-center gap-3 group relative overflow-hidden shadow-lg hover:shadow-xl">
-                <span className="relative z-10">Explore All Services</span>
+                <span className="relative z-10">{t("ctaButton")}</span>
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10"
                   fill="none"

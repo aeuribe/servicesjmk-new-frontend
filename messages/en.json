@@ -1,0 +1,302 @@
+{
+  "metadata": {
+    "title": "Services JMK, LLC",
+    "description": "Industrial services and automation company. Services JMK provides engineering, maintenance, and custom technological solutions."
+  },
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "Hero": {
+    "headline": "We provide, install and maintain your industrial machinery",
+    "slides": {
+      "slide1": "Excellence in industrial solutions",
+      "slide2": "Precision engineering services",
+      "slide3": "Your trusted industrial partner"
+    },
+    "button": "Learn More"
+  },
+  "ServicesSection": {
+    "title1": "Equipment Assembly",
+    "description1": "We assemble industrial machinery to meet operational requirements.",
+
+    "title2": "Maintenance",
+    "description2": "Scheduled maintenance to prevent unexpected downtime.",
+
+    "title3": "Technical Inspection",
+    "description3": "Diagnosing potential issues and ensuring optimal equipment performance.",
+
+    "title4": "Corrective Repairs",
+    "description4": "Fast and effective solutions when equipment fails.",
+
+    "title5": "Custom Design",
+    "description5": "Tailored equipment layouts and installation plans to fit your needs.",
+
+    "title6": "Consulting Services",
+    "description6": "Pre-project planning and operational advisory for smooth operations.",
+
+    "pretitle": "What We Do",
+    "titleLine1": "Industrial Solutions",
+    "titleLine2": "Tailored to Your Operations",
+    "description": "We offer end-to-end support for machinery installation, assembly, maintenance, and technical consultancy across all industries.",
+
+    "ctaText": "Need a customized solution for your industrial operation?",
+    "ctaButton": "Explore All Services"
+  },
+  "WhyUsSection": {
+    "pretitle": "Why Choose Us",
+    "title": "Industry-Leading Service Standards",
+    "points": {
+      "point1Title": "Certified Expertise",
+      "point1Desc": "Our team holds industry-recognized certifications and brings decades of combined experience.",
+
+      "point2Title": "Rapid Response",
+      "point2Desc": "24/7 emergency support ensures minimal downtime for critical operations.",
+
+      "point3Title": "Proven Results",
+      "point3Desc": "Track record of measurable improvements in efficiency and cost reduction."
+    },
+    "stats": {
+      "stat1Value": "99%",
+      "stat1Label": "Completion Rate",
+
+      "stat2Value": "25+",
+      "stat2Label": "Years Experience",
+
+      "stat3Value": "24/7",
+      "stat3Label": "Support Available",
+
+      "stat4Value": "100%",
+      "stat4Label": "Custom Solutions"
+    }
+  },
+  "Footer": {
+    "logoAlt": "Services JMK Logo",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "columns": {
+      "services": {
+        "title": "Our Services",
+        "item1": "Equipment Installation",
+        "item2": "Preventive Maintenance",
+        "item3": "Technical Repair",
+        "item4": "Industrial Consulting",
+        "item5": "System Optimization",
+        "item6": "View All Services"
+      },
+      "company": {
+        "title": "Company",
+        "item1": "Home",
+        "item2": "About Us",
+        "item3": "Contact Us",
+        "cta": "Request a Service"
+      },
+      "contact": {
+        "title": "Get in Touch",
+        "email": "info@servicesjmk.com",
+        "phone": "+1 (786) 258-7335",
+        "hoursTitle": "Business Hours",
+        "hour1": "Monday - Friday: 9:00 AM - 6:00 PM",
+        "hour2": "Saturday: 10:00 AM - 4:00 PM"
+      }
+    },
+    "bottom": {
+      "copyright": "Services JMK, LLC. All rights reserved.",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy"
+    }
+  },
+  "Services": {
+    "hero": {
+      "badge": "Our Expertise",
+      "title1": "Industrial Services ",
+      "title2": "That Drive Results",
+      "description": "Comprehensive solutions designed to optimize your operations, reduce downtime, and maximize efficiency across every stage of your industrial processes."
+    },
+    "sectionHeader": {
+      "badge": "What We Offer",
+      "title": "Specialized Solutions for Every Challenge",
+      "description": "From installation to optimization, we provide end-to-end industrial services tailored to your specific operational needs."
+    },
+    "cards": {
+      "installation": {
+        "title": "Specialized Industrial Installation",
+        "description": "Assembly and commissioning of industrial equipment, ensuring proper integration with existing infrastructure.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Technical and logistics planning",
+          "item2": "Physical assembly and system connection",
+          "item3": "Calibration and operational testing"
+        }
+      },
+      "maintenance": {
+        "title": "Comprehensive Industrial Maintenance",
+        "description": "Service combining scheduled and specialized maintenance to ensure operational continuity of equipment.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Scheduled maintenance: periodic inspections, preventive adjustments, critical parts replacement",
+          "item2": "Specialized maintenance: immediate attention to unforeseen failures, rapid diagnostics and repairs"
+        }
+      },
+      "repair": {
+        "title": "Repair & Operational Recovery",
+        "description": "Diagnosis and repair of failures in equipment and production lines, focused on minimizing downtime.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Technical failure identification",
+          "item2": "Replacement of damaged components",
+          "item3": "Adjustments and validation testing"
+        }
+      },
+      "design": {
+        "title": "Production Line Design & Adaptation",
+        "description": "Development of custom industrial solutions, from conceptual design to implementation of complete production lines.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Process engineering and planning",
+          "item2": "Equipment and system integration",
+          "item3": "Pilot testing and initial optimization"
+        }
+      },
+      "optimization": {
+        "title": "Industrial Process Optimization",
+        "description": "Analysis and improvement of existing processes to increase productivity and reduce costs.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Process auditing",
+          "item2": "Bottleneck identification",
+          "item3": "Implementation of technical and operational improvements"
+        }
+      },
+      "consulting": {
+        "title": "Technical & Industrial Consulting",
+        "description": "Strategic and technical advisory to support companies in decision-making related to industrial processes, technological infrastructure, and resource optimization.",
+        "scope": {
+          "title": "Scope",
+          "item1": "Assessment of technical and operational needs",
+          "item2": "Recommendation of scalable and sustainable solutions",
+          "item3": "Definition of honest metrics to measure impact",
+          "item4": "Support during implementation of improvements"
+        }
+      }
+    },
+    "capabilities": {
+      "badge": "Additional Capabilities",
+      "title": "Comprehensive Industrial Support",
+      "description": "Beyond our core services, we offer specialized capabilities to ensure complete coverage of your industrial needs.",
+      "items": {
+        "assembly": {
+          "title": "Equipment Assembly",
+          "description": "Professional assembly of industrial machinery with precision and adherence to manufacturer specifications and safety standards."
+        },
+        "inspection": {
+          "title": "Technical Inspection",
+          "description": "Comprehensive evaluation and diagnostic services to identify potential issues, ensure compliance, and optimize equipment performance."
+        },
+        "custom": {
+          "title": "Custom Design",
+          "description": "Tailored design solutions for equipment layouts, workflow optimization, and custom installations adapted to your specific operational requirements."
+        },
+        "core": "Core Capability"
+      }
+    },
+    "cta": {
+      "badge": "Get Started Today",
+      "title": "Ready to Enhance Your Industrial Operations?",
+      "description": "Let's discuss how our specialized services can help you achieve your operational goals. Contact us for a consultation and personalized assessment.",
+      "button": "Request a Consultation",
+      "phone": "+1 (786) 258-7335"
+    }
+  },
+
+  "About": {
+    "heroTitle": "About Us",
+    "heroSubtitle": "INDUSTRIAL EXCELLENCE SINCE 2023",
+    "heroParagraph1": "Services JMK LLC specializes in providing cutting-edge industrial solutions, combining technical expertise with advanced technology to optimize our clients' operations.",
+    "heroParagraph2": "We deliver comprehensive automation, maintenance, and technical support services designed to enhance operational efficiency, reduce downtime, and drive sustainable growth across multiple sectors.",
+    "heroStat1Value": "99%",
+    "heroStat1Label": "Project Completion Effectiveness",
+    "heroStat2Value": "25+",
+    "heroStat2Label": "Industrial Experience Behind Our Team",
+    "heroStat3Value": "100%",
+    "heroStat3Label": "Tailored Solutions for Each Client",
+    "heroExtra": "Service Across the United States",
+
+    "missionSubtitle": "Our Mission",
+    "missionTitle": "Transforming Industry Through Innovation",
+    "at": "At",
+    "missionParagraph1": "we are committed to transforming and optimizing the way industrial companies operate. Our mission is to deliver automation, maintenance, and technical support solutions that exceed the expectations of modern industry.",
+    "missionParagraph2": "with over 25 years of experience, we have developed an approach that combines advanced technologies with efficient processes to deliver consistent and sustainable results.",
+    "missionButton": "Start a Conversation",
+
+    "valuesSubtitle": "Our Values",
+    "valuesTitle": "What Sets Us Apart",
+    "valuesParagraph": "Our commitment to excellence is reflected in every aspect of our work.",
+    "values1Title": "Precision & Excellence",
+    "values1Description": "Every project is executed with the highest standards of quality and technical precision.",
+    "values2Title": "Certified Experience",
+    "values2Description": "Our team is highly qualified and experienced in international industrial standards.",
+    "values3Title": "Client-Focused Approach",
+    "values3Description": "We develop customized solutions tailored to each client's specific needs.",
+    "values4Title": "Proven Results",
+    "values4Description": "Demonstrated track record of significant improvements in operational efficiency and cost reduction.",
+
+    "expertiseSubtitle": "Technical Expertise",
+    "expertiseTitle": "Specialized Solutions for Every Industry",
+    "expertiseItem1": "Advanced industrial automation and robotics",
+    "expertiseItem2": "Preventive and predictive maintenance",
+    "expertiseItem3": "Production process optimization",
+    "expertiseItem4": "Control systems integration",
+    "expertiseItem5": "Specialized technical consulting",
+    "expertiseItem6": "24/7 technical support",
+
+    "ctaTitle": "Ready to Optimize Your Operations?",
+    "ctaParagraph": "Contact us today to discuss how Services JMK can help transform your industrial operation with proven solutions and measurable results.",
+    "ctaButton": "Contact Now",
+    "ctaPhone": "+1 (786) 258-7335"
+  },
+  "contact": {
+    "heroSection": {
+      "getInTouch": "Get In Touch",
+      "headline": "Let's Start a Conversation",
+      "description": "Share your industrial challenges with us. Our team of experts is ready to provide customized solutions that drive real results."
+    },
+    "form": {
+      "fullName": "Full Name *",
+      "fullNamePlaceholder": "John Smith",
+      "email": "Email Address *",
+      "emailPlaceholder": "john@company.com",
+      "phone": "Phone Number",
+      "phoneOptional": "(Optional)",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "message": "Tell Us About Your Project *",
+      "messagePlaceholder": "Describe your industrial automation needs, technical challenges, or any questions you have for our team...",
+      "messageMinChars": "characters minimum",
+      "sendMessage": "Send Message",
+      "sendingMessage": "Sending Message...",
+      "errorTitle": "Unable to Send Message",
+      "errorDescription": "We encountered an error. Please try again or contact us directly at",
+      "contactEmail": "info@servicesjmk.com"
+    },
+    "contactInfo": {
+      "directContact": "Direct Contact",
+      "callUs": "Call Us",
+      "emailUs": "Email Us",
+      "responseTime": "Response Time",
+      "responseTimeDescription": "We typically respond within 24 hours during business days",
+      "businessHours": "Business Hours",
+      "businessHoursDescription": "Monday - Saturday\n9:00 AM - 6:00 PM EST",
+      "emergencySupport": "Emergency Support",
+      "emergencySupportDescription": "24/7 availability for critical industrial emergencies",
+      "trustBadgeTitle": "Confidential & Secure",
+      "trustBadgeDescription": "Your information is encrypted and protected. We respect your privacy and will never share your data."
+    }
+  }
+}
