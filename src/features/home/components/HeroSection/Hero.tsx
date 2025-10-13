@@ -19,7 +19,7 @@ const Hero = () => {
     }, 4000);
     
     return () => clearInterval(interval);
-  }, []);
+  },[slides.length]);
 
   return (
     <section className="flex flex-col items-center justify-center xl:pt-10 lg:mt-15 md:mt-10 pt-15 mt-5 px-10 font-main ">

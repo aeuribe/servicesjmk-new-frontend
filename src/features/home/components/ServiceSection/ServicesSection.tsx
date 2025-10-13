@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 // Custom SVG Icons
 const WrenchHammerIcon = ({ className }: { className?: string }) => (
@@ -305,7 +306,7 @@ export default function ServicesShowcase() {
             <p className="text-gray-700 mb-6 text-sm sm:text-base">
               {t("ctaText")}
             </p>
-            <a href="/services">
+            <Link href="/services">
               <button className="bg-[#19165F] text-white px-8 sm:px-10 py-4 sm:py-5 hover:bg-[#19165F]/90 transition-all duration-300 inline-flex items-center gap-3 group relative overflow-hidden shadow-lg hover:shadow-xl">
                 <span className="relative z-10">{t("ctaButton")}</span>
                 <svg
@@ -323,7 +324,7 @@ export default function ServicesShowcase() {
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#E53E3E] to-[#E53E3E]/80 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -18,9 +18,6 @@ export default function Navigation({ onPageChange }: NavigationProps) {
   const pathname = usePathname();
   const t = useTranslations("header");
   const router = useRouter();
-
-  // Detect current locale from pathname
-  const currentLocale = pathname.split("/")[1];
   
   // Close mobile menu on page change
   useEffect(() => {

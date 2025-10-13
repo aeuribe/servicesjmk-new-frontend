@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 
 interface Service {
   id: number;
@@ -15,7 +14,6 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service, index, isVisible }: ServiceCardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
   const Icon = service.icon;
 
   return (
@@ -24,12 +22,15 @@ const ServiceCard = ({ service, index, isVisible }: ServiceCardProps) => {
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}
       style={{ animationDelay: `${0.1 + index * 0.05}s` }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* ... resto del JSX ... */}
+      <div className="p-6 flex flex-col items-center text-center">
+        <Icon className="w-12 h-12 text-[#19165F] mb-4" />
+        <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+        <p className="text-gray-600">{service.description}</p>
+      </div>
     </div>
   );
 };
+
 
 export default ServiceCard;
