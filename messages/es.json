@@ -1,62 +1,58 @@
 {
   "metadata": {
     "title": "Services JMK, LLC",
-    "description": "Empresa de servicios industriales y automatización. Services JMK brinda ingeniería, mantenimiento y soluciones tecnológicas a medida."
+    "description": "Empresa de servicios industriales y automatización. Services JMK proporciona ingeniería, mantenimiento y soluciones tecnológicas personalizadas."
   },
   "header": {
     "home": "Inicio",
     "services": "Servicios",
-    "about": "Nosotros",
-    "contact": "Contáctanos"
+    "about": "Acerca de Nosotros",
+    "contact": "Contáctenos"
   },
   "Hero": {
-    "headline": "Proveemos, instalamos y mantenemos tu maquinaria industrial",
-    "slides": {
-      "slide1": "Excelencia en soluciones industriales",
-      "slide2": "Servicios de ingeniería de precisión",
-      "slide3": "Tu socio industrial de confianza"
-    },
-    "button": "Saber más"
+    "headline": "IMPULSAMOS EL PODER INDUSTRIAL",
+    "subtitle": "Su socio estratégico para ingeniería industrial de alto nivel y soluciones de maquinaria.",
+    "button": "EXPLORAR SERVICIOS"
   },
   "ServicesSection": {
-    "title1": "Montaje de Equipos",
-    "description1": "Ensamblamos maquinaria industrial para cumplir con los requerimientos operativos.",
+    "title1": "Ensamblaje de Equipos",
+    "description1": "Ejecutamos ensamblaje de maquinaria industrial conforme a especificaciones operativas y estándares de fabricación.",
 
-    "title2": "Mantenimiento",
-    "description2": "Mantenimiento programado para evitar paradas inesperadas.",
+    "title2": "Mantenimiento Preventivo",
+    "description2": "Programas de mantenimiento programado para prevenir interrupciones operativas no planificadas.",
 
-    "title3": "Inspección Técnica",
-    "description3": "Diagnóstico de posibles problemas y aseguramiento del rendimiento óptimo del equipo.",
+    "title3": "Inspección Técnica Especializada",
+    "description3": "Diagnóstico técnico avanzado y evaluación de rendimiento para garantizar operatividad óptima de equipos.",
 
-    "title4": "Reparaciones Correctivas",
-    "description4": "Soluciones rápidas y efectivas cuando el equipo presenta fallas.",
+    "title4": "Mantenimiento Correctivo",
+    "description4": "Soluciones de recuperación operativa inmediata ante fallas de equipos críticos.",
 
-    "title5": "Diseño a Medida",
-    "description5": "Diseños de equipos e instalaciones personalizados según tus necesidades.",
+    "title5": "Ingeniería de Diseño Personalizado",
+    "description5": "Desarrollo de configuraciones de equipos e instalaciones adaptadas a requerimientos operativos específicos.",
 
-    "title6": "Servicios de Consultoría",
-    "description6": "Planificación previa al proyecto y asesoría operativa especializada.",
+    "title6": "Consultoría Técnica Estratégica",
+    "description6": "Planificación pre-proyecto y asesoría operativa especializada para optimización de procesos.",
 
-    "pretitle": "Lo que Hacemos",
+    "pretitle": "Nuestras Capacidades",
     "titleLine1": "Soluciones Industriales",
-    "titleLine2": "Adaptadas a Tus Operaciones",
-    "description": "Ofrecemos soporte integral para instalación, ensamblaje, mantenimiento y consultoría técnica de maquinaria en todas las industrias.",
+    "titleLine2": "Adaptadas a Sus Operaciones",
+    "description": "Proporcionamos soporte integral para instalación, ensamblaje, mantenimiento y consultoría técnica de maquinaria en todos los sectores industriales.",
 
-    "ctaText": "¿Necesitas una solución personalizada para tus operaciones industriales?",
-    "ctaButton": "Explora Todos los Servicios"
+    "ctaText": "¿Requiere una solución personalizada para sus operaciones industriales?",
+    "ctaButton": "Explorar Todos los Servicios"
   },
   "WhyUsSection": {
     "pretitle": "Por Qué Elegirnos",
-    "title": "Excelencia en estándares de servicio industrial",
+    "title": "Estándares de Servicio Líderes en la Industria",
     "points": {
       "point1Title": "Experiencia Certificada",
-      "point1Desc": "Nuestro equipo posee certificaciones reconocidas en la industria y aporta décadas de experiencia combinada.",
+      "point1Desc": "Nuestro equipo posee certificaciones reconocidas a nivel industrial y aporta décadas de experiencia técnica combinada.",
 
-      "point2Title": "Respuesta Rápida",
-      "point2Desc": "Soporte de emergencia 24/7 que garantiza un tiempo mínimo de inactividad en operaciones críticas.",
+      "point2Title": "Respuesta Operativa Rápida",
+      "point2Desc": "Soporte de emergencia 24/7 que garantiza tiempo de inactividad mínimo en operaciones críticas.",
 
       "point3Title": "Resultados Comprobados",
-      "point3Desc": "Historial de mejoras medibles en eficiencia y reducción de costos."
+      "point3Desc": "Historial documentado de mejoras medibles en eficiencia operativa y reducción de costos."
     },
     "stats": {
       "stat1Value": "99%",
@@ -66,7 +62,7 @@
       "stat2Label": "Años de Experiencia",
 
       "stat3Value": "24/7",
-      "stat3Label": "Soporte Disponible",
+      "stat3Label": "Soporte Operativo Disponible",
 
       "stat4Value": "100%",
       "stat4Label": "Soluciones Personalizadas"
@@ -77,7 +73,7 @@
     "nav": {
       "home": "Inicio",
       "services": "Servicios",
-      "about": "Nosotros",
+      "about": "Acerca de",
       "contact": "Contacto"
     },
     "columns": {
@@ -85,32 +81,108 @@
         "title": "Nuestros Servicios",
         "item1": "Instalación de Equipos",
         "item2": "Mantenimiento Preventivo",
-        "item3": "Reparación Técnica",
+        "item3": "Mantenimiento Correctivo",
         "item4": "Consultoría Industrial",
         "item5": "Optimización de Sistemas",
-        "item6": "Ver todos los servicios"
+        "item6": "Ver Todos los Servicios"
       },
       "company": {
-        "title": "Compañía",
+        "title": "Empresa",
         "item1": "Inicio",
-        "item2": "Nosotros",
-        "item3": "Contacto",
+        "item2": "Acerca de Nosotros",
+        "item3": "Contáctenos",
         "cta": "Solicitar un Servicio"
       },
       "contact": {
-        "title": "Contacto",
+        "title": "Contáctenos",
         "email": "info@servicesjmk.com",
         "phone": "+1 (786) 258-7335",
-        "hoursTitle": "Horario de Atención",
+        "hoursTitle": "Horario Comercial",
         "hour1": "Lunes - Viernes: 9:00 AM - 6:00 PM",
         "hour2": "Sábado: 10:00 AM - 4:00 PM"
       }
     },
     "bottom": {
-      "copyright": "Services JMK, LLC. Todos los derechos reservados.",
-      "terms": "Términos de Servicio",
-      "privacy": "Política de Privacidad",
-      "cookies": "Política de Cookies"
+      "copyright": "Services JMK Group.",
+      "contact": "Contáctenos",
+      "terms": "Términos de Uso",
+      "privacy": "Privacidad de Cookies",
+      "policy": "Política"
+    },
+    "infrastructure": {
+      "title": "LIDERAZGO EN INFRAESTRUCTURA",
+      "button": "CONTACTAR SUBSIDIARIAS"
+    }
+  },
+  "AboutUsSection": {
+    "pretitle": "ACERCA DE NOSOTROS",
+    "title": "EXPLORAMOS PARA EMPODERAR",
+    "readMore": "LEER MÁS",
+    "description": "Services JMK representa la formalización de una trayectoria comprobada en ingeniería industrial. Fundada sobre más de dos décadas de experiencia técnica, nuestra firma fue establecida para satisfacer una demanda crítica del mercado: diagnósticos precisos y soluciones definitivas que trascienden el mantenimiento correctivo convencional.",
+    "description2": "Operamos bajo un enfoque integral que abarca desde consultoría estratégica y análisis de causa raíz hasta el suministro de maquinaria avanzada. Con sede en Miami y capacidad de despliegue a nivel nacional, somos el socio estratégico para operaciones que no pueden permitirse tiempo de inactividad. No solo restauramos su presente operativo; optimizamos su futuro estratégico.",
+    "imageAlt": "Acerca de Services JMK"
+  },
+  "BusinessSegmentsSection": {
+    "pretitle": "SEGMENTOS DE NEGOCIO",
+    "title": "NUESTRO NEGOCIO",
+    "readMore": "LEER MÁS",
+    "segment1": {
+      "title": "Instalación"
+    },
+    "segment2": {
+      "title": "Mantenimiento"
+    },
+    "segment3": {
+      "title": "Mantenimiento Correctivo"
+    },
+    "segment4": {
+      "title": "Ingeniería de Diseño"
+    },
+    "segment5": {
+      "title": "Optimización"
+    },
+    "segment6": {
+      "title": "Consultoría"
+    }
+  },
+  "ManagementSection": {
+    "pretitle": "GESTIÓN EJECUTIVA",
+    "title": "NUESTROS DIRECTORES",
+    "readMore": "LEER MÁS",
+    "director1": {
+      "name": "Director Ejecutivo",
+      "title": "CEO",
+      "description": "Designado como Director Ejecutivo desde 2023. Involucrado en la estrategia corporativa y el desarrollo de operaciones industriales..."
+    },
+    "director2": {
+      "name": "Director de Recursos Humanos",
+      "title": "HR Director",
+      "description": "Designado oficialmente como director desde enero de 2023. Su carrera en Services JMK comenzó en 2015..."
+    },
+    "director3": {
+      "name": "Vicepresidente",
+      "title": "Vice President",
+      "description": "Designado oficialmente como director desde enero de 2023. Anteriormente se desempeñó como Director de Operaciones..."
+    }
+  },
+  "NewsSection": {
+    "title": "ÚLTIMAS NOTICIAS",
+    "readMore": "LEER MÁS",
+    "news1": {
+      "title": "Services JMK Anuncia Expansión de Operaciones",
+      "date": "06.02"
+    },
+    "news2": {
+      "title": "Services JMK Publica Primer Reporte de Sostenibilidad",
+      "date": "05.02"
+    },
+    "news3": {
+      "title": "Anuncia Obtención de Certificación Nacional",
+      "date": "03.02"
+    },
+    "news4": {
+      "title": "Nuevo Contrato Industrial Firmado",
+      "date": "02.02"
     }
   },
   "Services": {
@@ -118,36 +190,36 @@
       "badge": "Nuestra Experiencia",
       "title1": "Servicios Industriales",
       "title2": "que Generan Resultados",
-      "description": "Soluciones integrales diseñadas para optimizar tus operaciones, reducir tiempos de inactividad y maximizar la eficiencia en cada etapa de tus procesos industriales."
+      "description": "Soluciones integrales diseñadas para optimizar sus operaciones, reducir tiempo de inactividad y maximizar la eficiencia en cada etapa de sus procesos industriales."
     },
     "sectionHeader": {
       "badge": "Qué Ofrecemos",
       "title": "Soluciones Especializadas para Cada Desafío",
-      "description": "Desde la instalación hasta la optimización, brindamos servicios industriales integrales adaptados a tus necesidades operativas específicas."
+      "description": "Desde instalación hasta optimización, proporcionamos servicios industriales integrales adaptados a sus necesidades operativas específicas."
     },
     "cards": {
       "installation": {
         "title": "Instalación Industrial Especializada",
-        "description": "Montaje y puesta en marcha de equipos industriales, garantizando una integración adecuada con la infraestructura existente.",
+        "description": "Ensamblaje y puesta en marcha de equipos industriales, garantizando integración adecuada con infraestructura existente.",
         "scope": {
           "title": "Alcance",
           "item1": "Planificación técnica y logística",
-          "item2": "Montaje físico y conexión de sistemas",
-          "item3": "Calibración y pruebas de funcionamiento"
+          "item2": "Ensamblaje físico y conexión de sistemas",
+          "item3": "Calibración y pruebas operativas"
         }
       },
       "maintenance": {
         "title": "Mantenimiento Industrial Integral",
-        "description": "Servicio que combina mantenimiento programado y especializado para asegurar la continuidad operativa de los equipos.",
+        "description": "Servicio que combina mantenimiento programado y especializado para asegurar continuidad operativa de equipos.",
         "scope": {
           "title": "Alcance",
-          "item1": "Mantenimiento programado: inspecciones periódicas, ajustes preventivos, reemplazo de piezas críticas",
-          "item2": "Mantenimiento especializado: atención inmediata ante fallas imprevistas, diagnóstico y reparación rápida"
+          "item1": "Mantenimiento programado: inspecciones periódicas, ajustes preventivos, reemplazo de componentes críticos",
+          "item2": "Mantenimiento especializado: atención inmediata ante fallas imprevistas, diagnóstico rápido y mantenimiento correctivo"
         }
       },
       "repair": {
-        "title": "Reparación y Recuperación Operativa",
-        "description": "Diagnóstico y reparación de fallas en equipos y líneas de producción, enfocado en minimizar el tiempo de inactividad.",
+        "title": "Mantenimiento Correctivo y Recuperación Operativa",
+        "description": "Diagnóstico y mantenimiento correctivo de fallas en equipos y líneas de producción, enfocado en minimizar tiempo de inactividad.",
         "scope": {
           "title": "Alcance",
           "item1": "Identificación de fallas técnicas",
@@ -156,8 +228,8 @@
         }
       },
       "design": {
-        "title": "Diseño y Adaptación de Líneas de Producción",
-        "description": "Desarrollo de soluciones industriales personalizadas, desde el diseño conceptual hasta la implementación de líneas de producción completas.",
+        "title": "Ingeniería de Diseño y Adaptación de Líneas de Producción",
+        "description": "Desarrollo de soluciones industriales personalizadas, desde diseño conceptual hasta implementación de líneas de producción completas.",
         "scope": {
           "title": "Alcance",
           "item1": "Ingeniería y planificación de procesos",
@@ -167,7 +239,7 @@
       },
       "optimization": {
         "title": "Optimización de Procesos Industriales",
-        "description": "Análisis y mejora de procesos existentes para aumentar la productividad y reducir costos.",
+        "description": "Análisis y mejora de procesos existentes para aumentar productividad y reducir costos operativos.",
         "scope": {
           "title": "Alcance",
           "item1": "Auditoría de procesos",
@@ -183,57 +255,93 @@
           "item1": "Evaluación de necesidades técnicas y operativas",
           "item2": "Recomendación de soluciones escalables y sostenibles",
           "item3": "Definición de métricas objetivas para medir impacto",
-          "item4": "Acompañamiento en la implementación de mejoras"
+          "item4": "Soporte durante implementación de mejoras"
         }
       }
     },
     "capabilities": {
-      "badge": "Soluciones Complementarias",
+      "badge": "Capacidades Complementarias",
       "title": "Soporte Industrial Integral",
-      "description": "Además de nuestros servicios principales, ofrecemos soluciones especializadas que cubren de forma integral tus procesos industriales.",
+      "description": "Además de nuestros servicios principales, ofrecemos capacidades especializadas para garantizar cobertura completa de sus necesidades industriales.",
       "items": {
         "assembly": {
-          "title": "Montaje de Equipos",
-          "description": "Montaje profesional de maquinaria industrial con precisión y cumplimiento de las especificaciones del fabricante y normas de seguridad."
+          "title": "Ensamblaje de Equipos",
+          "description": "Ensamblaje profesional de maquinaria industrial con precisión y cumplimiento de especificaciones del fabricante y estándares de seguridad."
         },
         "inspection": {
-          "title": "Inspección Técnica",
-          "description": "Evaluación y diagnóstico completos para detectar posibles fallas, asegurar cumplimiento normativo y optimizar el rendimiento del equipo."
+          "title": "Inspección Técnica Especializada",
+          "description": "Evaluación y diagnóstico integrales para identificar problemas potenciales, asegurar cumplimiento normativo y optimizar rendimiento de equipos."
         },
         "custom": {
-          "title": "Diseño Personalizado",
-          "description": "Soluciones de diseño a medida para distribución de equipos, optimización de flujos de trabajo e instalaciones adaptadas a tus necesidades operativas."
+          "title": "Ingeniería de Diseño Personalizado",
+          "description": "Soluciones de diseño adaptadas para distribución de equipos, optimización de flujos de trabajo e instalaciones adaptadas a sus requerimientos operativos específicos."
         },
-        "core": "Área de Especialización"
+        "core": "Capacidad Principal"
       }
     },
     "cta": {
-      "badge": "Comienza Hoy",
-      "title": "¿Listo para Potenciar tus Operaciones Industriales?",
-      "description": "Conversemos sobre cómo nuestros servicios especializados pueden ayudarte a alcanzar tus objetivos operativos. Contáctanos para una consulta y evaluación personalizada.",
+      "badge": "Comience Hoy",
+      "title": "¿Listo para Potenciar sus Operaciones Industriales?",
+      "description": "Conversemos sobre cómo nuestros servicios especializados pueden ayudarle a alcanzar sus objetivos operativos. Contáctenos para una consulta y evaluación personalizada.",
       "button": "Solicitar una Consulta",
       "phone": "+1 (786) 258-7335"
     }
   },
   "About": {
-    "heroTitle": "Sobre Nosotros",
+    "heroTitle": "Acerca de Nosotros",
     "heroSubtitle": "EXCELENCIA INDUSTRIAL DESDE 2023",
-    "heroParagraph1": "Services JMK LLC se especializa en ofrecer soluciones industriales de vanguardia, combinando experiencia técnica con tecnología avanzada para optimizar las operaciones de nuestros clientes.",
-    "heroParagraph2": "Brindamos servicios integrales de automatización, mantenimiento y soporte técnico diseñados para mejorar la eficiencia operativa, reducir tiempos de inactividad y promover un crecimiento sostenible en distintos sectores.",
+    "heroHeadline": "INGENIERÍA EN MIAMI",
+    "heroDescription1": "Services JMK se posiciona como una firma líder en ingeniería industrial, entregando soluciones de nivel empresarial en manufactura, automatización y logística. Nuestras operaciones con sede en Miami aprovechan décadas de experiencia técnica para transformar operaciones industriales a nivel mundial.",
+    "heroDescription2": "Combinamos visión estratégica con excelencia operativa, garantizando que cada proyecto cumpla con los más altos estándares de precisión, confiabilidad y rendimiento.",
+    "pillars": {
+      "logistics": {
+        "title": "Logística",
+        "description": "Excelencia en cadena de suministro global y redes de entrega de precisión."
+      },
+      "heritage": {
+        "title": "Herencia",
+        "description": "Décadas de experiencia industrial y trayectoria comprobada."
+      },
+      "mastery": {
+        "title": "Maestría",
+        "description": "Excelencia técnica y soluciones de ingeniería innovadoras."
+      }
+    },
+    "leadership": {
+      "pretitle": "Liderazgo",
+      "title": "Equipo Ejecutivo",
+      "director": {
+        "name": "Director de Operaciones",
+        "role": "Director de Operaciones",
+        "bio": "Líder estratégico con amplia experiencia en operaciones industriales y gestión de proyectos a escala empresarial. Supervisa todas las iniciativas de excelencia operativa."
+      },
+      "kleyder": {
+        "name": "Kleyder",
+        "role": "Director de Desarrollo de Negocios",
+        "bio": "Impulsa el crecimiento empresarial mediante alianzas estratégicas y relaciones con clientes. Experto en identificar oportunidades de mercado y entregar soluciones orientadas al valor."
+      },
+      "cto": {
+        "name": "CTO",
+        "role": "Director de Tecnología",
+        "bio": "Visionario tecnológico especializado en automatización industrial y transformación digital. Lidera iniciativas de innovación y desarrollo de estrategia técnica."
+      }
+    },
+    "heroParagraph1": "Services JMK LLC se especializa en proporcionar soluciones industriales de vanguardia, combinando experiencia técnica con tecnología avanzada para optimizar las operaciones de nuestros clientes.",
+    "heroParagraph2": "Entregamos servicios integrales de automatización, mantenimiento y soporte técnico diseñados para mejorar eficiencia operativa, reducir tiempo de inactividad e impulsar crecimiento sostenible en múltiples sectores.",
     "heroStat1Value": "99%",
-    "heroStat1Label": "Eficiencia en la Ejecución de Proyectos",
+    "heroStat1Label": "Efectividad en Finalización de Proyectos",
     "heroStat2Value": "25+",
     "heroStat2Label": "Años de Experiencia Industrial en Nuestro Equipo",
     "heroStat3Value": "100%",
     "heroStat3Label": "Soluciones Personalizadas para Cada Cliente",
-    "heroExtra": "Cobertura nacional en los Estados Unidos",
+    "heroExtra": "Cobertura Nacional en los Estados Unidos",
 
     "missionSubtitle": "Nuestra Misión",
-    "missionTitle": "Transformando la Industria con Innovación",
+    "missionTitle": "Transformando la Industria mediante Innovación",
     "at": "En",
-    "missionParagraph1": "estamos comprometidos con transformar y optimizar la manera en que operan las empresas industriales. Nuestra misión es ofrecer soluciones de automatización, mantenimiento y soporte técnico que superen las expectativas de la industria moderna.",
-    "missionParagraph2": "Con más de 25 años de experiencia, hemos desarrollado un enfoque que combina tecnologías avanzadas con procesos eficientes para ofrecer resultados consistentes y sostenibles.",
-    "missionButton": "Escríbenos",
+    "missionParagraph1": "estamos comprometidos con transformar y optimizar la manera en que operan las empresas industriales. Nuestra misión es entregar soluciones de automatización, mantenimiento y soporte técnico que superen las expectativas de la industria moderna.",
+    "missionParagraph2": "con más de 25 años de experiencia, hemos desarrollado un enfoque que combina tecnologías avanzadas con procesos eficientes para entregar resultados consistentes y sostenibles.",
+    "missionButton": "Iniciar una Conversación",
 
     "valuesSubtitle": "Nuestros Valores",
     "valuesTitle": "Lo que Nos Distingue",
@@ -242,7 +350,7 @@
     "values1Description": "Cada proyecto se ejecuta bajo los más altos estándares de calidad y precisión técnica.",
     "values2Title": "Experiencia Certificada",
     "values2Description": "Nuestro equipo está altamente calificado y cuenta con amplia experiencia en estándares industriales internacionales.",
-    "values3Title": "Enfoque en el Cliente",
+    "values3Title": "Enfoque Orientado al Cliente",
     "values3Description": "Desarrollamos soluciones personalizadas adaptadas a las necesidades específicas de cada cliente.",
     "values4Title": "Resultados Comprobados",
     "values4Description": "Historial demostrado de mejoras significativas en eficiencia operativa y reducción de costos.",
@@ -256,46 +364,195 @@
     "expertiseItem5": "Consultoría técnica especializada",
     "expertiseItem6": "Soporte técnico 24/7",
 
-    "ctaTitle": "¿Listo para Optimizar tus Operaciones?",
-    "ctaParagraph": "Contáctanos hoy para conversar sobre cómo Services JMK puede transformar tu operación industrial con soluciones comprobadas y resultados medibles.",
-    "ctaButton": "Contáctanos",
+    "ctaTitle": "¿Listo para Optimizar sus Operaciones?",
+    "ctaParagraph": "Contáctenos hoy para conversar sobre cómo Services JMK puede transformar su operación industrial con soluciones comprobadas y resultados medibles.",
+    "ctaButton": "Contáctenos Ahora",
     "ctaPhone": "+1 (786) 258-7335"
   },
   "contact": {
     "heroSection": {
-      "getInTouch": "Contáctanos",
-      "headline": "Comencemos una Conversación",
-      "description": "Cuéntanos tus desafíos industriales. Nuestro equipo de expertos está listo para ofrecer soluciones personalizadas que generen resultados reales."
+      "getInTouch": "Contáctenos",
+      "headline": "Iniciemos una Conversación",
+      "description": "Comparta sus desafíos industriales con nosotros. Nuestro equipo de expertos está listo para proporcionar soluciones personalizadas que generen resultados reales."
     },
-    "form": {
-      "fullName": "Nombre completo *",
-      "fullNamePlaceholder": "Juan Pérez",
-      "email": "Correo electrónico *",
-      "emailPlaceholder": "juan@empresa.com",
-      "phone": "Número de teléfono",
-      "phoneOptional": "(Opcional)",
-      "phonePlaceholder": "+1 (555) 000-0000",
-      "message": "Cuéntanos sobre tu proyecto *",
-      "messagePlaceholder": "Describe tus necesidades de automatización industrial, desafíos técnicos o cualquier pregunta que tengas para nuestro equipo...",
-      "messageMinChars": "caracteres mínimo",
-      "sendMessage": "Enviar mensaje",
-      "sendingMessage": "Enviando mensaje...",
-      "errorTitle": "No se pudo enviar el mensaje",
-      "errorDescription": "Ocurrió un error. Por favor, inténtalo de nuevo o contáctanos directamente en",
-      "contactEmail": "info@servicesjmk.com"
+    "contactCard": {
+      "title": "Contáctenos",
+      "callUs": "Llámenos",
+      "phone": "+1 (786) 258-7335",
+      "phoneSubtitle": "Soporte Operativo Profesional",
+      "emailUs": "Envíenos un Correo",
+      "email": "info@servicesjmk.com",
+      "ourServices": "Nuestros Servicios",
+      "services": {
+        "manufacturing": "Soluciones de Manufactura",
+        "preventive": "Mantenimiento Preventivo",
+        "automation": "Automatización de Procesos"
+      }
     },
     "contactInfo": {
-      "directContact": "Contacto directo",
-      "callUs": "Llámanos",
-      "emailUs": "Envíanos un correo",
+      "pretitle": "Información de Contacto",
+      "title": "Soluciones Industriales",
+      "titleLine2": "Disponibles a Nivel Mundial",
+      "description": "Nuestro equipo de expertos proporciona servicios industriales integrales, desde mantenimiento de equipos hasta soluciones de manufactura a gran escala.",
+      "email": {
+        "title": "Correo Electrónico",
+        "content": "industrial@servicesjmk.com",
+        "subtitle": "Para consultas técnicas y especificaciones de proyectos"
+      },
+      "businessHours": {
+        "title": "Horario Comercial",
+        "content": "Lunes - Sábado: 9:00 AM - 6:00 PM EST",
+        "subtitle": "Respuesta dentro de 4 horas durante horario comercial"
+      },
+      "support": {
+        "title": "Soporte Técnico",
+        "content": "Consulta de Emergencia 24/7",
+        "subtitle": "Soporte industrial crítico disponible en cualquier momento"
+      }
+    },
+    "form": {
+      "fullName": "Nombre Completo *",
+      "fullNamePlaceholder": "Juan Pérez",
+      "email": "Correo Electrónico *",
+      "emailPlaceholder": "juan@empresa.com",
+      "phone": "Número de Teléfono",
+      "phoneOptional": "(Opcional)",
+      "phonePlaceholder": "+1 (555) 000-0000",
+      "message": "Cuéntenos sobre su Proyecto *",
+      "messagePlaceholder": "Describa sus necesidades de automatización industrial, desafíos técnicos o cualquier pregunta que tenga para nuestro equipo...",
+      "messageMinChars": "caracteres mínimo",
+      "sendMessage": "Enviar Mensaje",
+      "sendingMessage": "Enviando Mensaje...",
+      "errorTitle": "No se Pudo Enviar el Mensaje",
+      "errorDescription": "Se encontró un error. Por favor, inténtelo de nuevo o contáctenos directamente en",
+      "contactEmail": "info@servicesjmk.com"
+    },
+    "contactInfoOld": {
+      "directContact": "Contacto Directo",
+      "callUs": "Llámenos",
+      "emailUs": "Envíenos un Correo",
       "responseTime": "Tiempo de Respuesta",
       "responseTimeDescription": "Normalmente respondemos dentro de 24 horas en días hábiles",
-      "businessHours": "Horario de Atención",
+      "businessHours": "Horario Comercial",
       "businessHoursDescription": "Lunes - Sábado\n9:00 AM - 6:00 PM EST",
       "emergencySupport": "Soporte de Emergencia",
       "emergencySupportDescription": "Disponibilidad 24/7 para emergencias industriales críticas",
       "trustBadgeTitle": "Confidencial y Seguro",
-      "trustBadgeDescription": "Tu información está cifrada y protegida. Respetamos tu privacidad y nunca compartiremos tus datos."
+      "trustBadgeDescription": "Su información está cifrada y protegida. Respetamos su privacidad y nunca compartiremos sus datos."
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "badge": "Nuestros Servicios",
+      "title1": "Excelencia",
+      "title2": "Industrial",
+      "description": "Soluciones de nivel empresarial diseñadas para precisión, confiabilidad y superioridad operativa en todo el espectro industrial.",
+      "button": "Solicitar Consulta"
+    },
+    "services": {
+      "engineering": {
+        "sectionNumber": "02",
+        "title": "Ingeniería de Proyectos",
+        "subtitle": "Excelencia Técnica Estratégica",
+        "description": "Transformamos operaciones industriales mediante metodologías avanzadas, análisis de precisión y marcos de implementación estratégica diseñados para entornos de fabricación a escala empresarial.",
+        "metrics": {
+          "projectsDelivered": "Proyectos Entregados",
+          "efficiencyGain": "Ganancia de Eficiencia"
+        },
+        "benefits": {
+          "processOptimization": "Optimización de Procesos",
+          "digitalTwinDesign": "Diseño de Gemelo Digital",
+          "feasibilityStudies": "Estudios de Viabilidad"
+        }
+      },
+      "automation": {
+        "sectionNumber": "03",
+        "title": "Automatización Avanzada",
+        "subtitle": "Sistemas Operativos Inteligentes",
+        "description": "Soluciones de automatización de vanguardia y programas de mantenimiento predictivo que maximizan tiempo de actividad operativa y permiten toma de decisiones basada en datos mediante tecnologías integradas de IoT e IA.",
+        "metrics": {
+          "uptimeImprovement": "Mejora del Tiempo de Actividad",
+          "costReduction": "Reducción de Costos"
+        },
+        "keywords": {
+          "predictiveAnalytics": "Análisis Predictivo",
+          "iotIntegration": "Integración IoT",
+          "realTimeMonitoring": "Monitoreo en Tiempo Real",
+          "support247": "Soporte Operativo 24/7"
+        }
+      },
+      "machinery": {
+        "sectionNumber": "04",
+        "title": "Suministro de Maquinaria y Logística",
+        "subtitle": "Excelencia en Adquisiciones Globales",
+        "description": "Gestión integral de abastecimiento de maquinaria y logística con redes de cadena de suministro globales, garantizando entrega precisa e integración perfecta.",
+        "metrics": {
+          "unitsSupplied": "Unidades Suministradas",
+          "countriesServed": "Países Atendidos"
+        },
+        "keywords": {
+          "globalSourcing": "Abastecimiento Global",
+          "customConfig": "Configuración Personalizada",
+          "rapidDeployment": "Despliegue Rápido",
+          "lifecycleManagement": "Gestión del Ciclo de Vida"
+        },
+        "externalLink": "https://jmkrobotics.com",
+        "externalLinkText": "Visitar JMK Robotics"
+      },
+      "maintenance": {
+        "sectionNumber": "05",
+        "title": "Mantenimiento del Ciclo de Vida",
+        "subtitle": "Sistemas Operativos Inteligentes",
+        "description": "Programas integrales de mantenimiento que garantizan máximo tiempo de actividad, diagnósticos predictivos y soporte operativo 24/7 para operaciones industriales críticas.",
+        "metrics": {
+          "uptimeImprovement": "Mejora del Tiempo de Actividad",
+          "responseTime": "Tiempo de Respuesta"
+        },
+        "keywords": {
+          "preventiveMaintenance": "Mantenimiento Preventivo",
+          "predictiveAnalytics": "Análisis Predictivo",
+          "support247": "Soporte Operativo 24/7",
+          "remoteDiagnostics": "Diagnósticos Remotos"
+        }
+      }
+    },
+    "contactForm": {
+      "badge": "Comience",
+      "title": "Transforme sus Operaciones",
+      "description": "Asóciese con líderes de la industria para implementar soluciones que generen resultados medibles y ventaja competitiva sostenible.",
+      "form": {
+        "fullName": "Nombre Completo *",
+        "fullNamePlaceholder": "Juan Pérez",
+        "email": "Correo Electrónico *",
+        "emailPlaceholder": "juan@empresa.com",
+        "phone": "Número de Teléfono",
+        "phoneOptional": "(Opcional)",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "company": "Empresa",
+        "companyPlaceholder": "Nombre de la Empresa",
+        "message": "Cuéntenos sobre su Proyecto *",
+        "messagePlaceholder": "Describa sus necesidades de automatización industrial, desafíos técnicos o cualquier pregunta que tenga para nuestro equipo...",
+        "sendMessage": "Enviar Mensaje",
+        "sendingMessage": "Enviando Mensaje...",
+        "messageSent": "¡Mensaje Enviado Exitosamente!",
+        "errorTitle": "No se Pudo Enviar el Mensaje",
+        "errorDescription": "No se pudo enviar el mensaje. Por favor, inténtelo de nuevo o contáctenos directamente en",
+        "contactEmail": "info@servicesjmk.com"
+      },
+      "validation": {
+        "nameRequired": "El nombre es requerido",
+        "nameMinLength": "El nombre debe tener al menos 2 caracteres",
+        "emailRequired": "El correo electrónico es requerido",
+        "emailInvalid": "Por favor ingrese una dirección de correo electrónico válida",
+        "phoneInvalid": "Por favor ingrese un número de teléfono válido",
+        "messageRequired": "El mensaje es requerido",
+        "messageMinLength": "El mensaje debe tener al menos 10 caracteres"
+      },
+      "directContact": {
+        "title": "O contáctenos directamente:",
+        "phone": "+1 (786) 258-7335",
+        "email": "info@servicesjmk.com"
+      }
     }
   }
 }

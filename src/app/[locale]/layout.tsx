@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -10,9 +10,11 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 type Props = {
@@ -60,7 +62,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         <NextIntlClientProvider locale={locale}>
           {children}
         </NextIntlClientProvider>

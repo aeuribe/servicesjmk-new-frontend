@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -6,66 +8,40 @@ interface AboutUsProps {
   onNavigateToContact: () => void;
 }
 
-// Custom SVG Icons
-const TargetIcon = ({ className }: { className?: string }) => (
+// Pillar Icons - Electric Blue
+const LogisticsIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
   >
-    <circle
-      cx="12"
-      cy="12"
-      r="10"
-      strokeWidth="2"
+    <path
       strokeLinecap="round"
       strokeLinejoin="round"
-    />
-    <circle
-      cx="12"
-      cy="12"
-      r="6"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <circle
-      cx="12"
-      cy="12"
-      r="2"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
     />
   </svg>
 );
 
-const AwardIcon = ({ className }: { className?: string }) => (
+const HeritageIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
   >
-    <circle
-      cx="12"
-      cy="8"
-      r="6"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
     <path
-      d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
     />
   </svg>
 );
 
-const UsersIcon = ({ className }: { className?: string }) => (
+const MasteryIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
     fill="none"
@@ -73,377 +49,394 @@ const UsersIcon = ({ className }: { className?: string }) => (
     viewBox="0 0 24 24"
   >
     <path
-      d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
-      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-    />
-    <circle
-      cx="9"
-      cy="7"
-      r="4"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const CheckCircleIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="m9 11 3 3L22 4"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
     />
   </svg>
 );
 
 export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const t = useTranslations("About");
 
   React.useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const stats = [
-    { value: "99%", label: t("heroStat1Label") },
-    { value: "25+", label: t("heroStat2Label") },
-    { value: "100%", label: t("heroStat3Label")},
-  ];
-
-  const values = [
+  const leadership = [
     {
-      icon: TargetIcon,
-      title: t("values1Title"),
-      description:
-         t("values1Description"),
+      id: "director",
+      name: t("leadership.director.name"),
+      role: t("leadership.director.role"),
+      bio: t("leadership.director.bio"),
+      image: "/team/director.jpg", // Placeholder - replace with actual image
     },
     {
-      icon: AwardIcon,
-      title: t("values2Title"),
-      description:
-        t("values2Description"),
+      id: "kleyder",
+      name: t("leadership.kleyder.name"),
+      role: t("leadership.kleyder.role"),
+      bio: t("leadership.kleyder.bio"),
+      image: "/team/kleyder.jpg", // Placeholder - replace with actual image
     },
     {
-      icon: UsersIcon,
-      title: t("values3Title"),
-      description:
-        t("values3Description"),
-    },
-    {
-      icon: CheckCircleIcon,
-      title: t("values4Title"),
-      description:
-        t("values4Description"),
+      id: "cto",
+      name: t("leadership.cto.name"),
+      role: t("leadership.cto.role"),
+      bio: t("leadership.cto.bio"),
+      image: "/team/cto.jpg", // Placeholder - replace with actual image
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white font-main">
-      {/* Hero Section */}
-      <section
-        className="relative bg-[#19165F] bg-cover bg-center bg-no-repeat py-16 sm:py-20 lg:py-32 mt-10 overflow-hidden"
-        style={{ backgroundImage: "url('/background-hero.jpg')" }}
-      >
-        <style>{`
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .animate-slide-in-left {
-      animation: slideInLeft 0.8s ease-out forwards;
-    }
-    .animate-slide-in-right {
-      animation: slideInRight 0.8s ease-out forwards;
-    }
-  `}</style>
+    <div className="min-h-screen font-main relative overflow-hidden">
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .image-bw {
+          filter: grayscale(100%);
+          transition: filter 0.4s ease;
+        }
+        .image-color {
+          filter: grayscale(0%);
+        }
+      `}</style>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[auto_2px_1fr] gap-8 sm:gap-12 lg:gap-16 items-start">
-            {/* Left - About Us Title */}
+      {/* Hero Block - Corporate Profile */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Dark Industrial Background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "linear-gradient(135deg, #141414 0%, #1a1a1a 50%, #141414 100%)",
+            backgroundAttachment: "fixed",
+            backgroundSize: "100% 100vh",
+          }}
+        >
+          {/* Top vignette */}
+          <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/60 via-black/25 to-transparent pointer-events-none" />
+
+          {/* Subtle background pattern */}
+          <div className="absolute inset-0 opacity-5">
             <div
-              className={`inline-block ${
-                isVisible ? "animate-slide-in-left" : "opacity-0"
-              }`}
-              style={{ animationDelay: "0.1s" }}
-            >
-              <span className="text-white text-4xl sm:text-5xl lg:text-7xl block">
-                {t("heroTitle")}
-              </span>
-              <div className="h-px bg-[#E53E3E] mt-3"></div>
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                backgroundSize: "40px 40px",
+                backgroundAttachment: "fixed",
+              }}
+            ></div>
+          </div>
+        </div>
+
+        {/* Section Number Line */}
+        <div className="absolute left-4 lg:left-8 top-16 bottom-0 z-20 flex flex-col items-center">
+          <span className="text-2xl font-bold drop-shadow-sm text-white/60">
+            01
+          </span>
+          <div className="w-px bg-white/30 flex-1"></div>
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20 lg:pt-32 pb-16">
+          <div className="max-w-6xl mx-auto pl-12 lg:pl-16">
+            {/* Split Layout: Text Left, Image Right */}
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Side - Text Content */}
+              <div
+                className={`space-y-8 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: "0.1s" }}
+              >
+                {/* Headline */}
+                <div>
+                  <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 uppercase tracking-tight">
+                    {t("heroHeadline")}
+                  </h1>
+                  <div className="h-px bg-gradient-to-r from-[#00D4FF] to-transparent w-32 mb-6"></div>
+                </div>
+
+                {/* Description */}
+                <div className="space-y-4">
+                  <p className="text-white/90 text-lg leading-relaxed">
+                    {t("heroDescription1")}
+                  </p>
+                  <p className="text-white/90 text-lg leading-relaxed">
+                    {t("heroDescription2")}
+                  </p>
+                </div>
+
+                {/* Three Pillars with Electric Blue Icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 bg-[#00D4FF]/20 flex items-center justify-center border border-[#00D4FF]/30">
+                      <LogisticsIcon className="w-6 h-6 text-[#00D4FF]" />
+                    </div>
+                    <h3 className="text-white font-semibold text-sm uppercase tracking-wide">
+                      {t("pillars.logistics.title")}
+                    </h3>
+                    <p className="text-white/70 text-xs leading-relaxed">
+                      {t("pillars.logistics.description")}
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 bg-[#00D4FF]/20 flex items-center justify-center border border-[#00D4FF]/30">
+                      <HeritageIcon className="w-6 h-6 text-[#00D4FF]" />
+                    </div>
+                    <h3 className="text-white font-semibold text-sm uppercase tracking-wide">
+                      {t("pillars.heritage.title")}
+                    </h3>
+                    <p className="text-white/70 text-xs leading-relaxed">
+                      {t("pillars.heritage.description")}
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="w-12 h-12 bg-[#00D4FF]/20 flex items-center justify-center border border-[#00D4FF]/30">
+                      <MasteryIcon className="w-6 h-6 text-[#00D4FF]" />
+                    </div>
+                    <h3 className="text-white font-semibold text-sm uppercase tracking-wide">
+                      {t("pillars.mastery.title")}
+                    </h3>
+                    <p className="text-white/70 text-xs leading-relaxed">
+                      {t("pillars.mastery.description")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Image */}
+              <div
+                className={`relative ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+                style={{ animationDelay: "0.2s" }}
+              >
+                <div
+                  className="relative w-full h-[500px] lg:h-[600px] overflow-hidden"
+                  style={{
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
+                    filter: "drop-shadow(0 20px 40px rgba(0, 212, 255, 0.2))",
+                  }}
+                >
+                  {!imageErrors["hero-image"] ? (
+                    <Image
+                      src="/miami-skyline.jpg" // Placeholder - replace with actual Miami skyline or tech map image
+                      alt="Miami Skyline / Abstract Tech Map"
+                      fill
+                      className="object-cover"
+                      priority
+                      onError={() => setImageErrors(prev => ({ ...prev, "hero-image": true }))}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#00D4FF]/20 to-[#2563eb]/20"></div>
+                  )}
+                  {/* Overlay for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-transparent"></div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Divider Line */}
-            <div className="hidden lg:block w-px h-full bg-white/20 self-stretch"></div>
-
-            {/* Right - Content */}
+      {/* Leadership Pyramid Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Slightly lighter dark grey background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background: "linear-gradient(135deg, #1e1e1e 0%, #252525 50%, #1e1e1e 100%)",
+            backgroundAttachment: "fixed",
+            backgroundSize: "100% 100vh",
+          }}
+        >
+          {/* Subtle background pattern */}
+          <div className="absolute inset-0 opacity-3">
             <div
-              className={`space-y-8 ${
-                isVisible ? "animate-slide-in-right" : "opacity-0"
-              }`}
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                backgroundSize: "40px 40px",
+                backgroundAttachment: "fixed",
+              }}
+            ></div>
+          </div>
+        </div>
+
+        {/* Section Number Line */}
+        <div className="absolute left-4 lg:left-8 top-0 bottom-0 z-20 flex flex-col items-center">
+          <span className="text-2xl font-bold drop-shadow-sm text-white/60">
+            02
+          </span>
+          <div className="w-px bg-white/30 flex-1"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pl-12 lg:pl-16">
+          {/* Section Header */}
+          <div
+            className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+            style={{ animationDelay: "0.1s" }}
+          >
+            <span className="text-[#00D4FF] tracking-[0.3em] uppercase text-xs font-semibold block mb-4">
+              {t("leadership.pretitle")}
+            </span>
+            <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+              {t("leadership.title")}
+            </h2>
+            <div className="h-px bg-gradient-to-r from-transparent via-[#00D4FF] to-transparent w-32 mx-auto"></div>
+          </div>
+
+          {/* Leadership Pyramid */}
+          <div className="flex flex-col items-center space-y-8">
+            {/* Row 1: Director of Operations (Top Center, 20% larger) */}
+            <div
+              className={`w-full max-w-lg mx-auto ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="space-y-6">
-                <div>
-                  <span className="text-[#E53E3E] tracking-[0.3em] uppercase text-xs block mb-2">
-                    {t("heroSubtitle")}
-                  </span>
-                </div>
-
-                <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                  {t("heroParagraph1")}
-                </p>
-
-                <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-                  {t("heroParagraph2")}
-                </p>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-white/20">
-                {stats.map((stat, index) => (
-                  <div key={index}>
-                    <div className="text-white mb-2 text-3xl font-semibold">
-                      {stat.value}
-                    </div>
-                    <div className="text-white/70 text-xs uppercase tracking-wide">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Additional Info */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                <div className="flex items-center gap-2 text-white/80 text-sm">
-                  <div className="w-1.5 h-1.5 bg-[#E53E3E]"></div>
-                  <span>{t("heroExtra")}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div>
-                <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-                  {t("missionSubtitle")}
-                </span>
-                <div className="h-px bg-[#E53E3E] mt-3 w-20"></div>
-              </div>
-
-              {/* <h2 className="text-[#19165F] leading-tight">
-                {t("missionTitle")}
-              </h2> */}
-
-              <div className="space-y-6 text-gray-700 ">
-                <p className="leading-relaxed">
-                  {t("at")}{" "} 
-                  <span className="font-bold text-[#19165F]">Services JMK</span>, {t("missionParagraph1")}
-                </p>
-                <p className="leading-relaxed">
-                  {t("missionParagraph2")}
-                </p>
-              </div>
-
-              <div className="pt-4">
-                <button
-                  onClick={onNavigateToContact}
-                  className="bg-[#19165F] text-white px-8 py-4 hover:bg-[#19165F]/90 transition-all duration-300 inline-flex items-center gap-3 group"
-                >
-                  <span>{t("missionButton")}</span>
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div className="relative lg:h-[600px]">
-              <div className="absolute inset-0 bg-[#E53E3E]/10 -right-8 -bottom-8"></div>
-              <div className="relative h-full">
-                <Image
-                  src="https://images.unsplash.com/photo-1739599211500-74e04a9ca175?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZmFjaWxpdHklMjBtb2Rlcm58ZW58MXx8fHwxNzU5NTIxOTk2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Modern industrial facilities"
-                  fill
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 lg:py-32 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-              {t("valuesSubtitle")}
-            </span>
-            <div className="h-px bg-[#E53E3E] mt-3 w-20 mx-auto mb-8"></div>
-            {/* <h2 className="text-[#19165F] leading-tight mb-6">
-              {t("valuesTitle")}
-            </h2> */}
-            <p className="text-gray-700 leading-relaxed">
-              {t("valuesParagraph")}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, index) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white p-8 border border-gray-200 hover:border-[#19165F]/30 transition-all duration-300 group"
-                >
-                  <div className="flex gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-[#19165F]/10 flex items-center justify-center group-hover:bg-[#19165F] transition-colors duration-300">
-                        <Icon className="w-7 h-7 text-[#19165F] group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <h3 className="text-[#19165F]">{value.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {value.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise Section */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative lg:h-[500px] order-2 lg:order-1">
-              <div className="absolute inset-0 bg-[#E53E3E]/10 -left-8 -bottom-8"></div>
-              <div className="relative h-full">
-                <Image
-                  src="https://images.unsplash.com/photo-1759159091682-3b98f4759367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwYXV0b21hdGlvbiUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzU5NTIxOTk2fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Industrial automation technology"
-                  fill
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="space-y-8 order-1 lg:order-2">
-              <div>
-                <span className="text-[#19165F]/60 tracking-[0.2em] uppercase text-sm">
-                  {t("expertiseSubtitle")}
-                </span>
-                <div className="h-px bg-[#E53E3E] mt-3 w-20"></div>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  t("expertiseItem1"),
-                  t("expertiseItem2"),
-                  t("expertiseItem3"),
-                  t("expertiseItem4"),
-                  t("expertiseItem5"),
-                  t("expertiseItem6"),
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-6 h-6 border-2 border-[#E53E3E] flex items-center justify-center">
-                        <div className="w-2 h-2 bg-[#E53E3E]"></div>
-                      </div>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 bg-[#19165F]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-8">
-            <h2 className="text-white leading-tight">
-              {t("ctaTitle")}
-            </h2>
-
-            <p className="text-white/90 leading-relaxed max-w-2xl mx-auto text-lg">
-              {t("ctaParagraph")}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
-              <button
-                onClick={onNavigateToContact}
-                className="bg-[#E53E3E] text-white px-10 py-4 hover:bg-[#E53E3E]/90 transition-all duration-300 inline-flex items-center gap-3"
+              <div
+                className="bg-white/10 backdrop-blur-sm border border-white/20 p-10 relative overflow-hidden group hover:border-[#00D4FF]/50 transition-all duration-300"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
+                  filter: "drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))",
+                }}
+                onMouseEnter={() => setHoveredCard("director")}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                <span>{t("ctaButton")}</span>
-              </button>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  {/* Image - Larger for Director (20% larger card) */}
+                  <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-[#00D4FF]/30 bg-white/5">
+                    {!imageErrors[leadership[0].id] ? (
+                      <Image
+                        src={leadership[0].image || "/placeholder-avatar.jpg"}
+                        alt={leadership[0].name}
+                        fill
+                        className={`object-cover ${hoveredCard === "director" ? "image-color" : "image-bw"}`}
+                        onError={() => setImageErrors(prev => ({ ...prev, [leadership[0].id]: true }))}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
+                        Photo
+                      </div>
+                    )}
+                  </div>
+                  {/* Name & Role */}
+                  <div>
+                    <h3 className="text-white text-2xl font-bold mb-1">
+                      {leadership[0].name}
+                    </h3>
+                    <p className="text-[#00D4FF] text-sm font-semibold uppercase tracking-wide mb-3">
+                      {leadership[0].role}
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+                      {leadership[0].bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-              <a
-                href="tel:+17862587335"
-                className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"
+            {/* Row 2: Two Cards Side-by-Side */}
+            <div
+              className={`grid md:grid-cols-2 gap-8 w-full max-w-4xl ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
+              style={{ animationDelay: "0.3s" }}
+            >
+              {/* Business Development Director */}
+              <div
+                className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 relative overflow-hidden group hover:border-[#00D4FF]/50 transition-all duration-300"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
+                  filter: "drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))",
+                }}
+                onMouseEnter={() => setHoveredCard("kleyder")}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span>+1 (786) 258-7335</span>
-              </a>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  {/* Image */}
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#00D4FF]/30 bg-white/5">
+                    {!imageErrors[leadership[1].id] ? (
+                      <Image
+                        src={leadership[1].image || "/placeholder-avatar.jpg"}
+                        alt={leadership[1].name}
+                        fill
+                        className={`object-cover ${hoveredCard === "kleyder" ? "image-color" : "image-bw"}`}
+                        onError={() => setImageErrors(prev => ({ ...prev, [leadership[1].id]: true }))}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-white/40 text-xs">
+                        Photo
+                      </div>
+                    )}
+                  </div>
+                  {/* Name & Role */}
+                  <div>
+                    <h3 className="text-white text-lg font-bold mb-1">
+                      {leadership[1].name}
+                    </h3>
+                    <p className="text-[#00D4FF] text-xs font-semibold uppercase tracking-wide mb-3">
+                      {leadership[1].role}
+                    </p>
+                    <p className="text-slate-400 text-xs leading-relaxed">
+                      {leadership[1].bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTO */}
+              <div
+                className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 relative overflow-hidden group hover:border-[#00D4FF]/50 transition-all duration-300"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
+                  filter: "drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))",
+                }}
+                onMouseEnter={() => setHoveredCard("cto")}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+                <div className="flex flex-col items-center text-center space-y-4">
+                  {/* Image */}
+                  <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#00D4FF]/30 bg-white/5">
+                    {!imageErrors[leadership[2].id] ? (
+                      <Image
+                        src={leadership[2].image || "/placeholder-avatar.jpg"}
+                        alt={leadership[2].name}
+                        fill
+                        className={`object-cover ${hoveredCard === "cto" ? "image-color" : "image-bw"}`}
+                        onError={() => setImageErrors(prev => ({ ...prev, [leadership[2].id]: true }))}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-white/40 text-xs">
+                        Photo
+                      </div>
+                    )}
+                  </div>
+                  {/* Name & Role */}
+                  <div>
+                    <h3 className="text-white text-lg font-bold mb-1">
+                      {leadership[2].name}
+                    </h3>
+                    <p className="text-[#00D4FF] text-xs font-semibold uppercase tracking-wide mb-3">
+                      {leadership[2].role}
+                    </p>
+                    <p className="text-slate-400 text-xs leading-relaxed">
+                      {leadership[2].bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

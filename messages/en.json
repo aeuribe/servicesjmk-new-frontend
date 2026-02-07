@@ -10,13 +10,9 @@
     "contact": "Contact Us"
   },
   "Hero": {
-    "headline": "We provide, install and maintain your industrial machinery",
-    "slides": {
-      "slide1": "Excellence in industrial solutions",
-      "slide2": "Precision engineering services",
-      "slide3": "Your trusted industrial partner"
-    },
-    "button": "Learn More"
+    "headline": "WE DRIVE INDUSTRIAL POWER",
+    "subtitle": "Your strategic partner for high-level industrial engineering and machinery solutions.",
+    "button": "EXPLORE SERVICES"
   },
   "ServicesSection": {
     "title1": "Equipment Assembly",
@@ -107,10 +103,85 @@
       }
     },
     "bottom": {
-      "copyright": "Services JMK, LLC. All rights reserved.",
-      "terms": "Terms of Service",
-      "privacy": "Privacy Policy",
-      "cookies": "Cookie Policy"
+      "copyright": "Services JMK Group.",
+      "contact": "Contact Us",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Cookies",
+      "policy": "Policy"
+    },
+    "infrastructure": {
+      "title": "INFRASTRUCTURE LEADING",
+      "button": "CONTACTS SUBSIDIARIES"
+    }
+  },
+  "AboutUsSection": {
+    "pretitle": "ABOUT US",
+    "title": "WE EXPLORE TO EMPOWER",
+    "readMore": "READ MORE",
+    "description": "Services JMK represents the formalization of a proven track record in industrial engineering. Founded on over two decades of technical expertise, our firm was established to meet a critical market demand: precise diagnostics and definitive solutions that transcend conventional repair.",
+    "description2": "We operate under a comprehensive approach encompassing everything from consulting and root cause analysis to the supply of advanced machinery. Based in Miami with nationwide deployment capabilities, we are the strategic partner for operations that cannot afford downtime. We do not just repair your present; we optimize your future.",
+    "imageAlt": "About Services JMK"
+  },
+  "BusinessSegmentsSection": {
+    "pretitle": "BUSINESS SEGMENTS",
+    "title": "OUR BUSINESS",
+    "readMore": "READ MORE",
+    "segment1": {
+      "title": "Installation"
+    },
+    "segment2": {
+      "title": "Maintenance"
+    },
+    "segment3": {
+      "title": "Repair"
+    },
+    "segment4": {
+      "title": "Design"
+    },
+    "segment5": {
+      "title": "Optimization"
+    },
+    "segment6": {
+      "title": "Consulting"
+    }
+  },
+  "ManagementSection": {
+    "pretitle": "MANAGEMENT",
+    "title": "OUR DIRECTORS",
+    "director1": {
+      "name": "Chief Executive Officer",
+      "title": "CEO",
+      "description": "Appointed as Chief Executive Officer since 2023. Involved in company strategy and development of industrial operations..."
+    },
+    "director2": {
+      "name": "Human Resources Director",
+      "title": "HR Director",
+      "description": "Officially appointed as director since January 2023. Her career at Services JMK started in 2015..."
+    },
+    "director3": {
+      "name": "Vice President",
+      "title": "Vice President",
+      "description": "Officially appointed as director since January 2023. Previously served as Operations Director..."
+    }
+  },
+  "NewsSection": {
+    "title": "LATEST NEWS",
+    "readMore": "READ MORE",
+    "news1": {
+      "title": "Services JMK Announces Operations Expansion",
+      "date": "06.02"
+    },
+    "news2": {
+      "title": "Services JMK Publishes First Sustainability Report",
+      "date": "05.02"
+    },
+    "news3": {
+      "title": "Announces Obtaining National Certification",
+      "date": "03.02"
+    },
+    "news4": {
+      "title": "New Industrial Contract Signed",
+      "date": "02.02"
     }
   },
   "Services": {
@@ -219,6 +290,42 @@
   "About": {
     "heroTitle": "About Us",
     "heroSubtitle": "INDUSTRIAL EXCELLENCE SINCE 2023",
+    "heroHeadline": "ENGINEERED IN MIAMI",
+    "heroDescription1": "Services JMK stands as a premier industrial engineering firm, delivering enterprise-grade solutions across manufacturing, automation, and logistics. Our Miami-based operations leverage decades of technical expertise to transform industrial operations worldwide.",
+    "heroDescription2": "We combine strategic vision with operational excellence, ensuring every project meets the highest standards of precision, reliability, and performance.",
+    "pillars": {
+      "logistics": {
+        "title": "Logistics",
+        "description": "Global supply chain excellence and precision delivery networks."
+      },
+      "heritage": {
+        "title": "Heritage",
+        "description": "Decades of industrial expertise and proven track record."
+      },
+      "mastery": {
+        "title": "Mastery",
+        "description": "Technical excellence and innovative engineering solutions."
+      }
+    },
+    "leadership": {
+      "pretitle": "Leadership",
+      "title": "Executive Team",
+      "director": {
+        "name": "Director of Operations",
+        "role": "Director of Operations",
+        "bio": "Strategic leader with extensive experience in industrial operations and enterprise-scale project management. Oversees all operational excellence initiatives."
+      },
+      "kleyder": {
+        "name": "Kleyder",
+        "role": "Business Development Director",
+        "bio": "Drives business growth through strategic partnerships and client relationships. Expert in identifying market opportunities and delivering value-driven solutions."
+      },
+      "cto": {
+        "name": "CTO",
+        "role": "Chief Technology Officer",
+        "bio": "Technology visionary specializing in industrial automation and digital transformation. Leads innovation initiatives and technical strategy development."
+      }
+    },
     "heroParagraph1": "Services JMK LLC specializes in providing cutting-edge industrial solutions, combining technical expertise with advanced technology to optimize our clients' operations.",
     "heroParagraph2": "We deliver comprehensive automation, maintenance, and technical support services designed to enhance operational efficiency, reduce downtime, and drive sustainable growth across multiple sectors.",
     "heroStat1Value": "99%",
@@ -268,6 +375,41 @@
       "headline": "Let's Start a Conversation",
       "description": "Share your industrial challenges with us. Our team of experts is ready to provide customized solutions that drive real results."
     },
+    "contactCard": {
+      "title": "Get In Touch",
+      "callUs": "Call Us",
+      "phone": "+1 (786) 258-7335",
+      "phoneSubtitle": "Professional Support",
+      "emailUs": "Email Us",
+      "email": "info@servicesjmk.com",
+      "ourServices": "Our Services",
+      "services": {
+        "manufacturing": "Manufacturing Solutions",
+        "preventive": "Preventive Maintenance",
+        "automation": "Process Automation"
+      }
+    },
+    "contactInfo": {
+      "pretitle": "Contact Information",
+      "title": "Industrial Solutions",
+      "titleLine2": "Available Worldwide",
+      "description": "Our expert team provides comprehensive industrial services, from equipment maintenance to large-scale manufacturing solutions.",
+      "email": {
+        "title": "Email Address",
+        "content": "industrial@servicesjmk.com",
+        "subtitle": "For technical inquiries and project specifications"
+      },
+      "businessHours": {
+        "title": "Business Hours",
+        "content": "Monday - Saturday: 9:00 AM - 6:00 PM EST",
+        "subtitle": "Response within 4 hours during business hours"
+      },
+      "support": {
+        "title": "Technical Support",
+        "content": "24/7 Emergency Consultation",
+        "subtitle": "Critical industrial support available anytime"
+      }
+    },
     "form": {
       "fullName": "Full Name *",
       "fullNamePlaceholder": "John Smith",
@@ -285,7 +427,7 @@
       "errorDescription": "We encountered an error. Please try again or contact us directly at",
       "contactEmail": "info@servicesjmk.com"
     },
-    "contactInfo": {
+    "contactInfoOld": {
       "directContact": "Direct Contact",
       "callUs": "Call Us",
       "emailUs": "Email Us",
@@ -297,6 +439,120 @@
       "emergencySupportDescription": "24/7 availability for critical industrial emergencies",
       "trustBadgeTitle": "Confidential & Secure",
       "trustBadgeDescription": "Your information is encrypted and protected. We respect your privacy and will never share your data."
+    }
+  },
+  "ServicesPage": {
+    "hero": {
+      "badge": "Our Services",
+      "title1": "Industrial",
+      "title2": "Excellence",
+      "description": "Enterprise-grade solutions engineered for precision, reliability, and operational superiority across the industrial spectrum.",
+      "button": "Request Consultation"
+    },
+    "services": {
+      "engineering": {
+        "sectionNumber": "02",
+        "title": "Project Engineering",
+        "subtitle": "Strategic Technical Excellence",
+        "description": "Transform industrial operations through advanced methodologies, precision analysis, and strategic implementation frameworks designed for enterprise-scale manufacturing environments.",
+        "metrics": {
+          "projectsDelivered": "Projects Delivered",
+          "efficiencyGain": "Efficiency Gain"
+        },
+        "benefits": {
+          "processOptimization": "Process Optimization",
+          "digitalTwinDesign": "Digital Twin Design",
+          "feasibilityStudies": "Feasibility Studies"
+        }
+      },
+      "automation": {
+        "sectionNumber": "03",
+        "title": "Advanced Automation",
+        "subtitle": "Intelligent Operational Systems",
+        "description": "Cutting-edge automation solutions and predictive maintenance programs that maximize operational uptime and enable data-driven decision-making through integrated IoT and AI technologies.",
+        "metrics": {
+          "uptimeImprovement": "Uptime Improvement",
+          "costReduction": "Cost Reduction"
+        },
+        "keywords": {
+          "predictiveAnalytics": "Predictive Analytics",
+          "iotIntegration": "IoT Integration",
+          "realTimeMonitoring": "Real-Time Monitoring",
+          "support247": "24/7 Support"
+        }
+      },
+      "machinery": {
+        "sectionNumber": "04",
+        "title": "Machinery Supply & Logistics",
+        "subtitle": "Global Procurement Excellence",
+        "description": "End-to-end machinery sourcing and logistics management with global supply chain networks, ensuring precision delivery and seamless integration.",
+        "metrics": {
+          "unitsSupplied": "Units Supplied",
+          "countriesServed": "Countries Served"
+        },
+        "keywords": {
+          "globalSourcing": "Global Sourcing",
+          "customConfig": "Custom Config",
+          "rapidDeployment": "Rapid Deployment",
+          "lifecycleManagement": "Lifecycle Management"
+        },
+        "externalLink": "https://jmkrobotics.com",
+        "externalLinkText": "Visit JMK Robotics"
+      },
+      "maintenance": {
+        "sectionNumber": "05",
+        "title": "Lifecycle Maintenance",
+        "subtitle": "Intelligent Operational Systems",
+        "description": "Comprehensive maintenance programs ensuring maximum uptime, predictive diagnostics, and 24/7 support for critical industrial operations.",
+        "metrics": {
+          "uptimeImprovement": "Uptime Improvement",
+          "responseTime": "Response Time"
+        },
+        "keywords": {
+          "preventiveMaintenance": "Preventive Maintenance",
+          "predictiveAnalytics": "Predictive Analytics",
+          "support247": "24/7 Support",
+          "remoteDiagnostics": "Remote Diagnostics"
+        }
+      }
+    },
+    "contactForm": {
+      "badge": "Get Started",
+      "title": "Transform Your Operations",
+      "description": "Partner with industry leaders to implement solutions that drive measurable results and sustainable competitive advantage.",
+      "form": {
+        "fullName": "Full Name *",
+        "fullNamePlaceholder": "John Smith",
+        "email": "Email Address *",
+        "emailPlaceholder": "john@company.com",
+        "phone": "Phone Number",
+        "phoneOptional": "(Optional)",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "company": "Company",
+        "companyPlaceholder": "Company Name",
+        "message": "Tell Us About Your Project *",
+        "messagePlaceholder": "Describe your industrial automation needs, technical challenges, or any questions you have for our team...",
+        "sendMessage": "Send Message",
+        "sendingMessage": "Sending Message...",
+        "messageSent": "Message Sent Successfully!",
+        "errorTitle": "Unable to Send Message",
+        "errorDescription": "Unable to send message. Please try again or contact us directly at",
+        "contactEmail": "info@servicesjmk.com"
+      },
+      "validation": {
+        "nameRequired": "Name is required",
+        "nameMinLength": "Name must be at least 2 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Please enter a valid email address",
+        "phoneInvalid": "Please enter a valid phone number",
+        "messageRequired": "Message is required",
+        "messageMinLength": "Message must be at least 10 characters"
+      },
+      "directContact": {
+        "title": "Or contact us directly:",
+        "phone": "+1 (786) 258-7335",
+        "email": "info@servicesjmk.com"
+      }
     }
   }
 }
