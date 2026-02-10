@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { SectionNumber } from "@/components/shared/SectionNumber";
 
 const NewsSection = () => {
   const t = useTranslations("NewsSection");
@@ -38,16 +37,13 @@ const NewsSection = () => {
   return (
     <section className="py-20 lg:py-32 bg-white font-main relative">
       {/* Continuous Section Number Line - Extends to connect with previous section */}
-      <div className="absolute left-4 lg:left-8 z-20 flex flex-col items-center" style={{ top: '-100vh', bottom: 0 }}>
+      <div className="absolute left-4 lg:left-8 z-20 flex flex-col items-center" style={{ top: '0', bottom: 0 }}>
         {/* Line extension from previous section - consistent color */}
-        <div className="w-px bg-gray-400/50" style={{ height: '100vh' }}></div>
+        <div className="w-px bg-gray-400/50" ></div>
         {/* Number at the top of this section */}
         <span className="text-2xl font-bold drop-shadow-sm text-[#0a1929]/30">05</span>
         {/* Line extending down through this section with circle at bottom - consistent color */}
         <div className="w-px bg-gray-400/50 flex-1 relative">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 rounded-full bg-black border border-gray-400/50 flex items-center justify-center z-10">
-            <span className="text-white font-semibold text-lg">N</span>
-          </div>
         </div>
       </div>
       

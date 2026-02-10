@@ -3,14 +3,25 @@ import { usePathname, useRouter } from "next/navigation";
 import { SUPPORTED_LOCALES } from "../constants";
 
 export const useLanguage = () => {
-  const [language, setLanguage] = useState("English");
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
+  // Detectar locale inicial desde la URL
+  const segments = pathname.split("/");
+  const maybeLocale = segments[1];
+  const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
+
+  const initialLocale = hasLocale && maybeLocale === "es" ? "Español" : "English";
+  const [language, setLanguage] = useState(initialLocale);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+
+  // Mantener sincronizado el idioma si cambia la ruta
   useEffect(() => {
-    const localeFromPath = pathname.split("/")[1];
-    setLanguage(localeFromPath === "es" ? "Español" : "English");
+    const segments = pathname.split("/");
+    const maybeLocale = segments[1];
+    const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
+
+    setLanguage(hasLocale && maybeLocale === "es" ? "Español" : "English");
   }, [pathname]);
 
   useEffect(() => {
@@ -31,17 +42,26 @@ export const useLanguage = () => {
   };
 
   const handleLanguageSelect = (lang: string) => {
-    setLanguage(lang);
-    setIsLanguageOpen(false);
+  setLanguage(lang);
+  setIsLanguageOpen(false);
 
-    const locale = lang === "English" ? "en" : "es";
-    const segments = pathname.split("/");
-    const currentPath = SUPPORTED_LOCALES.includes(segments[1] as any)
-      ? "/" + segments.slice(2).join("/")
-      : pathname;
+  const locale = lang === "English" ? "en" : "es";
+  const segments = pathname.split("/");
+  const maybeLocale = segments[1];
+  const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
 
-    router.push(`/${locale}${currentPath}`);
-  };
+  const pathWithoutLocale = hasLocale
+    ? "/" + segments.slice(2).join("/")
+    : pathname;
+
+  const normalizedPath = pathWithoutLocale === "/" ? "" : pathWithoutLocale;
+  const newUrl = `/${locale}${normalizedPath}`;
+
+  // 1. Cambia la URL
+  router.push(newUrl);
+  // 2. Fuerza a Next.js a refrescar los datos del servidor para el nuevo idioma
+  router.refresh(); 
+};
 
   return {
     language,
@@ -50,4 +70,3 @@ export const useLanguage = () => {
     handleLanguageSelect,
   };
 };
-

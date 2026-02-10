@@ -18,7 +18,7 @@ const Home = () => {
       <AboutUsSection />
       <BusinessSegmentsSection />
       <ManagementSection />
-      <NewsSection />
+      {/* <NewsSection /> */}
       <Footer />
     </div>
   );

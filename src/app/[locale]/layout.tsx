@@ -42,7 +42,7 @@ export async function generateMetadata({
       "Engineering and Automation in the United States",
     ],
     icons: {
-      icon: "/isotipo.svg",
+      icon: "logos/isotipo.svg",
     },
     openGraph: {
       title: t("title"),

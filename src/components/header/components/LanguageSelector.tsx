@@ -19,54 +19,63 @@ export const LanguageSelector = ({
   isMobile = false,
   isLightMode = false,
 }: LanguageSelectorProps) => {
-  // Determine current language (EN vs ES)
   const isEnglish = language.toLowerCase().startsWith("en");
-  const currentShort = isEnglish ? "EN" : "ES";
-  const currentIcon = isEnglish ? "🇺🇸" : "🇪🇸";
-  const nextLanguage = isEnglish ? "Español" : "English";
 
-  const h = isMobile ? "h-8" : "h-9";
-  const w = isMobile ? "w-10" : "w-11";
-  const knob = isMobile ? "w-4 h-4" : "w-5 h-5";
-  const pad = isMobile ? "p-0.5" : "p-0.5";
+  const current = {
+    short: isEnglish ? "EN" : "ES",
+    icon: isEnglish ? "🇺🇸" : "🇪🇸",
+    next: isEnglish ? "Español" : "English",
+  };
+
+  // Tamaños según modo móvil o desktop
+  const sizes = {
+    containerH: isMobile ? "h-8" : "h-9",
+    containerW: isMobile ? "w-10" : "w-11",
+    knob: isMobile ? "w-4 h-4" : "w-5 h-5",
+    padding: "p-0.5",
+  };
+
+  const baseColor = isLightMode ? "text-gray-900" : "text-white";
+  const borderColor = isLightMode ? "border-gray-300" : "border-white/60";
+  const bgColor = isLightMode ? "bg-white/50" : "bg-transparent";
+  const knobColor = isLightMode ? "bg-gray-700" : "bg-white";
 
   return (
     <div className="inline-flex items-center gap-2">
-      {/* Current language icon */}
-      <span className={`text-sm leading-none ${
-        isLightMode ? "text-gray-900" : "text-white"
-      }`} aria-hidden="true">
-        {currentIcon}
+      {/* Icono del idioma actual */}
+      <span className={`text-sm leading-none ${baseColor}`} aria-hidden="true">
+        {current.icon}
       </span>
 
-      {/* Minimal transparent switch */}
+      {/* Switch minimalista */}
       <button
         type="button"
         role="switch"
         aria-checked={!isEnglish}
-        aria-label={`Switch language. Current: ${currentShort}`}
-        className={`relative inline-flex ${h} ${w} ${pad} rounded-full border ${
-          isLightMode 
-            ? "border-gray-300 bg-white/50" 
-            : "border-white/60 bg-transparent"
-        } drop-shadow-sm`}
+        aria-label={`Switch language. Current: ${current.short}`}
+        className={`
+    relative inline-flex rounded-full drop-shadow-sm
+    ${sizes.containerH} ${sizes.containerW} ${sizes.padding}
+    border ${borderColor} ${bgColor}
+    overflow-hidden
+  `}
         onClick={(e) => {
-          // Keep compatibility if parent expects toggle for outside click behavior
           onToggle?.(e);
-          onSelect(nextLanguage);
+          onSelect(current.next);
         }}
       >
         <span
-          className={`absolute top-1/2 -translate-y-1/2 ${knob} rounded-full ${
-            isLightMode ? "bg-gray-700" : "bg-white"
-          }`}
+          className={`
+            absolute top-1/2 -translate-y-1/2 rounded-full
+            ${sizes.knob} ${knobColor}
+            transition-transform duration-300 ease-out
+          `}
           style={{
-            left: isEnglish ? (isMobile ? "4px" : "4px") : undefined,
-            right: isEnglish ? undefined : (isMobile ? "4px" : "4px"),
+            left: isEnglish ? "4px" : undefined,
+            right: isEnglish ? undefined : "4px",
           }}
         />
       </button>
     </div>
   );
 };
-
