@@ -166,7 +166,7 @@
     },
     "director3": {
       "name": "Andres Uribe",
-      "title": "IT Director",
+      "title": "Director of Technology",
       "description": "Manages the company’s technological infrastructure and digital presence. He is responsible for maintaining critical services, developing web platforms, and implementing technological solutions for operational optimization."
     }
   },
@@ -314,22 +314,22 @@
       }
     },
     "leadership": {
-      "pretitle": "Leadership",
-      "title": "Executive Team",
+      "pretitle": "EXECUTIVE LEADERSHIP",
+      "title": "THE MINDS BEHIND OUR INNOVATION",
       "director": {
-        "name": "Director of Operations",
-        "role": "Director of Operations",
-        "bio": "Strategic leader with extensive experience in industrial operations and enterprise-scale project management. Oversees all operational excellence initiatives."
+        "name": "Jose Uribe",
+        "role": "Founder & Strategic Director",
+        "bio": "Founder of Services JMK, he leads the overarching strategic vision and industrial operations of the group. With an unwavering focus on organizational positioning and business model development, he ensures the company's long-term stability and dominance within the industrial automation sector."
       },
       "kleyder": {
-        "name": "Kleyder",
+        "name": "Kleyder Mendez",
         "role": "Business Development Director",
-        "bio": "Drives business growth through strategic partnerships and client relationships. Expert in identifying market opportunities and delivering value-driven solutions."
+        "bio": "A specialist in commercial expansion and strategic relationship management, he drives the company's sustainable growth. His leadership is focused on opening new market opportunities and strengthening corporate identity, ensuring that our technical solutions align perfectly with the evolving needs of the global industry."
       },
-      "cto": {
-        "name": "CTO",
-        "role": "Chief Technology Officer",
-        "bio": "Technology visionary specializing in industrial automation and digital transformation. Leads innovation initiatives and technical strategy development."
+      "andres": {
+        "name": "Andres Uribe",
+        "role": "Director of Technology",
+        "bio": "He manages the complete technological infrastructure and digital presence of the organization. His responsibility encompasses maintaining critical services, leading the development of advanced web platforms, and implementing high-end technological solutions designed for operational optimization and digital transformation."
       }
     },
     "heroParagraph1": "Services JMK LLC specializes in providing cutting-edge industrial solutions, combining technical expertise with advanced technology to optimize our clients' operations.",

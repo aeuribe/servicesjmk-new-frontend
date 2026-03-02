@@ -157,7 +157,7 @@
     "readMore": "LEER MÁS",
     "director1": {
       "name": "Jose Uribe",
-      "title": "Founder",
+      "title": "Fundador",
       "description": "Lidera la visión estratégica y supervisa el desarrollo de las operaciones industriales. Su enfoque principal es el posicionamiento de la organización y la dirección general del modelo de negocio, asegurando la solidez de la empresa en el sector."
     },
     "director2": {
@@ -297,8 +297,8 @@
     "heroTitle": "Acerca de Nosotros",
     "heroSubtitle": "EXCELENCIA INDUSTRIAL DESDE 2023",
     "heroHeadline": "INGENIERÍA EN MIAMI",
-    "heroDescription1": "Services JMK se posiciona como una firma líder en ingeniería industrial, entregando soluciones de nivel empresarial en manufactura, automatización y logística. Nuestras operaciones con sede en Miami aprovechan décadas de experiencia técnica para transformar operaciones industriales a nivel mundial.",
-    "heroDescription2": "Combinamos visión estratégica con excelencia operativa, garantizando que cada proyecto cumpla con los más altos estándares de precisión, confiabilidad y rendimiento.",
+    "heroDescription1": "En Services JMK nos enfocamos en resolver desafíos de ingeniería industrial, proporcionando sistemas de manufactura, automatización y logística que realmente funcionan. Desde nuestra base de operaciones, aplicamos años de experiencia técnica acumulada para optimizar procesos industriales donde sea necesario.",
+    "heroDescription2": "Nuestra prioridad es la funcionalidad y la confianza. Trabajamos para que cada proyecto responda a estándares reales de precisión y rendimiento, asegurando que la tecnología sea una herramienta útil y no una complicación para nuestros clientes.",
     "pillars": {
       "logistics": {
         "title": "Logística",
@@ -314,22 +314,22 @@
       }
     },
     "leadership": {
-      "pretitle": "Liderazgo",
-      "title": "Equipo Ejecutivo",
+      "pretitle": "LIDERAZGO EJECUTIVO",
+      "title": "LAS MENTES DETRÁS DE NUESTRA INNOVACIÓN",
       "director": {
-        "name": "Director de Operaciones",
-        "role": "Director de Operaciones",
-        "bio": "Líder estratégico con amplia experiencia en operaciones industriales y gestión de proyectos a escala empresarial. Supervisa todas las iniciativas de excelencia operativa."
+        "name": "Jose Uribe",
+        "role": "Fundador y Director Estratégico",
+        "bio": "Fundador de Services JMK, lidera la visión estratégica integral y las operaciones industriales de la empresa. Con un enfoque en el posicionamiento organizacional y el desarrollo del modelo de negocio, asegura la estabilidad a largo plazo y la solidez de la empresa dentro del sector industrial."
       },
       "kleyder": {
-        "name": "Kleyder",
+        "name": "Kleyder Mendez",
         "role": "Director de Desarrollo de Negocios",
-        "bio": "Impulsa el crecimiento empresarial mediante alianzas estratégicas y relaciones con clientes. Experto en identificar oportunidades de mercado y entregar soluciones orientadas al valor."
+        "bio": "Especialista en expansión comercial y gestión de relaciones estratégicas, impulsa el crecimiento sostenible de la empresa. Su gestión se centra en la apertura de nuevas oportunidades de mercado y el fortalecimiento de la identidad corporativa, asegurando que nuestras soluciones técnicas se alineen perfectamente con las necesidades evolutivas de la industria global."
       },
-      "cto": {
-        "name": "CTO",
+      "andres": {
+        "name": "Andres Uribe",
         "role": "Director de Tecnología",
-        "bio": "Visionario tecnológico especializado en automatización industrial y transformación digital. Lidera iniciativas de innovación y desarrollo de estrategia técnica."
+        "bio": "Gestiona la infraestructura tecnológica completa y la presencia digital de la organización. Su responsabilidad abarca el mantenimiento de servicios, el liderazgo en el desarrollo de plataformas web y la implementación de soluciones tecnológicas diseñadas para la optimización operativa y la transformación digital."
       }
     },
     "heroParagraph1": "Services JMK LLC se especializa en proporcionar soluciones industriales de vanguardia, combinando experiencia técnica con tecnología avanzada para optimizar las operaciones de nuestros clientes.",

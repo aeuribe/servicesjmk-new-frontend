@@ -24,7 +24,7 @@ const getDirectors = (
     name: t("director1.name"),
     title: t("director1.title"),
     description: t("director1.description"),
-    image: "/hero-image4.png",
+    image: "",
   },
   {
     id: 2,
