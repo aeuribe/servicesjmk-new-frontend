@@ -14,7 +14,7 @@ export const Logo = ({ onPageChange, isLightMode = false }: LogoProps) => {
       onClick={() => onPageChange("home")}
     >
       <Image
-        src="logos/isotipo.svg"
+        src="/logos/isotipo.svg"
         alt="Logo Services JMK"
         width={28}
         height={28}

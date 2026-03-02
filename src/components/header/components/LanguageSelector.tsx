@@ -1,4 +1,3 @@
-import { LANGUAGES } from "./constants";
 
 interface LanguageSelectorProps {
   language: string;
@@ -12,8 +11,6 @@ interface LanguageSelectorProps {
 
 export const LanguageSelector = ({
   language,
-  isLanguageOpen,
-  isScrolled,
   onToggle,
   onSelect,
   isMobile = false,

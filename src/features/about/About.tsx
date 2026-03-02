@@ -57,7 +57,7 @@ const MasteryIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export default function AboutUs({ onNavigateToContact }: AboutUsProps) {
+export default function AboutUs({ }: AboutUsProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});

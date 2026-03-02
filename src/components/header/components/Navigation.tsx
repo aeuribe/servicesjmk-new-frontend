@@ -12,16 +12,16 @@ import { LanguageSelector } from "./LanguageSelector";
 import { ContactButton } from "./ContactButton";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { MobileMenu } from "./MobileMenu";
+import { LoadingScreen } from "../../shared/LoadingScreen";
+
+export type PageKey = "home" | "services" | "about" | "contact";
 
 export interface NavigationProps {
   currentPage: string;
-  onPageChange: () => void;
+  onPageChange: (page?: PageKey) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({
-  currentPage,
-  onPageChange,
-}) => {
+const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const t = useTranslations("header");
@@ -30,11 +30,11 @@ const Navigation: React.FC<NavigationProps> = ({
   const {
     language,
     isLanguageOpen,
+    isPending, // <--- Extraído del hook actualizado
     handleLanguageToggle,
     handleLanguageSelect,
   } = useLanguage();
 
-  // Detectar si estamos en el top
   const [isAtTop, setIsAtTop] = useState(true);
   const isLight = !isAtTop;
 
@@ -45,7 +45,6 @@ const Navigation: React.FC<NavigationProps> = ({
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -59,7 +58,9 @@ const Navigation: React.FC<NavigationProps> = ({
     { key: "about", label: t("about"), href: "/about" },
   ] as const;
 
-  const handlePageChange = (_page?: unknown) => onPageChange();
+  const handlePageChange = (page?: PageKey) => {
+    onPageChange(page);
+  };
 
   return (
     <>
@@ -77,16 +78,13 @@ const Navigation: React.FC<NavigationProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 font-satoshi">
           {/* Desktop */}
           <div className="hidden lg:flex items-center h-16">
-            <Logo
-              onPageChange={handlePageChange as any}
-              isLightMode={isLight}
-            />
+            <Logo onPageChange={handlePageChange} isLightMode={isLight} />
 
             <div className="flex-1 flex justify-center">
               <NavigationLinks
                 items={navigationItems}
                 pathname={pathname}
-                onPageChange={handlePageChange as any}
+                onPageChange={handlePageChange}
                 isLightMode={isLight}
               />
             </div>
@@ -100,7 +98,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 onSelect={handleLanguageSelect}
                 isLightMode={isLight}
               />
-              <ContactButton onPageChange={handlePageChange as any} />
+              <ContactButton onPageChange={handlePageChange} />
             </div>
           </div>
 
@@ -110,10 +108,7 @@ const Navigation: React.FC<NavigationProps> = ({
               isAtTop ? "text-white drop-shadow-sm" : "text-gray-900"
             }`}
           >
-            <Logo
-              onPageChange={handlePageChange as any}
-              isLightMode={isLight}
-            />
+            <Logo onPageChange={handlePageChange} isLightMode={isLight} />
 
             <div className="flex items-center gap-3">
               <LanguageSelector
@@ -139,10 +134,18 @@ const Navigation: React.FC<NavigationProps> = ({
         isOpen={isMobileMenuOpen}
         items={navigationItems}
         pathname={pathname}
-        onPageChange={handlePageChange as any}
+        onPageChange={handlePageChange}
         onClose={() => setIsMobileMenuOpen(false)}
         isLightMode={isLight}
       />
+
+      {/* OVERLAY DE CARGA INDUSTRIAL (Reutilizado) */}
+      {isPending && (
+        <LoadingScreen
+          title="Actualizando Idioma"
+          subtitle="Sincronizando entorno de idioma..."
+        />
+      )}
     </>
   );
 };

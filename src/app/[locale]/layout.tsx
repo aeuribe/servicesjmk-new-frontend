@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
+
 import "./globals.css";
 
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -42,7 +43,7 @@ export async function generateMetadata({
       "Engineering and Automation in the United States",
     ],
     icons: {
-      icon: "logos/isotipo.svg",
+      icon: "/logos/isotipo.svg",
     },
     openGraph: {
       title: t("title"),

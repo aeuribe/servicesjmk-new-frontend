@@ -1,13 +1,8 @@
-import { GalleryItem } from "@/components/gallery/ServiceGallery";
+import { GalleryItem } from "@/features/services/components/gallery/ServiceGallery";
 
 export interface ServiceBenefit {
   title: string;
   icon: React.ComponentType<{ className?: string }>;
-}
-
-export interface ServiceMetric {
-  label: string;
-  value: string;
 }
 
 export interface ServiceData {
@@ -19,8 +14,7 @@ export interface ServiceData {
   iconKey: string;
   gallery: GalleryItem[];
   layout: "text-left" | "text-right";
-  colorTheme: "blue" | "white" | "dark-blue";
-  metrics?: ServiceMetric[];
+  colorTheme: "blue" | "white";
   benefits?: ServiceBenefit[];
   keywords?: string[];
   externalLink?: string;

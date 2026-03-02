@@ -8,6 +8,7 @@ import { BusinessSegmentsGrid } from "./components/BusinessSegmentsGrid";
 interface SegmentItem {
   id: number;
   title: string;
+  description:string;
   image: string;
 }
 
@@ -15,12 +16,12 @@ const BusinessSegmentsSection = () => {
   const t = useTranslations("BusinessSegmentsSection");
 
   const segments: SegmentItem[] = [
-    { id: 1, title: t("segment1.title"), image: "/hero-image4.png" },
-    { id: 2, title: t("segment2.title"), image: "/hero-image4.png" },
-    { id: 3, title: t("segment3.title"), image: "/hero-image4.png" },
-    { id: 4, title: t("segment4.title"), image: "/hero-image4.png" },
-    { id: 5, title: t("segment5.title"), image: "/hero-image4.png" },
-    { id: 6, title: t("segment6.title"), image: "/hero-image4.png" },
+    { id: 1, description: t("segment1.description"), title: t("segment1.title"), image: "/business_section_1.jpg" },
+    { id: 2, description: t("segment2.description"), title: t("segment2.title"), image: "/business_section_2.jpg" },
+    { id: 3, description: t("segment3.description"), title: t("segment3.title"), image: "/business_section_3.png" },
+    { id: 4, description: t("segment4.description"), title: t("segment4.title"), image: "/business_section_4.jpg" },
+    { id: 5, description: t("segment5.description"), title: t("segment5.title"), image: "/business_section_5.jpg" },
+    { id: 6, description: t("segment6.description"), title: t("segment6.title"), image: "/business_section_6.jpg" },
   ];
 
   return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useHeroProgress(duration: number, interval: number, trigger: any) {
+export function useHeroProgress(duration: number, interval: number, trigger: unknown) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

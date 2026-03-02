@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { useServicesTranslations } from "../hooks/useServicesTranslations";
+import { useTranslations } from "next-intl";
 import { FormData, FormErrors, FormStatus } from "../types";
 
 export const ContactFormSection: React.FC = () => {
-  const t = useServicesTranslations();
+  const t = useTranslations("ServicesPage");
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -25,25 +25,25 @@ export const ContactFormSection: React.FC = () => {
     const newErrors: FormErrors = {};
 
     if (!data.name.trim()) {
-      newErrors.name = t.contactForm.validation.nameRequired;
+      newErrors.name = t("contactForm.validation.nameRequired");
     } else if (data.name.trim().length < 2) {
-      newErrors.name = t.contactForm.validation.nameMinLength;
+      newErrors.name = t("contactForm.validation.nameMinLength");
     }
 
     if (!data.email.trim()) {
-      newErrors.email = t.contactForm.validation.emailRequired;
+      newErrors.email = t("contactForm.validation.emailRequired");
     } else if (!validateEmail(data.email)) {
-      newErrors.email = t.contactForm.validation.emailInvalid;
+      newErrors.email = t("contactForm.validation.emailInvalid");
     }
 
     if (data.phone && !/^[\d\s\-\+\(\)]+$/.test(data.phone)) {
-      newErrors.phone = t.contactForm.validation.phoneInvalid;
+      newErrors.phone = t("contactForm.validation.phoneInvalid");
     }
 
     if (!data.message.trim()) {
-      newErrors.message = t.contactForm.validation.messageRequired;
+      newErrors.message = t("contactForm.validation.messageRequired");
     } else if (data.message.trim().length < 10) {
-      newErrors.message = t.contactForm.validation.messageMinLength;
+      newErrors.message = t("contactForm.validation.messageMinLength");
     }
 
     return newErrors;
@@ -107,7 +107,7 @@ export const ContactFormSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-32 font-main relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 font-main relative overflow-hidden">
       {/* Background matching Hero section gray */}
       <div
         className="absolute inset-0"
@@ -132,43 +132,35 @@ export const ContactFormSection: React.FC = () => {
       </div>
 
       {/* Section Number Line */}
-      <div className="absolute left-4 lg:left-8 top-0 bottom-0 z-20 flex flex-col items-center">
-        <span className="text-2xl font-bold drop-shadow-sm text-white/60">
+      <div className="absolute left-3 sm:left-4 lg:left-8 top-0 bottom-0 z-20 flex flex-col items-center">
+        <span className="text-lg sm:text-xl lg:text-2xl font-bold drop-shadow-sm text-white/60">
           03
         </span>
         <div className="w-px bg-white/30 flex-1"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pl-12 lg:pl-16">
+      <div className="max-w-4xl mx-auto pl-12 sm:pl-14 lg:pl-16 pr-4 sm:pr-6 lg:pr-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-[#2563eb] text-sm uppercase tracking-widest block mb-4 font-semibold">
-            {t.contactForm.badge}
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <span className="text-[#2563eb] text-xs sm:text-sm uppercase tracking-widest block mb-3 sm:mb-4 font-semibold">
+            {t("contactForm.badge")}
           </span>
-          <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            {t.contactForm.title}
+          <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
+            {t("contactForm.title")}
           </h2>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed font-light">
-            {t.contactForm.description}
+          <p className="text-white/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed font-light px-0 sm:px-2">
+            {t("contactForm.description")}
           </p>
         </div>
 
         {/* Contact Form */}
         <div
-          className="bg-white/12 backdrop-blur-sm p-8 lg:p-12"
-          style={{
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
-            boxShadow: `
-              0 4px 12px rgba(0, 0, 0, 0.8),
-              0 12px 48px rgba(0, 0, 0, 0.6),
-              0 24px 96px rgba(0, 0, 0, 0.4),
-              0 48px 192px rgba(0, 0, 0, 0.2)
-            `,
-          }}
+          className="bg-white/12 backdrop-blur-sm p-5 sm:p-6 md:p-8 lg:p-12"
+
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Name and Email Row */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label
                   htmlFor="name"
@@ -180,7 +172,7 @@ export const ContactFormSection: React.FC = () => {
                       : "text-white/90"
                   }`}
                 >
-                  {t.contactForm.form.fullName}
+                  {t("contactForm.form.fullName")}
                 </label>
                 <input
                   type="text"
@@ -190,14 +182,14 @@ export const ContactFormSection: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 py-3 bg-white/5 border ${
+                  className={`w-full min-h-[44px] px-4 py-3 bg-white/5 border text-base ${
                     errors.name
                       ? "border-red-400"
                       : focusedField === "name"
                       ? "border-[#2563eb]"
                       : "border-white/20"
-                  } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
-                  placeholder={t.contactForm.form.fullNamePlaceholder}
+                  } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all touch-manipulation`}
+                  placeholder={t("contactForm.form.fullNamePlaceholder")}
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-400">{errors.name}</p>
@@ -215,7 +207,7 @@ export const ContactFormSection: React.FC = () => {
                       : "text-white/90"
                   }`}
                 >
-                  {t.contactForm.form.email}
+                  {t("contactForm.form.email")}
                 </label>
                 <input
                   type="email"
@@ -225,14 +217,14 @@ export const ContactFormSection: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 py-3 bg-white/5 border ${
+                  className={`w-full min-h-[44px] px-4 py-3 bg-white/5 border text-base ${
                     errors.email
                       ? "border-red-400"
                       : focusedField === "email"
                       ? "border-[#2563eb]"
                       : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
-                  placeholder={t.contactForm.form.emailPlaceholder}
+                  placeholder={t("contactForm.form.emailPlaceholder")}
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-400">{errors.email}</p>
@@ -241,7 +233,7 @@ export const ContactFormSection: React.FC = () => {
             </div>
 
             {/* Phone and Company Row */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label
                   htmlFor="phone"
@@ -253,9 +245,9 @@ export const ContactFormSection: React.FC = () => {
                       : "text-white/90"
                   }`}
                 >
-                  {t.contactForm.form.phone}
+                  {t("contactForm.form.phone")}
                   <span className="text-white/60 text-xs font-normal ml-1">
-                    {t.contactForm.form.phoneOptional}
+                    {t("contactForm.form.phoneOptional")}
                   </span>
                 </label>
                 <input
@@ -266,14 +258,14 @@ export const ContactFormSection: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("phone")}
                   onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 py-3 bg-white/5 border ${
+                  className={`w-full min-h-[44px] px-4 py-3 bg-white/5 border text-base ${
                     errors.phone
                       ? "border-red-400"
                       : focusedField === "phone"
                       ? "border-[#2563eb]"
                       : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
-                  placeholder={t.contactForm.form.phonePlaceholder}
+                  placeholder={t("contactForm.form.phonePlaceholder")}
                 />
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
@@ -289,9 +281,9 @@ export const ContactFormSection: React.FC = () => {
                       : "text-white/90"
                   }`}
                 >
-                  {t.contactForm.form.company}
+                  {t("contactForm.form.company")}
                   <span className="text-white/60 text-xs font-normal ml-1">
-                    {t.contactForm.form.phoneOptional}
+                    {t("contactForm.form.phoneOptional")}
                   </span>
                 </label>
                 <input
@@ -302,12 +294,12 @@ export const ContactFormSection: React.FC = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedField("company")}
                   onBlur={() => setFocusedField(null)}
-                  className={`w-full px-4 py-3 bg-white/5 border ${
+                  className={`w-full min-h-[44px] px-4 py-3 bg-white/5 border text-base ${
                     focusedField === "company"
                       ? "border-[#2563eb]"
                       : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
-                  placeholder={t.contactForm.form.companyPlaceholder}
+                  placeholder={t("contactForm.form.companyPlaceholder")}
                 />
               </div>
             </div>
@@ -324,7 +316,7 @@ export const ContactFormSection: React.FC = () => {
                     : "text-white/90"
                 }`}
               >
-                {t.contactForm.form.message}
+                {t("contactForm.form.message")}
               </label>
               <textarea
                 id="message"
@@ -333,15 +325,15 @@ export const ContactFormSection: React.FC = () => {
                 onChange={handleChange}
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                rows={6}
-                className={`w-full px-4 py-3 bg-white/5 border ${
-                  errors.message
+                rows={5}
+                className={`w-full min-h-[120px] px-4 py-3 bg-white/5 border text-base ${
+                    errors.message
                     ? "border-red-400"
                     : focusedField === "message"
                     ? "border-[#2563eb]"
                     : "border-white/20"
                 } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all resize-none`}
-                placeholder={t.contactForm.form.messagePlaceholder}
+                placeholder={t("contactForm.form.messagePlaceholder")}
               />
               {errors.message && (
                 <p className="mt-1 text-sm text-red-400">{errors.message}</p>
@@ -349,13 +341,13 @@ export const ContactFormSection: React.FC = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="pt-4">
+            <div className="pt-3 sm:pt-4">
               <button
                 type="submit"
                 disabled={formStatus === "loading"}
-                className="w-full bg-[#2563eb] text-white px-8 py-4 text-base font-semibold hover:bg-[#1d4ed8] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 uppercase tracking-wider inline-flex items-center justify-center gap-3 group relative"
+                className="w-full min-h-[48px] bg-[#2563eb] text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold hover:bg-[#1d4ed8] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 uppercase tracking-wider inline-flex items-center justify-center gap-2 sm:gap-3 group relative touch-manipulation"
                 style={{
-                  clipPath: "polygon(0 0, 100% 0, 100% 75%, 90% 100%, 0 100%)",
+                  clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)",
                 }}
               >
                 {formStatus === "loading" ? (
@@ -380,7 +372,7 @@ export const ContactFormSection: React.FC = () => {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    <span>{t.contactForm.form.sendingMessage}</span>
+                    <span>{t("contactForm.form.sendingMessage")}</span>
                   </>
                 ) : formStatus === "success" ? (
                   <>
@@ -397,11 +389,11 @@ export const ContactFormSection: React.FC = () => {
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span>{t.contactForm.form.messageSent}</span>
+                    <span>{t("contactForm.form.messageSent")}</span>
                   </>
                 ) : (
                   <>
-                    <span>{t.contactForm.form.sendMessage}</span>
+                    <span>{t("contactForm.form.sendMessage")}</span>
                     <svg
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                       fill="none"
@@ -421,12 +413,12 @@ export const ContactFormSection: React.FC = () => {
 
               {formStatus === "error" && (
                 <p className="mt-4 text-sm text-red-400 text-center">
-                  {t.contactForm.form.errorDescription}{" "}
+                  {t("contactForm.form.errorDescription")}{" "}
                   <a
-                    href={`mailto:${t.contactForm.form.contactEmail}`}
+                    href={`mailto:${t("contactForm.form.contactEmail")}`}
                     className="underline hover:text-red-300"
                   >
-                    {t.contactForm.form.contactEmail}
+                    {t("contactForm.form.contactEmail")}
                   </a>
                 </p>
               )}
@@ -435,12 +427,12 @@ export const ContactFormSection: React.FC = () => {
         </div>
 
         {/* Direct Contact Info */}
-        <div className="mt-8 text-center">
-          <p className="text-white/60 text-sm mb-4">{t.contactForm.directContact.title}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mt-6 sm:mt-8 text-center">
+          <p className="text-white/60 text-xs sm:text-sm mb-3 sm:mb-4">{t("contactForm.directContact.title")}</p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <a
-              href={`tel:${t.contactForm.directContact.phone}`}
-              className="flex items-center gap-3 text-white hover:text-[#2563eb] transition-colors px-6 py-3 border border-white/30 hover:border-[#2563eb] group"
+              href={`tel:${t("contactForm.directContact.phone")}`}
+              className="flex items-center justify-center gap-2 sm:gap-3 text-white hover:text-[#2563eb] transition-colors px-4 sm:px-6 py-3 min-h-[44px] border border-white/30 hover:border-[#2563eb] group w-full sm:w-auto touch-manipulation"
             >
               <svg
                 className="w-5 h-5"
@@ -455,11 +447,11 @@ export const ContactFormSection: React.FC = () => {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              <span>{t.contactForm.directContact.phone}</span>
+              <span>{t("contactForm.directContact.phone")}</span>
             </a>
             <a
-              href={`mailto:${t.contactForm.directContact.email}`}
-              className="flex items-center gap-3 text-white hover:text-[#2563eb] transition-colors px-6 py-3 border border-white/30 hover:border-[#2563eb] group"
+              href={`mailto:${t("contactForm.directContact.email")}`}
+              className="flex items-center justify-center gap-2 sm:gap-3 text-white hover:text-[#2563eb] transition-colors px-4 sm:px-6 py-3 min-h-[44px] border border-white/30 hover:border-[#2563eb] group w-full sm:w-auto touch-manipulation"
             >
               <svg
                 className="w-5 h-5"
@@ -474,7 +466,7 @@ export const ContactFormSection: React.FC = () => {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              <span>{t.contactForm.directContact.email}</span>
+              <span>{t("contactForm.directContact.email")}</span>
             </a>
           </div>
         </div>

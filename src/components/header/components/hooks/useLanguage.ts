@@ -1,40 +1,62 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { SUPPORTED_LOCALES } from "../constants";
+
+// Definimos un tipo basado en tus constantes para reusarlo
+type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
 
 export const useLanguage = () => {
   const pathname = usePathname();
   const router = useRouter();
+  
+  // 1. Agregamos el hook de transición
+  const [isPending, startTransition] = useTransition();
 
-  // Detectar locale inicial desde la URL
-  const segments = pathname.split("/");
-  const maybeLocale = segments[1];
-  const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
+  // Función auxiliar para no repetir código y tipar correctamente
+  const getLocaleFromPath = (path: string) => {
+    const segments = path.split("/");
+    const maybeLocale = segments[1];
+    // Aquí el cast mágico: le decimos que lo trate como un posible locale
+    const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as SupportedLocale);
+    return { hasLocale, maybeLocale, segments };
+  };
 
-  const initialLocale = hasLocale && maybeLocale === "es" ? "Español" : "English";
-  const [language, setLanguage] = useState(initialLocale);
+  const { hasLocale: initialHasLocale, maybeLocale: initialMaybe } = getLocaleFromPath(pathname);
+  
+  const [language, setLanguage] = useState(
+    initialHasLocale && initialMaybe === "es" ? "Español" : "English"
+  );
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
-  // Mantener sincronizado el idioma si cambia la ruta
+  // Sincronizar idioma al cambiar de ruta
   useEffect(() => {
-    const segments = pathname.split("/");
-    const maybeLocale = segments[1];
-    const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
-
+    const { hasLocale, maybeLocale } = getLocaleFromPath(pathname);
     setLanguage(hasLocale && maybeLocale === "es" ? "Español" : "English");
   }, [pathname]);
 
+  // Manejo de clic afuera (Click Outside)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest("[data-language-selector]")) {
+      if (!(event.target as HTMLElement).closest("[data-language-selector]")) {
         setIsLanguageOpen(false);
       }
     };
-
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
+
+  // 2. Bloqueo de scroll global mientras la transición está activa
+  useEffect(() => {
+    if (isPending) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isPending]);
 
   const handleLanguageToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -42,30 +64,30 @@ export const useLanguage = () => {
   };
 
   const handleLanguageSelect = (lang: string) => {
-  setLanguage(lang);
-  setIsLanguageOpen(false);
+    const { hasLocale, segments } = getLocaleFromPath(pathname);
+    const locale = lang === "English" ? "en" : "es";
 
-  const locale = lang === "English" ? "en" : "es";
-  const segments = pathname.split("/");
-  const maybeLocale = segments[1];
-  const hasLocale = SUPPORTED_LOCALES.includes(maybeLocale as any);
+    const pathWithoutLocale = hasLocale
+      ? "/" + segments.slice(2).join("/")
+      : pathname;
 
-  const pathWithoutLocale = hasLocale
-    ? "/" + segments.slice(2).join("/")
-    : pathname;
+    const normalizedPath = pathWithoutLocale === "/" ? "" : pathWithoutLocale;
+    const newUrl = `/${locale}${normalizedPath}`;
 
-  const normalizedPath = pathWithoutLocale === "/" ? "" : pathWithoutLocale;
-  const newUrl = `/${locale}${normalizedPath}`;
-
-  // 1. Cambia la URL
-  router.push(newUrl);
-  // 2. Fuerza a Next.js a refrescar los datos del servidor para el nuevo idioma
-  router.refresh(); 
-};
+    setLanguage(lang);
+    setIsLanguageOpen(false);
+    
+    // 3. Envolvemos la navegación en la transición
+    startTransition(() => {
+      router.push(newUrl);
+      router.refresh(); 
+    });
+  };
 
   return {
     language,
     isLanguageOpen,
+    isPending, // 4. Exportamos el estado para usarlo en la UI
     handleLanguageToggle,
     handleLanguageSelect,
   };

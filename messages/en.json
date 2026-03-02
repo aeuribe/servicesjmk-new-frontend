@@ -103,7 +103,7 @@
       }
     },
     "bottom": {
-      "copyright": "Services JMK Group.",
+      "copyright": "Services JMK, LLC.",
       "contact": "Contact Us",
       "terms": "Terms of Use",
       "privacy": "Privacy Cookies",
@@ -127,41 +127,47 @@
     "title": "OUR BUSINESS",
     "readMore": "READ MORE",
     "segment1": {
-      "title": "Installation"
+      "title": "Diagnostics & Assessment",
+      "description": "We don't guess; we analyze. We perform precise technical inspections to identify the root cause of failures prior to any intervention."
     },
     "segment2": {
-      "title": "Maintenance"
+      "title": "Project Engineering",
+      "description": "Translating diagnostics into actionable plans. We design custom technical solutions and specify the exact equipment required for your operations."
     },
     "segment3": {
-      "title": "Repair"
+      "title": "Installation & Commissioning",
+      "description": "Flawless execution. We install and commission industrial machinery in strict compliance with the highest safety and precision standards."
     },
     "segment4": {
-      "title": "Design"
+      "title": "Preventive Maintenance",
+      "description": "Protecting your investment. Systematic inspection programs designed to anticipate failures, eliminate downtime, and extend equipment lifespan."
     },
     "segment5": {
-      "title": "Optimization"
+      "title": "Corrective Intervention",
+      "description": "Definitive solutions when it matters most. Rapid, expert technical response to resolve critical breakdowns and fully restore operability."
     },
     "segment6": {
-      "title": "Consulting"
+      "title": "Modernization & Automation",
+      "description": "Propelling your industry into the future. We upgrade legacy equipment and integrate advanced automation technologies to maximize operational efficiency."
     }
   },
   "ManagementSection": {
     "pretitle": "MANAGEMENT",
     "title": "OUR DIRECTORS",
     "director1": {
-      "name": "Chief Executive Officer",
-      "title": "CEO",
-      "description": "Appointed as Chief Executive Officer since 2023. Involved in company strategy and development of industrial operations..."
+      "name": "Jose Uribe",
+      "title": "Founder",
+      "description": "Leads the strategic vision and oversees the development of industrial operations. His primary focus is the organization’s positioning and general business model direction, ensuring the company’s stability and strength within the sector."
     },
     "director2": {
-      "name": "Human Resources Director",
-      "title": "HR Director",
-      "description": "Officially appointed as director since January 2023. Her career at Services JMK started in 2015..."
+      "name": "Kleyder Mendez",
+      "title": "Business Development Director",
+      "description": "Responsible for commercial expansion and strategic relationship management. His management focuses on opening new markets and strengthening corporate identity, driving the company’s sustainable growth."
     },
     "director3": {
-      "name": "Vice President",
-      "title": "Vice President",
-      "description": "Officially appointed as director since January 2023. Previously served as Operations Director..."
+      "name": "Andres Uribe",
+      "title": "IT Director",
+      "description": "Manages the company’s technological infrastructure and digital presence. He is responsible for maintaining critical services, developing web platforms, and implementing technological solutions for operational optimization."
     }
   },
   "NewsSection": {
@@ -453,66 +459,56 @@
       "engineering": {
         "sectionNumber": "02",
         "title": "Project Engineering",
-        "subtitle": "Strategic Technical Excellence",
-        "description": "Transform industrial operations through advanced methodologies, precision analysis, and strategic implementation frameworks designed for enterprise-scale manufacturing environments.",
+        "subtitle": "Get Your Machinery Online and Producing",
+        "description": "We don’t just deliver plans; we deliver results. We specialize in the installation, calibration, and full-scale startup of any industrial machinery. If you have the equipment, we make it run at peak performance—no excuses, just pure production.",
         "metrics": {
-          "projectsDelivered": "Projects Delivered",
-          "efficiencyGain": "Efficiency Gain"
+          "projectsDelivered": "Operational Plants",
+          "projectsDeliveredValue": "500+",
+          "efficiencyGain": "Production Capacity",
+          "efficiencyGainValue": "35% avg"
         },
         "benefits": {
-          "processOptimization": "Process Optimization",
-          "digitalTwinDesign": "Digital Twin Design",
-          "feasibilityStudies": "Feasibility Studies"
-        }
-      },
-      "automation": {
-        "sectionNumber": "03",
-        "title": "Advanced Automation",
-        "subtitle": "Intelligent Operational Systems",
-        "description": "Cutting-edge automation solutions and predictive maintenance programs that maximize operational uptime and enable data-driven decision-making through integrated IoT and AI technologies.",
-        "metrics": {
-          "uptimeImprovement": "Uptime Improvement",
-          "costReduction": "Cost Reduction"
-        },
-        "keywords": {
-          "predictiveAnalytics": "Predictive Analytics",
-          "iotIntegration": "IoT Integration",
-          "realTimeMonitoring": "Real-Time Monitoring",
-          "support247": "24/7 Support"
+          "processOptimization": "Turnkey Startup",
+          "digitalTwinDesign": "Machinery Installation",
+          "feasibilityStudies": "Line Integration"
         }
       },
       "machinery": {
-        "sectionNumber": "04",
+        "sectionNumber": "03",
         "title": "Machinery Supply & Logistics",
-        "subtitle": "Global Procurement Excellence",
-        "description": "End-to-end machinery sourcing and logistics management with global supply chain networks, ensuring precision delivery and seamless integration.",
+        "subtitle": "Industrial Equipment Delivered to Your Floor",
+        "description": "We provide the specific machinery your production requires, handling everything from procurement to on-site delivery. We ensure you get the exact equipment needed for your operation, fully managed and ready for installation.",
         "metrics": {
-          "unitsSupplied": "Units Supplied",
-          "countriesServed": "Countries Served"
+          "unitsSupplied": "Equipment Delivered",
+          "unitsSuppliedValue": "2,500+",
+          "logisticsReach": "Logistics Capability",
+          "logisticsReachValue": "International"
         },
         "keywords": {
-          "globalSourcing": "Global Sourcing",
-          "customConfig": "Custom Config",
-          "rapidDeployment": "Rapid Deployment",
-          "lifecycleManagement": "Lifecycle Management"
+          "equipmentSourcing": "Industrial Supply",
+          "heavyLogistics": "Heavy-Duty Logistics",
+          "delivery": "On-Site Delivery",
+          "readyToRun": "Installation Ready"
         },
         "externalLink": "https://jmkrobotics.com",
         "externalLinkText": "Visit JMK Robotics"
       },
       "maintenance": {
-        "sectionNumber": "05",
-        "title": "Lifecycle Maintenance",
-        "subtitle": "Intelligent Operational Systems",
-        "description": "Comprehensive maintenance programs ensuring maximum uptime, predictive diagnostics, and 24/7 support for critical industrial operations.",
+        "sectionNumber": "04",
+        "title": "Maintenance & Support",
+        "subtitle": "Ensuring Continuous Operation",
+        "description": "We keep your production lines moving. We provide on-site preventive maintenance and corrective repairs to maximize equipment lifespan and eliminate unscheduled downtime. When a technical issue arises, we fix it.",
         "metrics": {
-          "uptimeImprovement": "Uptime Improvement",
-          "responseTime": "Response Time"
+          "uptimeImprovement": "Plant Uptime",
+          "uptimeImprovementValue": "Maximum",
+          "responseTime": "Technical Response",
+          "responseTimeValue": "Immediate"
         },
         "keywords": {
-          "preventiveMaintenance": "Preventive Maintenance",
-          "predictiveAnalytics": "Predictive Analytics",
-          "support247": "24/7 Support",
-          "remoteDiagnostics": "Remote Diagnostics"
+          "preventive": "Preventive Maintenance",
+          "corrective": "On-Site Repairs",
+          "overhaul": "Machinery Overhaul",
+          "emergencySupport": "Emergency Support"
         }
       }
     },

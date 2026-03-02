@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React from "react";
 import { ManagementSectionNumber } from "./components/ManagementSectionNumber";
 import { ManagementSectionHeader } from "./components/ManagementSectionHeader";
@@ -32,14 +31,14 @@ const getDirectors = (
     name: t("director2.name"),
     title: t("director2.title"),
     description: t("director2.description"),
-    image: "/hero-image4.png",
+    image: "/kleyder.png",
   },
   {
     id: 3,
     name: t("director3.name"),
     title: t("director3.title"),
     description: t("director3.description"),
-    image: "/hero-image4.png",
+    image: "/me2.png",
   },
 ];
 

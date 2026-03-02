@@ -7,15 +7,13 @@ interface SectionHeaderProps {
 
 export const BusinessSectionHeader: React.FC<SectionHeaderProps> = ({ t }) => (
   <div className="mb-12 lg:mb-16 pl-12 lg:pl-16">
-    <span className="text-[#2563eb] text-sm uppercase tracking-widest block mb-4">
+    <span className="text-[#2563eb] text-sm uppercase tracking-widest block mb-4 ">
       {t("pretitle")}
     </span>
-
+    <h2 className="text-[#0a1929] text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+      {t("title")}
+    </h2>
     <div className="flex items-center justify-between">
-      <h2 className="text-[#0a1929] text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-        {t("title")}
-      </h2>
-
       <Link
         href="/services"
         className="hidden lg:inline-flex items-center gap-2 text-[#0a1929] font-semibold hover:gap-4 transition-all duration-300 group uppercase tracking-wider"

@@ -103,7 +103,7 @@
       }
     },
     "bottom": {
-      "copyright": "Services JMK Group.",
+      "copyright": "Services JMK, LLC.",
       "contact": "Contáctenos",
       "terms": "Términos de Uso",
       "privacy": "Privacidad de Cookies",
@@ -127,22 +127,28 @@
     "title": "NUESTRO NEGOCIO",
     "readMore": "LEER MÁS",
     "segment1": {
-      "title": "Instalación"
+      "title": "Diagnóstico y Auditoría",
+      "description": "No adivinamos, analizamos. Realizamos inspecciones técnicas precisas para identificar la causa raíz de las fallas antes de intervenir."
     },
     "segment2": {
-      "title": "Mantenimiento"
+      "title": "Ingeniería de Proyectos",
+      "description": "Transformamos el diagnóstico en un plan. Diseñamos soluciones técnicas a medida y seleccionamos los equipos exactos para su necesidad."
     },
     "segment3": {
-      "title": "Mantenimiento Correctivo"
+      "title": "Montaje e Instalación",
+      "description": "Ejecución impecable. Instalamos y ponemos en marcha maquinaria industrial cumpliendo con los más altos estándares de seguridad y precisión."
     },
     "segment4": {
-      "title": "Ingeniería de Diseño"
+      "title": "Mantenimiento Preventivo",
+      "description": "Protegemos su inversión. Programas de revisión sistemática para anticipar fallas, evitar paradas de planta y extender la vida útil de sus equipos."
     },
     "segment5": {
-      "title": "Optimización"
+      "title": "Intervención Correctiva",
+      "description": "Soluciones definitivas cuando más importa. Respuesta técnica rápida y experta para resolver averías críticas y restaurar su operatividad."
     },
     "segment6": {
-      "title": "Consultoría"
+      "title": "Modernización y Automatización",
+      "description": "Llevamos su industria al futuro. Actualizamos equipos obsoletos e integramos tecnologías de automatización para maximizar su eficiencia."
     }
   },
   "ManagementSection": {
@@ -150,19 +156,19 @@
     "title": "NUESTROS DIRECTORES",
     "readMore": "LEER MÁS",
     "director1": {
-      "name": "Director Ejecutivo",
-      "title": "CEO",
-      "description": "Designado como Director Ejecutivo desde 2023. Involucrado en la estrategia corporativa y el desarrollo de operaciones industriales..."
+      "name": "Jose Uribe",
+      "title": "Founder",
+      "description": "Lidera la visión estratégica y supervisa el desarrollo de las operaciones industriales. Su enfoque principal es el posicionamiento de la organización y la dirección general del modelo de negocio, asegurando la solidez de la empresa en el sector."
     },
     "director2": {
-      "name": "Director de Recursos Humanos",
-      "title": "HR Director",
-      "description": "Designado oficialmente como director desde enero de 2023. Su carrera en Services JMK comenzó en 2015..."
+      "name": "Kleyder Mendez",
+      "title": "Director de Desarrollo de Negocios",
+      "description": "Responsable de la expansión comercial y la gestión de relaciones estratégicas. Su gestión se centra en la apertura de nuevos mercados y el fortalecimiento de la identidad corporativa, impulsando el crecimiento sostenible de la compañía."
     },
     "director3": {
-      "name": "Vicepresidente",
-      "title": "Vice President",
-      "description": "Designado oficialmente como director desde enero de 2023. Anteriormente se desempeñó como Director de Operaciones..."
+      "name": "Andres Uribe",
+      "title": "Director de IT",
+      "description": "Dirige la infraestructura tecnológica y la presencia digital de la empresa. Se encarga del mantenimiento de servicios críticos, el desarrollo de plataformas web y la implementación de soluciones tecnológicas para la optimización operativa."
     }
   },
   "NewsSection": {
@@ -453,66 +459,56 @@
       "engineering": {
         "sectionNumber": "02",
         "title": "Ingeniería de Proyectos",
-        "subtitle": "Excelencia Técnica Estratégica",
-        "description": "Transformamos operaciones industriales mediante metodologías avanzadas, análisis de precisión y marcos de implementación estratégica diseñados para entornos de fabricación a escala empresarial.",
+        "subtitle": "Maquinaria en Marcha y Produciendo",
+        "description": "No nos quedamos en planos. Somos especialistas en montar, calibrar y poner en producción la maquinaria que tu industria necesite. Si la tienes, la ponemos a funcionar a su máxima capacidad; sin vueltas, con seriedad técnica y resultados inmediatos.",
         "metrics": {
-          "projectsDelivered": "Proyectos Entregados",
-          "efficiencyGain": "Ganancia de Eficiencia"
+          "projectsDelivered": "Plantas Operativas",
+          "projectsDeliveredValue": "500+",
+          "efficiencyGain": "Capacidad de Producción",
+          "efficiencyGainValue": "35% promedio"
         },
         "benefits": {
-          "processOptimization": "Optimización de Procesos",
-          "digitalTwinDesign": "Diseño de Gemelo Digital",
-          "feasibilityStudies": "Estudios de Viabilidad"
-        }
-      },
-      "automation": {
-        "sectionNumber": "03",
-        "title": "Automatización Avanzada",
-        "subtitle": "Sistemas Operativos Inteligentes",
-        "description": "Soluciones de automatización de vanguardia y programas de mantenimiento predictivo que maximizan tiempo de actividad operativa y permiten toma de decisiones basada en datos mediante tecnologías integradas de IoT e IA.",
-        "metrics": {
-          "uptimeImprovement": "Mejora del Tiempo de Actividad",
-          "costReduction": "Reducción de Costos"
-        },
-        "keywords": {
-          "predictiveAnalytics": "Análisis Predictivo",
-          "iotIntegration": "Integración IoT",
-          "realTimeMonitoring": "Monitoreo en Tiempo Real",
-          "support247": "Soporte Operativo 24/7"
+          "processOptimization": "Puesta en Marcha (Start-up)",
+          "digitalTwinDesign": "Instalación de Maquinaria",
+          "feasibilityStudies": "Adecuación de Líneas"
         }
       },
       "machinery": {
-        "sectionNumber": "04",
+        "sectionNumber": "03",
         "title": "Suministro de Maquinaria y Logística",
-        "subtitle": "Excelencia en Adquisiciones Globales",
-        "description": "Gestión integral de abastecimiento de maquinaria y logística con redes de cadena de suministro globales, garantizando entrega precisa e integración perfecta.",
+        "subtitle": "Equipos Industriales Puestos en su Planta",
+        "description": "Proveemos la maquinaria específica que su producción requiere, gestionando todo el proceso hasta la entrega en sitio. Nos aseguramos de que reciba el equipo exacto para su operación, totalmente disponible y listo para ser instalado.",
         "metrics": {
-          "unitsSupplied": "Unidades Suministradas",
-          "countriesServed": "Países Atendidos"
+          "unitsSupplied": "Equipos Entregados",
+          "unitsSuppliedValue": "2.500+",
+          "logisticsReach": "Capacidad Logística",
+          "logisticsReachValue": "Internacional"
         },
         "keywords": {
-          "globalSourcing": "Abastecimiento Global",
-          "customConfig": "Configuración Personalizada",
-          "rapidDeployment": "Despliegue Rápido",
-          "lifecycleManagement": "Gestión del Ciclo de Vida"
+          "equipmentSourcing": "Suministro Industrial",
+          "heavyLogistics": "Logística de Carga Pesada",
+          "delivery": "Entrega en Planta",
+          "readyToRun": "Listo para Instalación"
         },
         "externalLink": "https://jmkrobotics.com",
         "externalLinkText": "Visitar JMK Robotics"
       },
       "maintenance": {
-        "sectionNumber": "05",
-        "title": "Mantenimiento del Ciclo de Vida",
-        "subtitle": "Sistemas Operativos Inteligentes",
-        "description": "Programas integrales de mantenimiento que garantizan máximo tiempo de actividad, diagnósticos predictivos y soporte operativo 24/7 para operaciones industriales críticas.",
+        "sectionNumber": "04",
+        "title": "Mantenimiento y Soporte",
+        "subtitle": "Garantía de Continuidad Operativa",
+        "description": "Mantenemos su planta en movimiento. Ejecutamos programas de mantenimiento preventivo y reparaciones correctivas en sitio para maximizar la vida útil de sus equipos y evitar paradas imprevistas. Si hay un problema técnico, lo resolvemos.",
         "metrics": {
-          "uptimeImprovement": "Mejora del Tiempo de Actividad",
-          "responseTime": "Tiempo de Respuesta"
+          "uptimeImprovement": "Disponibilidad de Planta",
+          "uptimeImprovementValue": "Máxima",
+          "responseTime": "Atención Técnica",
+          "responseTimeValue": "Inmediata"
         },
         "keywords": {
-          "preventiveMaintenance": "Mantenimiento Preventivo",
-          "predictiveAnalytics": "Análisis Predictivo",
-          "support247": "Soporte Operativo 24/7",
-          "remoteDiagnostics": "Diagnósticos Remotos"
+          "preventive": "Mantenimiento Preventivo",
+          "corrective": "Reparaciones en Sitio",
+          "overhaul": "Overhaul de Maquinaria",
+          "emergencySupport": "Soporte de Emergencia"
         }
       }
     },

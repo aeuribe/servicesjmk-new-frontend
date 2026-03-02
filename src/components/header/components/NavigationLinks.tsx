@@ -1,9 +1,13 @@
 import Link from "next/link";
 
+// 1. Definimos las páginas permitidas
+type PageKey = "home" | "services" | "about" | "contact";
+
 interface NavigationLinksProps {
-  items: ReadonlyArray<{ readonly key: string; readonly label: string; readonly href: string }>;
+  // 2. Aquí está el truco: la key ya no es un string cualquiera
+  items: ReadonlyArray<{ readonly key: PageKey; readonly label: string; readonly href: string }>;
   pathname: string;
-  onPageChange: (page: "home" | "services" | "about" | "contact") => void;
+  onPageChange: (page: PageKey) => void;
   isLightMode?: boolean;
 }
 
@@ -21,8 +25,9 @@ export const NavigationLinks = ({
           <Link
             key={item.key}
             href={item.href}
-            onClick={() => onPageChange(item.key as any)}
-            className={`text-[12px] tracking-[0.12em] uppercase font-medium ${
+            // 3. Ya no necesitas 'as any'. TypeScript sabe que item.key es PageKey
+            onClick={() => onPageChange(item.key)} 
+            className={`text-[12px] tracking-[0.12em] uppercase font-medium transition-colors duration-300 ${
               isLightMode
                 ? isActive
                   ? "text-gray-900"
@@ -39,4 +44,3 @@ export const NavigationLinks = ({
     </div>
   );
 };
-
