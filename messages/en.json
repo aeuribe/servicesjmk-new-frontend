@@ -417,6 +417,8 @@
       }
     },
     "form": {
+      "title": "Project Requirements",
+      "description": "Complete the form with your request specifications. Our technical team will evaluate the information and contact you.",
       "fullName": "Full Name *",
       "fullNamePlaceholder": "John Smith",
       "email": "Email Address *",
@@ -431,7 +433,63 @@
       "sendingMessage": "Sending Message...",
       "errorTitle": "Unable to Send Message",
       "errorDescription": "We encountered an error. Please try again or contact us directly at",
-      "contactEmail": "info@servicesjmk.com"
+      "contactEmail": "info@servicesjmk.com",
+      "fields": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "your.email@company.com"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Your company name"
+        },
+        "projectType": {
+          "label": "Project Type",
+          "options": {
+            "default": "Select project type",
+            "engineering": "Industrial Engineering & Consulting",
+            "automation": "Maintenance & Automation",
+            "machinery": "Machinery Supply & Logistics",
+            "other": "Other / Custom Solution"
+          }
+        },
+        "message": {
+          "label": "Project Details",
+          "placeholder": "Describe your project requirements, timeline, and any specific technical needs..."
+        }
+      },
+      "submit": {
+        "label": "INITIATE PROJECT REQUEST",
+        "loading": "Initiating Protocol..."
+      },
+      "error": {
+        "title": "Transmission Failed",
+        "description": "Unable to submit request. Please try again or contact us directly at"
+      },
+      "validation": {
+        "name": {
+          "required": "Name is required",
+          "minLength": "Name must be at least 2 characters"
+        },
+        "email": {
+          "required": "Email is required",
+          "invalid": "Please enter a valid email address"
+        },
+        "company": {
+          "required": "Company is required"
+        },
+        "projectType": {
+          "required": "Project type is required"
+        },
+        "message": {
+          "required": "Message is required",
+          "minLength": "Message must be at least 10 characters"
+        }
+      }
     },
     "contactInfoOld": {
       "directContact": "Direct Contact",
@@ -445,6 +503,25 @@
       "emergencySupportDescription": "24/7 availability for critical industrial emergencies",
       "trustBadgeTitle": "Confidential & Secure",
       "trustBadgeDescription": "Your information is encrypted and protected. We respect your privacy and will never share your data."
+    },
+    "success": {
+      "protocolInitiated": "Protocol Initiated",
+      "title": "Request Submitted Successfully",
+      "description": "Your project request has been received. Our engineering team will review your submission and respond within 24 hours.",
+      "button": "Submit Another Request"
+    },
+    "info": {
+      "status": {
+        "online": "ONLINE"
+      },
+      "contactCenter": {
+        "title": "Contact Center",
+        "subtitle": "Direct Communication"
+      },
+      "systemStatus": {
+        "title": "System Status",
+        "description": "All systems operational. Response time: <24 hours. Emergency support available 24/7."
+      }
     }
   },
   "ServicesPage": {

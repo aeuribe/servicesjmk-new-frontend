@@ -417,6 +417,8 @@
       }
     },
     "form": {
+      "title": "Requerimientos de Proyecto",
+      "description": "Complete el formulario con las especificaciones de su solicitud. Nuestro equipo técnico evaluará la información y se pondrá en contacto con usted.",
       "fullName": "Nombre Completo *",
       "fullNamePlaceholder": "Juan Pérez",
       "email": "Correo Electrónico *",
@@ -431,7 +433,63 @@
       "sendingMessage": "Enviando Mensaje...",
       "errorTitle": "No se Pudo Enviar el Mensaje",
       "errorDescription": "Se encontró un error. Por favor, inténtelo de nuevo o contáctenos directamente en",
-      "contactEmail": "info@servicesjmk.com"
+      "contactEmail": "info@servicesjmk.com",
+      "fields": {
+        "name": {
+          "label": "Nombre Completo",
+          "placeholder": "Nombre y apellido"
+        },
+        "email": {
+          "label": "Correo Electrónico",
+          "placeholder": "correo@empresa.com"
+        },
+        "company": {
+          "label": "Empresa",
+          "placeholder": "Nombre de la empresa"
+        },
+        "projectType": {
+          "label": "Tipo de Proyecto",
+          "options": {
+            "default": "Seleccione el tipo de proyecto",
+            "engineering": "Ingeniería Industrial y Consultoría",
+            "automation": "Mantenimiento y Automatización",
+            "machinery": "Suministro de Maquinaria y Logística",
+            "other": "Otro / Solución Personalizada"
+          }
+        },
+        "message": {
+          "label": "Detalles del Proyecto",
+          "placeholder": "Describa los requerimientos de su proyecto, tiempos y necesidades técnicas específicas..."
+        }
+      },
+      "submit": {
+        "label": "INICIAR SOLICITUD DE PROYECTO",
+        "loading": "Iniciando Protocolo..."
+      },
+      "error": {
+        "title": "Transmisión Fallida",
+        "description": "No fue posible enviar la solicitud. Por favor intente nuevamente o contáctenos directamente en"
+      },
+      "validation": {
+        "name": {
+          "required": "El nombre es obligatorio",
+          "minLength": "El nombre debe tener al menos 2 caracteres"
+        },
+        "email": {
+          "required": "El correo electrónico es obligatorio",
+          "invalid": "Ingrese una dirección de correo electrónico válida"
+        },
+        "company": {
+          "required": "La empresa es obligatoria"
+        },
+        "projectType": {
+          "required": "El tipo de proyecto es obligatorio"
+        },
+        "message": {
+          "required": "El mensaje es obligatorio",
+          "minLength": "El mensaje debe tener al menos 10 caracteres"
+        }
+      }
     },
     "contactInfoOld": {
       "directContact": "Contacto Directo",
@@ -445,6 +503,25 @@
       "emergencySupportDescription": "Disponibilidad 24/7 para emergencias industriales críticas",
       "trustBadgeTitle": "Confidencial y Seguro",
       "trustBadgeDescription": "Su información está cifrada y protegida. Respetamos su privacidad y nunca compartiremos sus datos."
+    },
+    "success": {
+      "protocolInitiated": "Protocolo Iniciado",
+      "title": "Solicitud Enviada Correctamente",
+      "description": "Hemos recibido su solicitud de proyecto. Nuestro equipo de ingeniería la revisará y responderá en menos de 24 horas.",
+      "button": "Enviar Otra Solicitud"
+    },
+    "info": {
+      "status": {
+        "online": "EN LÍNEA"
+      },
+      "contactCenter": {
+        "title": "Centro de Contacto",
+        "subtitle": "Comunicación Directa"
+      },
+      "systemStatus": {
+        "title": "Estado del Sistema",
+        "description": "Todos los sistemas operativos. Tiempo de respuesta: <24 horas. Soporte de emergencia disponible 24/7."
+      }
     }
   },
   "ServicesPage": {
