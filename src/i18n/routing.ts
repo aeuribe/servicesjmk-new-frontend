@@ -21,9 +21,17 @@ export const routing = defineRouting({
       en: '/about',
       es: '/acerca-de-nosotros'
     },
-    '/services':{
+    '/services': {
       en: '/services',
       es: '/servicios'
+    },
+    '/privacy': {
+      en: '/privacy',
+      es: '/politica-de-privacidad'
+    },
+    '/terms': {
+      en: '/terms',
+      es: '/terminos-de-servicio'
     }
   }
 });

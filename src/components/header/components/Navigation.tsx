@@ -21,8 +21,11 @@ export interface NavigationProps {
   onPageChange: (page?: PageKey) => void;
 }
 
+const NAV_LG = 1024;
+
 const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
   const pathname = usePathname();
   const t = useTranslations("header");
   const isHeaderVisible = useScrollHeader(50);
@@ -30,13 +33,20 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
   const {
     language,
     isLanguageOpen,
-    isPending, // <--- Extraído del hook actualizado
+    isPending,
     handleLanguageToggle,
     handleLanguageSelect,
   } = useLanguage();
 
   const [isAtTop, setIsAtTop] = useState(true);
-  const isLight = !isAtTop;
+  const isLight = !isAtTop && !isMobileView;
+
+  useEffect(() => {
+    const check = () => setIsMobileView(window.innerWidth < NAV_LG);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,11 +76,13 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out ${
-          isAtTop ? "bg-transparent" : "bg-white/95 backdrop-blur-md shadow-md"
+          isAtTop
+            ? "bg-transparent"
+            : "bg-[#141414]/95 backdrop-blur-md border-b border-white/10 lg:bg-white/95 lg:backdrop-blur-md lg:shadow-md lg:border-b-0"
         }`}
         style={{
           backgroundImage: isAtTop
-            ? "linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.22) 55%, rgba(0,0,0,0) 100%)"
+            ? "linear-gradient(to bottom, rgba(20,20,20,0.55) 0%, rgba(20,20,20,0.2) 50%, transparent 100%)"
             : "none",
           transform: isHeaderVisible ? "translateY(0)" : "translateY(-100%)",
         }}
@@ -102,12 +114,8 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
             </div>
           </div>
 
-          {/* Mobile */}
-          <div
-            className={`flex lg:hidden items-center justify-between h-14 sm:h-16 transition-colors duration-300 ${
-              isAtTop ? "text-white drop-shadow-sm" : "text-gray-900"
-            }`}
-          >
+          {/* Mobile: siempre tema oscuro para coherencia con la página */}
+          <div className="flex lg:hidden items-center justify-between h-14 sm:h-16 text-white/95 transition-colors duration-300">
             <Logo onPageChange={handlePageChange} isLightMode={isLight} />
 
             <div className="flex items-center gap-3">

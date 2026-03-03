@@ -627,5 +627,49 @@
         "email": "info@servicesjmk.com"
       }
     }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: marzo 2025",
+    "collection": {
+      "title": "Información que recopilamos",
+      "intro": "Cuando utiliza nuestro formulario de contacto, recopilamos los siguientes datos de identificación personal (PII):",
+      "item1": "Nombre completo",
+      "item2": "Dirección de correo electrónico",
+      "item3": "Nombre de la empresa"
+    },
+    "use": {
+      "title": "Uso de sus datos",
+      "intro": "Utilizamos la información que nos proporciona únicamente para:",
+      "item1": "Responder a sus solicitudes de proyectos y consultas",
+      "item2": "Prestar soporte técnico y seguimiento relacionado con sus solicitudes"
+    },
+    "thirdParties": {
+      "title": "Terceros y cesión de datos",
+      "intro": "No vendemos, alquilamos ni compartimos sus datos personales con terceros con fines publicitarios u otros. Su información es utilizada únicamente por Services JMK, LLC para los fines descritos anteriormente."
+    },
+    "rights": {
+      "title": "Sus derechos y contacto",
+      "intro": "Puede solicitar el acceso, la corrección o la eliminación de sus datos personales en cualquier momento. Para ejercer estos derechos o para cualquier consulta sobre privacidad, contáctenos en:"
+    }
+  },
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización: marzo 2025",
+    "intellectualProperty": {
+      "title": "Propiedad intelectual",
+      "intro": "Todo el contenido de este sitio web, incluyendo pero no limitado a texto, imágenes, videos, logos, diseños y cualquier otro material, es propiedad de Services JMK, LLC.",
+      "content": "Esto incluye fotos, videos de maquinaria, diseños técnicos y todo contenido original. No se puede copiar, reproducir ni utilizar el contenido para otros fines sin nuestro consentimiento previo por escrito."
+    },
+    "permittedUse": {
+      "title": "Uso permitido",
+      "intro": "Puede ver y utilizar este sitio web para su propósito previsto: conocer nuestros servicios y contactarnos.",
+      "content": "No puede copiar, descargar ni reutilizar nuestro contenido (incluido texto, imágenes o videos) con fines comerciales u otros sin autorización expresa de Services JMK, LLC."
+    },
+    "limitationOfLiability": {
+      "title": "Limitación de responsabilidad",
+      "intro": "La información en este sitio web se ofrece solo con fines informativos generales.",
+      "content": "No constituye un contrato vinculante ni un acuerdo de ingeniería definitivo. Cualquier compromiso formal entre usted y Services JMK, LLC se establecerá únicamente mediante una propuesta o contrato firmado. No somos responsables de decisiones tomadas basándose únicamente en la información presentada en este sitio."
+    }
   }
 }

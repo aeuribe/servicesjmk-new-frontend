@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 const BotomSection = () => {
@@ -17,26 +19,26 @@ const BotomSection = () => {
           {t("bottom.contact")}
         </Link>
         <span className="text-white/20">|</span>
-        <a
-          href="#"
+        <Link
+          href="/terms"
           className="hover:text-white/80 transition-colors duration-300"
         >
           {t("bottom.terms")}
-        </a>
+        </Link>
         <span className="text-white/20">|</span>
-        <a
-          href="#"
+        <Link
+          href="/privacy"
           className="hover:text-white/80 transition-colors duration-300"
         >
           {t("bottom.privacy")}
-        </a>
+        </Link>
         <span className="text-white/20">|</span>
-        <a
-          href="#"
+        <Link
+          href="/privacy"
           className="hover:text-white/80 transition-colors duration-300"
         >
           {t("bottom.policy")}
-        </a>
+        </Link>
       </div>
     </div>
   );

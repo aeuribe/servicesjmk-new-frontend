@@ -1,11 +1,9 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { HeroBackground } from "./ServicesHero/HeroBackground";
 import { HeroSectionNumber } from "./ServicesHero/ServiceHeroSectionNumber";
 import { HeroContent } from "./ServicesHero/ServiceHeroContent";
 
 export const ServicesHero = () => {
-  const t = useTranslations("ServicesPage");
 
   return (
     <section

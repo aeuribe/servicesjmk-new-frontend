@@ -14,24 +14,33 @@ const PillarIcon = ({ d }: { d: string }) => (
   </div>
 );
 
-const LeaderCard = ({ 
-  leader, 
-  isLarge = false, 
-  hoveredId, 
-  setHoveredId 
-}: { 
-  leader: any, 
-  isLarge?: boolean, 
-  hoveredId: string | null, 
-  setHoveredId: (id: string | null) => void 
+// data structure for a person in the leadership section
+interface Leader {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+}
+
+const LeaderCard = ({
+  leader,
+  isLarge = false,
+  hoveredId,
+  setHoveredId,
+}: {
+  leader: Leader;
+  isLarge?: boolean;
+  hoveredId: string | null;
+  setHoveredId: (id: string | null) => void;
 }) => {
   const [hasError, setHasError] = useState(false);
   
   return (
     <div
       className={`bg-white/5 backdrop-blur-md border border-white/10 relative overflow-hidden group transition-all duration-500 ${
-        isLarge ? "p-10 max-w-2xl mx-auto w-full" : "p-8 w-full"
-      } `} // Cambiado clipPath por rounded-2xl para mejor visibilidad
+        isLarge ? "p-6 sm:p-8 lg:p-10 max-w-2xl mx-auto w-full" : "p-6 sm:p-8 w-full"
+      } `}
       onMouseEnter={() => setHoveredId(leader.id)}
       onMouseLeave={() => setHoveredId(null)}
       style={{
@@ -41,9 +50,13 @@ const LeaderCard = ({
     >
       <div className={`flex ${isLarge ? "flex-col md:flex-row" : "flex-col"} items-center gap-8`}>
         {/* Contenedor de Imagen Optimizado */}
-        <div className={`relative flex-shrink-0 overflow-hidden border-2 border-white/10 bg-slate-800  ${
-          isLarge ? "w-48 h-48 md:w-56 md:h-56" : "w-32 h-32"
-        }`}>
+        <div
+          className={`relative flex-shrink-0 overflow-hidden border-2 border-white/10 bg-slate-800 ${
+            isLarge
+              ? "w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56"
+              : "w-28 h-28 sm:w-32 sm:h-32"
+          }`}
+        >
           {!hasError ? (
             <Image
               src={leader.image}
@@ -64,7 +77,11 @@ const LeaderCard = ({
 
         {/* Texto Alineado */}
         <div className={`${isLarge ? "text-center md:text-left" : "text-center"} flex-1`}>
-          <h3 className={`text-white font-bold mb-1 uppercase tracking-tight ${isLarge ? "text-3xl" : "text-xl"}`}>
+          <h3
+            className={`text-white font-bold mb-1 uppercase tracking-tight ${
+              isLarge ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
+            }`}
+          >
             {leader.name}
           </h3>
           <p className="text-[#2563eb] text-sm font-bold uppercase tracking-[0.2em] mb-4">
@@ -94,7 +111,7 @@ export default function AboutUs() {
     setIsVisible(true);
   }, []);
 
-  const leadership = [
+  const leadership: Leader[] = [
     {
       id: "director",
       name: t("leadership.director.name"),
@@ -127,25 +144,34 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen font-main relative overflow-hidden bg-[#141414]">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center py-20">
-        <div className="absolute inset-0 opacity-5 pointer-events-none" 
-             style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center py-16 sm:py-20">
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
 
-        <div className="absolute left-4 lg:left-8 top-16 bottom-0 flex flex-col items-center">
+        <div className="absolute left-4 lg:left-8 top-16 bottom-0 hidden sm:flex flex-col items-center">
           <span className="text-2xl font-bold text-white/60 mb-4">01</span>
           <div className="w-px bg-white/20 flex-1" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-16 items-center">
-          <div className={`space-y-8 transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div
+            className={`space-y-8 transition-all duration-1000 transform ${
+              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+          >
             <div>
-              <h1 className="text-white text-5xl lg:text-7xl font-bold uppercase tracking-tight leading-tight">
+              <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tight leading-tight">
                 {t("heroHeadline")}
               </h1>
-              <div className="h-1 bg-[#2563eb] w-24 mt-6" />
+              <div className="h-1 bg-[#2563eb] w-20 sm:w-24 mt-4 sm:mt-6" />
             </div>
 
-            <div className="space-y-4 text-white/90 text-lg leading-relaxed">
+            <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
               <p>{t("heroDescription1")}</p>
               <p>{t("heroDescription2")}</p>
             </div>
@@ -161,36 +187,44 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className={`relative h-[500px] lg:h-[600px] transition-all duration-1000 delay-300 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-             <div className="relative w-full h-full overflow-hidden" 
-                  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))" }}>
-                <Image src="/founder-2.jpg" alt="Operational Background" fill className="object-cover opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent" />
-             </div>
+          <div
+            className={`relative h-72 sm:h-96 lg:h-[600px] transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div
+              className="relative w-full h-full overflow-hidden"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px))",
+              }}
+            >
+              <Image src="/founder-2.jpg" alt="Operational Background" fill className="object-cover opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Leadership Section */}
-      <section className="relative py-24 bg-[#1e1e1e]">
-        <div className="absolute left-4 lg:left-8 top-0 bottom-0 flex flex-col items-center">
+      <section className="relative py-20 sm:py-24 bg-[#1e1e1e]">
+        <div className="absolute left-4 lg:left-8 top-0 bottom-0 hidden sm:flex flex-col items-center">
           <span className="text-2xl font-bold text-white/60 mb-4">02</span>
           <div className="w-px bg-white/20 flex-1" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-20">
           <span className="text-[#2563eb] tracking-[0.3em] uppercase text-xs font-bold mb-4 block">
             {t("leadership.pretitle")}
           </span>
-          <h2 className="text-white text-4xl lg:text-6xl font-bold">{t("leadership.title")}</h2>
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-6xl font-bold">{t("leadership.title")}</h2>
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 space-y-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-12">
           {/* Director Row */}
           <LeaderCard leader={leadership[0]} isLarge hoveredId={hoveredId} setHoveredId={setHoveredId} />
 
           {/* IT Director & BizDev Row */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             <LeaderCard leader={leadership[1]} hoveredId={hoveredId} setHoveredId={setHoveredId} />
             <LeaderCard leader={leadership[2]} hoveredId={hoveredId} setHoveredId={setHoveredId} />
           </div>

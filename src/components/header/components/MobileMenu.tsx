@@ -75,56 +75,56 @@ export const MobileMenu = ({
 
   return (
     <>
-      {/* Fondo sólido y oscuro (cero desenfoques gomosos) */}
+      {/* Overlay oscuro coherente con la página */}
       <div
-        className={`lg:hidden fixed inset-0 bg-slate-950/90 z-40 transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 bg-[#141414]/90 z-40 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Panel lateral técnico */}
+      {/* Panel lateral: misma paleta que la web (#141414, #2563eb) */}
       <div
         ref={menuRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="mobile-menu-title"
-        className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-slate-900 border-l border-white/5 z-50 
-          shadow-2xl flex flex-col items-center transform transition-transform duration-500 ${
+        className={`lg:hidden fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#141414] border-l border-white/10 z-50
+          shadow-[0_0_40px_rgba(0,0,0,0.4)] flex flex-col items-center transform transition-transform duration-500 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         style={{
-          transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)", // Freno mecánico
+          transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        {/* Línea superior indicadora de estado (Acero azul) */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-blue-600" />
+        {/* Línea superior: acento azul de la marca */}
+        <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#2563eb]" />
 
         {/* Cabecera */}
-        <div className="w-full flex items-center justify-between px-8 pt-10 pb-6 border-b border-white/5">
+        <div className="w-full flex items-center justify-between px-6 sm:px-8 pt-8 sm:pt-10 pb-5 sm:pb-6 border-b border-white/10">
           <div className="scale-90 origin-left">
-            <Logo 
+            <Logo
               onPageChange={() => {
                 onPageChange("home");
                 onClose();
-              }} 
-              isLightMode={false} 
+              }}
+              isLightMode={false}
             />
           </div>
           <button
             onClick={onClose}
-            className="text-slate-500 hover:text-white transition-colors duration-200"
+            className="text-white/50 hover:text-white transition-colors duration-200 p-1 -m-1"
             aria-label="Cerrar menú"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
-        {/* Navegación - Tipografía estructurada y monolineal */}
-        <nav className="flex-1 w-full flex flex-col justify-center px-8 space-y-8">
+        {/* Navegación */}
+        <nav className="flex-1 w-full flex flex-col justify-center px-6 sm:px-8 space-y-6 sm:space-y-8">
           {items.map((item, index) => {
             const isActive = pathname === item.href;
             return (
@@ -135,18 +135,19 @@ export const MobileMenu = ({
                   onPageChange(item.key);
                   onClose();
                 }}
-                className={`group flex items-center justify-between text-sm uppercase tracking-[0.25em] font-medium transition-all duration-300 ${
-                  isActive ? "text-white" : "text-slate-500 hover:text-slate-300"
+                className={`group flex items-center justify-between text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 ${
+                  isActive ? "text-white" : "text-white/50 hover:text-white/80"
                 }`}
                 style={{
                   animation: isOpen ? `slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + index * 0.05}s both` : "none",
                 }}
               >
-                <div className="flex items-center gap-4">
-                  {/* Indicador de bloque cuadrado en lugar de una flecha sutil */}
-                  <span 
-                    className={`h-2 w-2 transition-all duration-300 ${
-                      isActive ? "bg-blue-500" : "bg-transparent border border-slate-700 group-hover:bg-slate-600"
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <span
+                    className={`h-2 w-2 shrink-0 transition-all duration-300 ${
+                      isActive
+                        ? "bg-[#2563eb]"
+                        : "bg-white/25 border border-white/40 group-hover:bg-white/35 group-hover:border-white/50"
                     }`}
                   />
                   <span>{item.label}</span>
@@ -156,8 +157,8 @@ export const MobileMenu = ({
           })}
         </nav>
 
-        {/* Footer técnico - Redes y CTA */}
-        <div className="w-full px-8 pb-12 space-y-10 border-t border-white/5 pt-8">
+        {/* Footer: CTA y redes */}
+        <div className="w-full px-6 sm:px-8 pb-10 sm:pb-12 space-y-8 sm:space-y-10 border-t border-white/10 pt-6 sm:pt-8">
           {/* Botón de Contacto - Sin brillos ni pulsos, solo solidez */}
           <div 
             style={{
@@ -173,13 +174,13 @@ export const MobileMenu = ({
             />
           </div>
 
-          {/* Redes Sociales - Sin escalas, solo transiciones de color */}
-          <div className="flex justify-start gap-8">
+          {/* Redes: sutil, acento azul al hover */}
+          <div className="flex justify-start gap-6 sm:gap-8">
             {socialLinks.map((social, i) => (
               <a
                 key={social.name}
                 href={social.href}
-                className="text-slate-600 hover:text-blue-500 transition-colors duration-200"
+                className="text-white/35 hover:text-[#2563eb] transition-colors duration-200"
                 style={{
                   animation: isOpen ? `slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${0.5 + i * 0.05}s both` : "none",
                 }}

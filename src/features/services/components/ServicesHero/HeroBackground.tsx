@@ -25,7 +25,7 @@ export const HeroBackground = () => {
         poster="/fallback.jpg"
         className="absolute inset-0 object-cover w-full h-full opacity-90"
       >
-        <source src="/videos/services_video.mp4" type="video/mp4" />
+        <source src="/videos/services_video.webm" type="video/webm" />
         Tu navegador no soporta videos de fondo.
       </video>
 
