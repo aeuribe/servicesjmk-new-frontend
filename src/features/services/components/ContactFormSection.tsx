@@ -53,25 +53,25 @@ export const ContactFormSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 1. Primero validar token ANTES de setear loading
+    if (!turnstileToken) {
+      alert("Por favor, completa la verificación de seguridad.");
+      return;
+    }
+
     const allErrors = validateAllFields(formData);
     setErrors(allErrors);
     if (Object.keys(allErrors).length > 0) return;
 
     setFormStatus("loading");
 
-    if (!turnstileToken) {
-      alert("Por favor, completa la verificación de seguridad.");
-      return;
-    }
-
     try {
       const response = await fetch(
         "https://servicesjmk-backend.onrender.com/enviar-correo-services",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             full_name: formData.name,
             email: formData.email,
@@ -84,7 +84,9 @@ export const ContactFormSection: React.FC = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.json(); // ← así ves el error real
+        console.error("Backend error:", errorData);
+        throw new Error(errorData.error || "Failed to send message");
       }
 
       setFormStatus("success");
@@ -349,7 +351,17 @@ export const ContactFormSection: React.FC = () => {
             <div className="flex justify-center sm:justify-start pt-2">
               <Turnstile
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY as string}
-                onSuccess={(token) => setTurnstileToken(token)}
+                onSuccess={(token) => {
+                  console.log(
+                    "✅ Turnstile token recibido:",
+                    token.slice(0, 20) + "...",
+                  );
+                  setTurnstileToken(token);
+                }}
+                onError={() =>
+                  console.error("❌ Turnstile error - revisar siteKey")
+                }
+                onExpire={() => console.warn("⚠️ Turnstile token expirado")}
                 options={{ theme: "dark" }}
               />
             </div>

@@ -4,7 +4,7 @@ import type {
   FormErrors,
   FormStatus,
 } from "@/features/contact/contactTypes";
-import { Turnstile } from '@marsidev/react-turnstile';
+import { Turnstile } from "@marsidev/react-turnstile";
 
 interface ContactFormProps {
   formData: FormData;
@@ -16,7 +16,7 @@ interface ContactFormProps {
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
-      | React.ChangeEvent<HTMLSelectElement>
+      | React.ChangeEvent<HTMLSelectElement>,
   ) => void;
   onSubmit: (e: React.FormEvent) => void;
   t: (key: string) => string;
@@ -44,8 +44,7 @@ export function ContactForm({
       <div
         className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 lg:p-10 relative overflow-hidden"
         style={{
-          clipPath:
-            "polygon(0 0, 100% 0, 100% 100%, 90% 100%, 0 100%)",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 90% 100%, 0 100%)",
           filter: "drop-shadow(0 20px 40px rgba(37, 99, 235, 0.2))",
         }}
       >
@@ -84,8 +83,8 @@ export function ContactForm({
                 focusedField === "name"
                   ? "text-[#2563eb]"
                   : errors.name
-                  ? "text-red-400"
-                  : "text-white/90"
+                    ? "text-red-400"
+                    : "text-white/90"
               }`}
             >
               {t("form.fields.name.label") || "Full Name"}{" "}
@@ -103,8 +102,8 @@ export function ContactForm({
                 errors.name
                   ? "border-red-400"
                   : focusedField === "name"
-                  ? "border-[#2563eb]"
-                  : "border-white/20"
+                    ? "border-[#2563eb]"
+                    : "border-white/20"
               } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
               placeholder={
                 t("form.fields.name.placeholder") || "Enter your full name"
@@ -112,7 +111,11 @@ export function ContactForm({
             />
             {errors.name && (
               <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -131,8 +134,8 @@ export function ContactForm({
                 focusedField === "email"
                   ? "text-[#2563eb]"
                   : errors.email
-                  ? "text-red-400"
-                  : "text-white/90"
+                    ? "text-red-400"
+                    : "text-white/90"
               }`}
             >
               {t("form.fields.email.label") || "Email Address"}{" "}
@@ -150,8 +153,8 @@ export function ContactForm({
                 errors.email
                   ? "border-red-400"
                   : focusedField === "email"
-                  ? "border-[#2563eb]"
-                  : "border-white/20"
+                    ? "border-[#2563eb]"
+                    : "border-white/20"
               } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
               placeholder={
                 t("form.fields.email.placeholder") || "your.email@company.com"
@@ -159,7 +162,11 @@ export function ContactForm({
             />
             {errors.email && (
               <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -178,8 +185,8 @@ export function ContactForm({
                 focusedField === "company"
                   ? "text-[#2563eb]"
                   : errors.company
-                  ? "text-red-400"
-                  : "text-white/90"
+                    ? "text-red-400"
+                    : "text-white/90"
               }`}
             >
               {t("form.fields.company.label") || "Company"}{" "}
@@ -197,8 +204,8 @@ export function ContactForm({
                 errors.company
                   ? "border-red-400"
                   : focusedField === "company"
-                  ? "border-[#2563eb]"
-                  : "border-white/20"
+                    ? "border-[#2563eb]"
+                    : "border-white/20"
               } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
               placeholder={
                 t("form.fields.company.placeholder") || "Your company name"
@@ -206,7 +213,11 @@ export function ContactForm({
             />
             {errors.company && (
               <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -225,8 +236,8 @@ export function ContactForm({
                 focusedField === "projectType"
                   ? "text-[#2563eb]"
                   : errors.projectType
-                  ? "text-red-400"
-                  : "text-white/90"
+                    ? "text-red-400"
+                    : "text-white/90"
               }`}
             >
               {t("form.fields.projectType.label") || "Project Type"}{" "}
@@ -243,8 +254,8 @@ export function ContactForm({
                 errors.projectType
                   ? "border-red-400"
                   : focusedField === "projectType"
-                  ? "border-[#2563eb]"
-                  : "border-white/20"
+                    ? "border-[#2563eb]"
+                    : "border-white/20"
               } text-white focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232563eb' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
@@ -276,7 +287,11 @@ export function ContactForm({
             </select>
             {errors.projectType && (
               <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -295,8 +310,8 @@ export function ContactForm({
                 focusedField === "message"
                   ? "text-[#2563eb]"
                   : errors.message
-                  ? "text-red-400"
-                  : "text-white/90"
+                    ? "text-red-400"
+                    : "text-white/90"
               }`}
             >
               {t("form.fields.message.label") || "Project Details"}{" "}
@@ -314,8 +329,8 @@ export function ContactForm({
                 errors.message
                   ? "border-red-400"
                   : focusedField === "message"
-                  ? "border-[#2563eb]"
-                  : "border-white/20"
+                    ? "border-[#2563eb]"
+                    : "border-white/20"
               } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all resize-none`}
               placeholder={
                 t("form.fields.message.placeholder") ||
@@ -324,7 +339,11 @@ export function ContactForm({
             />
             {errors.message && (
               <p className="mt-1 text-sm text-red-400 flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path
                     fillRule="evenodd"
                     d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
@@ -339,20 +358,29 @@ export function ContactForm({
             </div>
           </div>
           <div className="flex justify-center lg:justify-start pt-2">
-            <Turnstile 
-              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY as string} 
-              onSuccess={(token) => setTurnstileToken(token)} 
-              options={{ theme: 'dark' }} /* Opcional: Para que combine con el diseño oscuro de tu web */
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY as string}
+              onSuccess={(token) => {
+                console.log(
+                  "✅ Turnstile token recibido:",
+                  token.slice(0, 20) + "...",
+                );
+                setTurnstileToken(token);
+              }}
+              onError={() =>
+                console.error("❌ Turnstile error - revisar siteKey")
+              }
+              onExpire={() => console.warn("⚠️ Turnstile token expirado")}
+              options={{ theme: "dark" }}
             />
-        </div>
+          </div>
           <div className="pt-4">
             <button
               type="submit"
               disabled={formStatus === "loading" || !turnstileToken}
               className="w-full bg-gradient-to-r from-[#2563eb] to-[#2563eb] text-white px-8 py-5 hover:from-[#2563eb]/90 hover:to-[#2563eb]/90 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden shadow-lg hover:shadow-2xl font-bold text-lg"
               style={{
-                clipPath:
-                  "polygon(0 0, 100% 0, 100% 75%, 90% 100%, 0 100%)",
+                clipPath: "polygon(0 0, 100% 0, 100% 75%, 90% 100%, 0 100%)",
                 filter: "drop-shadow(0 0 20px rgba(37, 99, 235, 0.5))",
               }}
             >
@@ -442,4 +470,3 @@ export function ContactForm({
     </div>
   );
 }
-

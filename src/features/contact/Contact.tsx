@@ -40,8 +40,7 @@ export default function Contact() {
     const newErrors: FormErrors = {};
 
     if (!data.name.trim()) {
-      newErrors.name =
-        t("form.validation.name.required") || "Name is required";
+      newErrors.name = t("form.validation.name.required") || "Name is required";
     } else if (data.name.trim().length < 2) {
       newErrors.name =
         t("form.validation.name.minLength") ||
@@ -64,8 +63,7 @@ export default function Contact() {
 
     if (!data.projectType) {
       newErrors.projectType =
-        t("form.validation.projectType.required") ||
-        "Project type is required";
+        t("form.validation.projectType.required") || "Project type is required";
     }
 
     if (!data.message.trim()) {
@@ -110,11 +108,13 @@ export default function Contact() {
             message: formData.message,
             token: turnstileToken,
           }),
-        }
+        },
       );
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorData = await response.json();
+        console.error("Backend respondió:", response.status, errorData);
+        throw new Error(errorData.error || "Failed to send message");
       }
 
       setFormStatus("success");
@@ -137,11 +137,13 @@ export default function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev: FormData) => ({ ...prev, [name]: value }));
-    
+
     setErrors((prevErrors: FormErrors) => {
       const newErrors = { ...prevErrors };
       if (name === "name") {
