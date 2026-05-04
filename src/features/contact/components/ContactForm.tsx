@@ -4,6 +4,7 @@ import type {
   FormErrors,
   FormStatus,
 } from "@/features/contact/contactTypes";
+import { Turnstile } from '@marsidev/react-turnstile';
 
 interface ContactFormProps {
   formData: FormData;
@@ -19,6 +20,8 @@ interface ContactFormProps {
   ) => void;
   onSubmit: (e: React.FormEvent) => void;
   t: (key: string) => string;
+  turnstileToken: string;
+  setTurnstileToken: (token: string) => void;
 }
 
 export function ContactForm({
@@ -30,6 +33,8 @@ export function ContactForm({
   onChange,
   onSubmit,
   t,
+  turnstileToken,
+  setTurnstileToken,
 }: ContactFormProps) {
   return (
     <div
@@ -333,11 +338,17 @@ export function ContactForm({
               {formData.message.length} / 10 minimum characters
             </div>
           </div>
-
+          <div className="flex justify-center lg:justify-start pt-2">
+            <Turnstile 
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY as string} 
+              onSuccess={(token) => setTurnstileToken(token)} 
+              options={{ theme: 'dark' }} /* Opcional: Para que combine con el diseño oscuro de tu web */
+            />
+        </div>
           <div className="pt-4">
             <button
               type="submit"
-              disabled={formStatus === "loading"}
+              disabled={formStatus === "loading" || !turnstileToken}
               className="w-full bg-gradient-to-r from-[#2563eb] to-[#2563eb] text-white px-8 py-5 hover:from-[#2563eb]/90 hover:to-[#2563eb]/90 transition-all duration-300 flex items-center justify-center gap-3 group disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden shadow-lg hover:shadow-2xl font-bold text-lg"
               style={{
                 clipPath:

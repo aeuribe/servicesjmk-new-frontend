@@ -21,6 +21,7 @@ export default function Contact() {
     projectType: "",
     message: "",
   });
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -83,6 +84,12 @@ export default function Contact() {
     e.preventDefault();
     const allErrors = validateAllFields(formData);
     setErrors(allErrors);
+
+    if (!turnstileToken) {
+      alert("Por favor, completa la verificación de seguridad.");
+      return;
+    }
+
     if (Object.keys(allErrors).length > 0) return;
 
     setFormStatus("loading");
@@ -101,6 +108,7 @@ export default function Contact() {
             company: formData.company,
             project_type: formData.projectType,
             message: formData.message,
+            token: turnstileToken,
           }),
         }
       );
@@ -119,6 +127,7 @@ export default function Contact() {
           projectType: "",
           message: "",
         });
+        setTurnstileToken("");
         setFormStatus("idle");
       }, 3000);
     } catch (error) {
@@ -278,6 +287,8 @@ export default function Contact() {
                 onChange={handleChange}
                 onSubmit={handleSubmit}
                 t={t}
+                turnstileToken={turnstileToken}
+                setTurnstileToken={setTurnstileToken}
               />
             </div>
           </div>
