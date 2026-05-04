@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { FormData, FormErrors, FormStatus } from "../types";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export const ContactFormSection: React.FC = () => {
   const t = useTranslations("ServicesPage");
@@ -15,6 +16,7 @@ export const ContactFormSection: React.FC = () => {
   const [formStatus, setFormStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<FormErrors>({});
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   const validateEmail = (email: string): boolean => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -57,6 +59,11 @@ export const ContactFormSection: React.FC = () => {
 
     setFormStatus("loading");
 
+    if (!turnstileToken) {
+      alert("Por favor, completa la verificación de seguridad.");
+      return;
+    }
+
     try {
       const response = await fetch(
         "https://servicesjmk-backend.onrender.com/enviar-correo-services",
@@ -71,8 +78,9 @@ export const ContactFormSection: React.FC = () => {
             phone: formData.phone,
             company: formData.company,
             message: formData.message,
+            token: turnstileToken,
           }),
-        }
+        },
       );
 
       if (!response.ok) {
@@ -88,6 +96,7 @@ export const ContactFormSection: React.FC = () => {
           company: "",
           message: "",
         });
+        setTurnstileToken("");
         setFormStatus("idle");
       }, 3000);
     } catch (error) {
@@ -97,7 +106,7 @@ export const ContactFormSection: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -154,10 +163,7 @@ export const ContactFormSection: React.FC = () => {
         </div>
 
         {/* Contact Form */}
-        <div
-          className="bg-white/12 backdrop-blur-sm p-5 sm:p-6 md:p-8 lg:p-12"
-
-        >
+        <div className="bg-white/12 backdrop-blur-sm p-5 sm:p-6 md:p-8 lg:p-12">
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Name and Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
@@ -168,8 +174,8 @@ export const ContactFormSection: React.FC = () => {
                     focusedField === "name"
                       ? "text-[#2563eb]"
                       : errors.name
-                      ? "text-red-400"
-                      : "text-white/90"
+                        ? "text-red-400"
+                        : "text-white/90"
                   }`}
                 >
                   {t("contactForm.form.fullName")}
@@ -186,8 +192,8 @@ export const ContactFormSection: React.FC = () => {
                     errors.name
                       ? "border-red-400"
                       : focusedField === "name"
-                      ? "border-[#2563eb]"
-                      : "border-white/20"
+                        ? "border-[#2563eb]"
+                        : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all touch-manipulation`}
                   placeholder={t("contactForm.form.fullNamePlaceholder")}
                 />
@@ -203,8 +209,8 @@ export const ContactFormSection: React.FC = () => {
                     focusedField === "email"
                       ? "text-[#2563eb]"
                       : errors.email
-                      ? "text-red-400"
-                      : "text-white/90"
+                        ? "text-red-400"
+                        : "text-white/90"
                   }`}
                 >
                   {t("contactForm.form.email")}
@@ -221,8 +227,8 @@ export const ContactFormSection: React.FC = () => {
                     errors.email
                       ? "border-red-400"
                       : focusedField === "email"
-                      ? "border-[#2563eb]"
-                      : "border-white/20"
+                        ? "border-[#2563eb]"
+                        : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
                   placeholder={t("contactForm.form.emailPlaceholder")}
                 />
@@ -241,8 +247,8 @@ export const ContactFormSection: React.FC = () => {
                     focusedField === "phone"
                       ? "text-[#2563eb]"
                       : errors.phone
-                      ? "text-red-400"
-                      : "text-white/90"
+                        ? "text-red-400"
+                        : "text-white/90"
                   }`}
                 >
                   {t("contactForm.form.phone")}
@@ -262,8 +268,8 @@ export const ContactFormSection: React.FC = () => {
                     errors.phone
                       ? "border-red-400"
                       : focusedField === "phone"
-                      ? "border-[#2563eb]"
-                      : "border-white/20"
+                        ? "border-[#2563eb]"
+                        : "border-white/20"
                   } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all`}
                   placeholder={t("contactForm.form.phonePlaceholder")}
                 />
@@ -312,8 +318,8 @@ export const ContactFormSection: React.FC = () => {
                   focusedField === "message"
                     ? "text-[#2563eb]"
                     : errors.message
-                    ? "text-red-400"
-                    : "text-white/90"
+                      ? "text-red-400"
+                      : "text-white/90"
                 }`}
               >
                 {t("contactForm.form.message")}
@@ -327,11 +333,11 @@ export const ContactFormSection: React.FC = () => {
                 onBlur={() => setFocusedField(null)}
                 rows={5}
                 className={`w-full min-h-[120px] px-4 py-3 bg-white/5 border text-base ${
-                    errors.message
+                  errors.message
                     ? "border-red-400"
                     : focusedField === "message"
-                    ? "border-[#2563eb]"
-                    : "border-white/20"
+                      ? "border-[#2563eb]"
+                      : "border-white/20"
                 } text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#2563eb]/50 transition-all resize-none`}
                 placeholder={t("contactForm.form.messagePlaceholder")}
               />
@@ -340,11 +346,18 @@ export const ContactFormSection: React.FC = () => {
               )}
             </div>
 
+            <div className="flex justify-center sm:justify-start pt-2">
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY as string}
+                onSuccess={(token) => setTurnstileToken(token)}
+                options={{ theme: "dark" }}
+              />
+            </div>
             {/* Submit Button */}
             <div className="pt-3 sm:pt-4">
               <button
                 type="submit"
-                disabled={formStatus === "loading"}
+                disabled={formStatus === "loading" || !turnstileToken}
                 className="w-full min-h-[48px] bg-[#2563eb] text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold hover:bg-[#1d4ed8] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 uppercase tracking-wider inline-flex items-center justify-center gap-2 sm:gap-3 group relative touch-manipulation"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)",
@@ -428,7 +441,9 @@ export const ContactFormSection: React.FC = () => {
 
         {/* Direct Contact Info */}
         <div className="mt-6 sm:mt-8 text-center">
-          <p className="text-white/60 text-xs sm:text-sm mb-3 sm:mb-4">{t("contactForm.directContact.title")}</p>
+          <p className="text-white/60 text-xs sm:text-sm mb-3 sm:mb-4">
+            {t("contactForm.directContact.title")}
+          </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <a
               href={`tel:${t("contactForm.directContact.phone")}`}
@@ -474,4 +489,3 @@ export const ContactFormSection: React.FC = () => {
     </section>
   );
 };
-
