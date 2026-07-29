@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Hero from "./components/HeroSection/Hero";
 import AboutUsSection from "./components/AboutUsSection/AboutUsSection";
 import BusinessSegmentsSection from "./components/BusinessSegmentsSection/BusinessSegmentsSection";
-import ManagementSection from "./components/ManagementSection/ManagementSection";
 import Footer from "@/components/footer/Footer";
 
 const Home = () => {
