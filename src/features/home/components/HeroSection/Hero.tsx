@@ -10,9 +10,22 @@ import { HeroSectionNumber } from "./components/HeroSectionNumber";
 import { HeroContent } from "./components/HeroContent";
 
 const HERO_IMAGES = [
-  { src: "/placa-jmk.png", alt: "Industrial Services JMK" },
-  { src: "/founder.jpg", alt: "Technology Robot Arm" },
-  { src: "/brazo.png", alt: "Technology Robot Arm" },
+  { 
+    src: "/placa-jmk.png", 
+    alt: "Industrial Services JMK", 
+    positionClass: "object-[75%_center] scale-75 md:object-center" // Centrada por defecto
+  },
+  { 
+    src: "/VFFS_machine.jpg", 
+    alt: "VFFS Machine", 
+    // En móvil desplaza el foco al 80% (o el valor que necesites), en desktop lo centra
+    positionClass: "object-[25%_center] scale-75 md:object-center" 
+  },
+  { 
+    src: "/hero_machinery.jpg", 
+    alt: "VFFS Machine", 
+    positionClass: "object-[75%_center] scale-75 md:scale-95" 
+  },
 ];
 
 const SLIDE_DURATION = 7000; // ms
