@@ -15,16 +15,17 @@ const HERO_IMAGES = [
     alt: "Industrial Services JMK", 
     positionClass: "object-[75%_center] scale-75 md:object-center" // Centrada por defecto
   },
-  { 
-    src: "/VFFS_machine.jpg", 
-    alt: "VFFS Machine", 
-    // En móvil desplaza el foco al 80% (o el valor que necesites), en desktop lo centra
-    positionClass: "object-[25%_center] scale-75 md:object-center" 
+{ 
+    src: "/multicabezal_machine.jpg", 
+    alt: "Multicabezal Machine", 
+    // Móvil: Enfoca al 25% y aleja la imagen al 75%.
+    // Escritorio (md:): Centra la imagen y devuelve la escala al 100% para llenar la pantalla.
+    positionClass: "object-cover object-[25%_center] scale-75 md:object-center md:scale-100" 
   },
   { 
-    src: "/hero_machinery.jpg", 
-    alt: "VFFS Machine", 
-    positionClass: "object-[75%_center] scale-75 md:scale-95" 
+    src: "/conveyor_machine.jpg", 
+    alt: "Conveyor Machine", 
+    positionClass: "object-[50%_center] w-full h-full0" 
   },
 ];
 
