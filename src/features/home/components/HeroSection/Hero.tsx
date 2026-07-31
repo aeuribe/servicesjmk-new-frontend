@@ -37,7 +37,7 @@ const Hero = () => {
   const currentIndex = useHeroSlider(HERO_IMAGES.length, SLIDE_DURATION);
   const progress = useHeroProgress(SLIDE_DURATION, PROGRESS_INTERVAL, currentIndex);
 
-  return (
+return (
     <section className="relative min-h-screen flex items-center justify-center font-main overflow-hidden">
       <HeroBackground />
 
@@ -47,7 +47,8 @@ const Hero = () => {
 
       <HeroSectionNumber />
 
-      <HeroContent t={t} />
+      {/* Le pasamos el currentIndex a HeroContent */}
+      <HeroContent t={t} currentIndex={currentIndex} />
     </section>
   );
 };

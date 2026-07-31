@@ -10,8 +10,20 @@
     "contact": "Contáctenos"
   },
   "Hero": {
-    "headline": "TRANSFORMAMOS INGENIERÍA EN RESULTADOS",
-    "subtitle": "Su socio estratégico para ingeniería industrial de alto nivel y soluciones de maquinaria.",
+    "slides": [
+      {
+        "headline": "Cualquier falla\nCualquier máquina\nNosotros lo resolvemos",
+        "subtitle": "Reparación, mantenimiento preventivo y correctivo, y repuestos para toda su maquinaria industrial"
+      },
+      {
+        "headline": "Cero tiempo de inactividad\n Ingeniería total para su planta",
+        "subtitle": "Instalación, mudanza industrial y modernización de maquinaria, con automatización de sus líneas de producción"
+      },
+      {
+        "headline": "Un solo socio estratégico\n para toda su maquinaria",
+        "subtitle": "Asesoría de producción, entrenamiento operativo y provisión de maquinaria industrial"
+      }
+    ],
     "button": "EXPLORAR SERVICIOS"
   },
   "ServicesSection": {

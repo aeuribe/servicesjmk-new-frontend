@@ -10,8 +10,20 @@
     "contact": "Contact Us"
   },
   "Hero": {
-    "headline": "WE DRIVE INDUSTRIAL POWER",
-    "subtitle": "Your strategic partner for high-level industrial engineering and machinery solutions.",
+    "slides": [
+      {
+        "headline": "Any breakdown\nAny machine\nWe fix it",
+        "subtitle": "Repair, preventive and corrective maintenance, and spare parts for all your industrial machinery"
+      },
+      {
+        "headline": "Zero downtime\nComplete engineering for your plant",
+        "subtitle": "Installation, industrial relocation, and machinery modernization, with automation for your production lines"
+      },
+      {
+        "headline": "One strategic partner\nFor all your machinery",
+        "subtitle": "Production consulting, operator training, and industrial machinery supply"
+      }
+    ],
     "button": "EXPLORE SERVICES"
   },
   "ServicesSection": {
