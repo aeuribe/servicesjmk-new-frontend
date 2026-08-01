@@ -689,5 +689,31 @@
     "tooltipTitle": "¿Falla en su maquinaria?",
     "tooltipSubtitle": "Escríbanos y lo resolvemos hoy mismo",
     "defaultMessage": "Hola, necesito ayuda con un problema de maquinaria industrial."
+  },
+  "leadCapture": {
+    "close": "Cerrar",
+    "title": "¿Necesita un servicio industrial?",
+    "subtitle": "Cuéntenos qué necesita y lo contactamos en minutos.",
+    "fields": {
+      "namePlaceholder": "Nombre",
+      "phonePlaceholder": "Teléfono",
+      "emailPlaceholder": "Email (opcional)",
+      "messagePlaceholder": "¿Qué necesita? (opcional)"
+    },
+    "submit": {
+      "label": "Enviar",
+      "loading": "Enviando..."
+    },
+    "errors": {
+      "nameRequired": "Ingresa tu nombre",
+      "phoneRequired": "Ingresa tu teléfono",
+      "emailInvalid": "Email inválido",
+      "submitFailed": "No se pudo enviar. Intenta de nuevo."
+    },
+    "success": {
+      "title": "¡Recibido!",
+      "subtitle": "Nos pondremos en contacto muy pronto."
+    },
+    "reopen": "¿Le ayudamos?"
   }
 }

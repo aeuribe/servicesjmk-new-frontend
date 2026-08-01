@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import WhatsAppFloatingButton from "@/components/shared/WhatsappFloatingButton"
+import LeadCaptureSlideIn from "@/components/shared/LeadCaptureSlideIn";
 import Script from "next/script";
 
 import "./globals.css";
@@ -69,14 +70,10 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
           
           <WhatsAppFloatingButton />
+          <LeadCaptureSlideIn />
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
-        <Script
-          src="https://integration.financepartners.com/ascstart.js?acv=bffc42a4-96b0-47a1-a0a4-c3495d0c5da3"
-          id="acapital"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );

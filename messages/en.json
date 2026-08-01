@@ -689,5 +689,32 @@
     "tooltipTitle": "Machine down?",
     "tooltipSubtitle": "Message us and we'll fix it today",
     "defaultMessage": "Hi, I need help with an industrial machinery issue."
+  },
+  "leadCapture": {
+    "close": "Close",
+    "title": "Need an industrial service?",
+    "subtitle": "Tell us what you need and we'll contact you in minutes.",
+    "fields": {
+      "namePlaceholder": "Name",
+      "phonePlaceholder": "Phone",
+      "emailPlaceholder": "Email (optional)",
+      "messagePlaceholder": "What do you need? (optional)"
+    },
+    "submit": {
+      "label": "Send",
+      "loading": "Sending..."
+    },
+    "errors": {
+      "nameRequired": "Enter your name",
+      "phoneRequired": "Enter your phone",
+      "emailInvalid": "Invalid email",
+      "submitFailed": "Couldn't send. Please try again."
+    },
+    "success": {
+      "title": "Got it!",
+      "subtitle": "We'll be in touch shortly."
+    },
+    "reopen": "Need help?"
   }
+  
 }
