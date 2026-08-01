@@ -301,3 +301,10 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+body.menu-open .whatsapp-floating-button,
+body.locale-changing .whatsapp-floating-button {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}

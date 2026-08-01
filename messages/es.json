@@ -683,5 +683,11 @@
       "intro": "La información en este sitio web se ofrece solo con fines informativos generales.",
       "content": "No constituye un contrato vinculante ni un acuerdo de ingeniería definitivo. Cualquier compromiso formal entre usted y Services JMK, LLC se establecerá únicamente mediante una propuesta o contrato firmado. No somos responsables de decisiones tomadas basándose únicamente en la información presentada en este sitio."
     }
+  },
+  "whatsapp": {
+    "ariaLabel": "Escríbenos por WhatsApp",
+    "tooltipTitle": "¿Falla en su maquinaria?",
+    "tooltipSubtitle": "Escríbanos y lo resolvemos hoy mismo",
+    "defaultMessage": "Hola, necesito ayuda con un problema de maquinaria industrial."
   }
 }

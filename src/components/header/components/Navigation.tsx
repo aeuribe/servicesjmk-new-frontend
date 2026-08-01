@@ -62,6 +62,14 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+  document.body.classList.toggle("menu-open", isMobileMenuOpen);
+}, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    document.body.classList.toggle("locale-changing", isPending);
+  }, [isPending]);
+
   const navigationItems = [
     { key: "home", label: t("home"), href: "/" },
     { key: "services", label: t("services"), href: "/services" },
@@ -102,7 +110,7 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
             </div>
 
             <div className="flex items-center gap-5">
-              <ContactInfo isLightMode={isLight} />
+              
               <LanguageSelector
                 language={language}
                 isLanguageOpen={isLanguageOpen}

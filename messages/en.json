@@ -683,5 +683,11 @@
       "intro": "The information on this website is provided for general and informational purposes only.",
       "content": "It does not constitute a binding contract or a final engineering agreement. Any formal commitment between you and Services JMK, LLC will be established only through a signed proposal or contract. We are not liable for decisions made based solely on the information presented on this site."
     }
+  },
+  "whatsapp": {
+    "ariaLabel": "Message us on WhatsApp",
+    "tooltipTitle": "Machine down?",
+    "tooltipSubtitle": "Message us and we'll fix it today",
+    "defaultMessage": "Hi, I need help with an industrial machinery issue."
   }
 }
