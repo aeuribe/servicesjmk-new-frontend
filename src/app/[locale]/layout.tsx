@@ -4,7 +4,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import WhatsAppFloatingButton from "@/components/shared/WhatsappFloatingButton"
 import LeadCaptureSlideIn from "@/components/shared/LeadCaptureSlideIn";
-import Script from "next/script";
 
 import "./globals.css";
 
