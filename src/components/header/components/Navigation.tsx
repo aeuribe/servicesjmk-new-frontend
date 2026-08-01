@@ -7,7 +7,6 @@ import { useScrollHeader } from "@/components/header/components/hooks/useScrollH
 import { useLanguage } from "./hooks/useLanguage";
 import { Logo } from "./Logo";
 import { NavigationLinks } from "./NavigationLinks";
-import { ContactInfo } from "./ContactInfo";
 import { LanguageSelector } from "./LanguageSelector";
 import { ContactButton } from "./ContactButton";
 import { MobileMenuButton } from "./MobileMenuButton";
