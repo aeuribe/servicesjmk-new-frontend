@@ -29,7 +29,7 @@ import { Turnstile } from "@marsidev/react-turnstile";
 
 const SCROLL_TRIGGER_PERCENT = 45;
 const TIME_TRIGGER_MS = 9000;
-const SESSION_KEY = "jmk_lead_slidein_shown";
+const STATE_KEY = "jmk_lead_slidein_state"; // "open" | "minimized"
 
 const ENDPOINT = "https://servicesjmk-backend.onrender.com/enviar-correo-services";
 
@@ -62,17 +62,32 @@ export default function LeadCaptureSlideIn() {
 
   const triggerOpen = useCallback(() => {
     if (triggeredRef.current) return;
-    if (sessionStorage.getItem(SESSION_KEY)) return;
+    if (sessionStorage.getItem(STATE_KEY)) return;
 
     triggeredRef.current = true;
-    sessionStorage.setItem(SESSION_KEY, "1");
+    sessionStorage.setItem(STATE_KEY, "open");
     setShouldRender(true);
     // deja un frame para que la transición de entrada corra
     requestAnimationFrame(() => setIsOpen(true));
   }, []);
 
+  // Al montar (incluye remounts por cambio de idioma/locale), restaura
+  // el estado exacto en el que había quedado esta sesión.
   useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return;
+    const saved = sessionStorage.getItem(STATE_KEY);
+    if (saved === "open") {
+      triggeredRef.current = true;
+      setShouldRender(true);
+      requestAnimationFrame(() => setIsOpen(true));
+    } else if (saved === "minimized") {
+      triggeredRef.current = true;
+      setShouldRender(true);
+      setIsMinimized(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (sessionStorage.getItem(STATE_KEY)) return;
 
     const timeTimer = setTimeout(triggerOpen, TIME_TRIGGER_MS);
 
@@ -95,11 +110,15 @@ export default function LeadCaptureSlideIn() {
 
   const handleClose = () => {
     setIsOpen(false);
-    setTimeout(() => setIsMinimized(true), 350);
+    setTimeout(() => {
+      setIsMinimized(true);
+      sessionStorage.setItem(STATE_KEY, "minimized");
+    }, 350);
   };
 
   const handleReopen = () => {
     setIsMinimized(false);
+    sessionStorage.setItem(STATE_KEY, "open");
     requestAnimationFrame(() => setIsOpen(true));
   };
 
@@ -178,7 +197,7 @@ export default function LeadCaptureSlideIn() {
           type="button"
           onClick={handleReopen}
           aria-label={t("reopen")}
-          className="lead-tab"
+          className="lead-tab hide-on-transition"
           style={{
             position: "fixed",
             left: 0,
@@ -259,7 +278,7 @@ export default function LeadCaptureSlideIn() {
           : "translateY(16px) scale(0.97)",
         transition: "opacity 0.35s ease, transform 0.35s ease",
       }}
-      className="lead-slidein"
+      className="lead-slidein hide-on-transition"
     >
       <div
         style={{
