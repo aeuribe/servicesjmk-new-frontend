@@ -303,8 +303,10 @@ html {
 }
 
 body.menu-open .whatsapp-floating-button,
-body.locale-changing .whatsapp-floating-button {
-  opacity: 0;
-  pointer-events: none;
+body.locale-changing .whatsapp-floating-button,
+body.menu-open .hide-on-transition,
+body.locale-changing .hide-on-transition {
+  opacity: 0 !important;
+  pointer-events: none !important;
   transition: opacity 0.2s ease;
 }
