@@ -7,7 +7,8 @@
     "home": "Home",
     "services": "Services",
     "about": "About Us",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "inAction": "In Action"
   },
   "Hero": {
     "slides": [
@@ -715,6 +716,17 @@
       "subtitle": "We'll be in touch shortly."
     },
     "reopen": "Need help?"
+  },
+  "inAction": {
+    "eyebrow": "In Action",
+    "title": "SOLUTIONS THAT KEEP YOUR PLANT PRODUCING",
+    "subtitle": "Installation, maintenance, repair, automation, supply, and industrial consulting. Engineering solutions executed in the field and backed by real results.",
+    "all": "All",
+    "mostRecent": "Most recent",
+    "noEntries": "No work has been logged in this category yet.",
+    "loadMore": "Load more work",
+    "backToInAction": "Back to In Action",
+    "needSimilar": "Need something similar at your plant?",
+    "contactUs": "Contact us"
   }
-  
 }

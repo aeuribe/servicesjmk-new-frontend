@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // 1. Definimos las páginas permitidas
-type PageKey = "home" | "services" | "about" | "contact";
+type PageKey = "home" | "services" | "about" | "contact" | "in-action";
 
 interface NavigationLinksProps {
   // 2. Aquí está el truco: la key ya no es un string cualquiera

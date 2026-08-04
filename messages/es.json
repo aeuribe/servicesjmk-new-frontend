@@ -7,7 +7,8 @@
     "home": "Inicio",
     "services": "Servicios",
     "about": "Acerca de Nosotros",
-    "contact": "Contáctenos"
+    "contact": "Contáctenos",
+    "inAction": "En Acción"
   },
   "Hero": {
     "slides": [
@@ -715,5 +716,17 @@
       "subtitle": "Nos pondremos en contacto muy pronto."
     },
     "reopen": "¿Le ayudamos?"
+  },
+  "inAction": {
+    "eyebrow": "En Acción",
+    "title": "SOLUCIONES QUE PONEN A PRODUCIR TU PLANTA",
+    "subtitle": "Instalación, mantenimiento, reparación, automatización, suministro y asesoría industrial. Soluciones de ingeniería ejecutadas en planta y respaldadas por resultados reales.",
+    "all": "Todos",
+    "mostRecent": "Más reciente",
+    "noEntries": "Aún no hay trabajos registrados en esta categoría.",
+    "loadMore": "Cargar más trabajos",
+    "backToInAction": "Volver a En Acción",
+    "needSimilar": "¿Necesita algo similar en su planta?",
+    "contactUs": "Contáctenos"
   }
 }

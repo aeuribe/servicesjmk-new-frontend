@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ContactButton } from "./ContactButton";
 import { Logo } from "./Logo";
 
-export type PageKey = "home" | "services" | "about" | "contact";
+export type PageKey = "home" | "services" | "about" | "contact" | "in-action";
 
 interface MobileMenuProps {
   isOpen: boolean;
