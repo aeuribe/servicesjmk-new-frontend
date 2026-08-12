@@ -13,7 +13,7 @@ import { MobileMenuButton } from "./MobileMenuButton";
 import { MobileMenu } from "./MobileMenu";
 import { LoadingScreen } from "../../shared/LoadingScreen";
 
-export type PageKey = "home" | "services" | "about" | "contact";
+export type PageKey = "home" | "services" | "about" | "contact" | "in-action";
 
 export interface NavigationProps {
   currentPage: string;
@@ -73,6 +73,7 @@ const Navigation: React.FC<NavigationProps> = ({ onPageChange }) => {
     { key: "home", label: t("home"), href: "/" },
     { key: "services", label: t("services"), href: "/services" },
     { key: "about", label: t("about"), href: "/about" },
+    { key: "in-action", label: t("inAction"), href: "/in-action" },
   ] as const;
 
   const handlePageChange = (page?: PageKey) => {
