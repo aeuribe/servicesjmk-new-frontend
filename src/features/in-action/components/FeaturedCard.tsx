@@ -3,6 +3,7 @@ import Image from "next/image";
 import { pickText, type WorkEntry } from "../work-entries";
 import { PlayBadge } from "./PlayBadge";
 import { formatDate } from "../../../app/utils/formatDate";
+import { isYouTubeUrl, getYouTubeThumbnail } from "../../../app/utils/youtube";
 
 export function FeaturedCard({
   entry,
@@ -23,7 +24,11 @@ export function FeaturedCard({
     >
       <div className="relative w-full aspect-[4/3] sm:aspect-[16/7] bg-black">
         <Image
-          src={entry.media[0].src}
+          src={
+            entry.media[0].type === "video" && isYouTubeUrl(entry.media[0].src)
+              ? getYouTubeThumbnail(entry.media[0].src) ?? entry.media[0].src
+              : entry.media[0].src
+          }
           alt={pickText(entry.title, locale)}
           fill
           sizes="100vw"

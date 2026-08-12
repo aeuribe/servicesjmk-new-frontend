@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { CATEGORY_LABELS, pickText, type WorkEntry } from "../work-entries";
+import { CATEGORY_LABELS, pickText, type WorkEntry, type ContentBlock } from "../work-entries";
 import { MediaGallery } from "./MediaGallery";
 import { formatDate } from "../../../app/utils/formatDate";
+import { isYouTubeUrl, getYouTubeEmbedUrl } from "../../../app/utils/youtube";
 
 export default function WorkEntryDetail({
   entry,
@@ -57,13 +58,16 @@ export default function WorkEntryDetail({
           <h1 className="text-white text-2xl sm:text-3xl font-bold mb-2">
             {pickText(entry.title, locale)}
           </h1>
-          <p className="text-white/50 text-sm mb-6">
+          <p className="text-white/50 text-sm mb-10">
             {entry.location} · {formatDate(entry.date, locale)}
           </p>
 
-          <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-2xl">
-            {pickText(entry.shortDescription, locale)}
-          </p>
+          {/* Cuerpo del detalle: bloques libres, en el orden definido en work-entries.ts */}
+          <div className="space-y-6">
+            {entry.content.map((block, i) => (
+              <ContentBlockRenderer key={i} block={block} locale={locale} />
+            ))}
+          </div>
 
           <div className="mt-10 pt-6 border-t border-white/10">
             <p className="text-white/60 text-sm mb-3">{labels.needSimilar}</p>
@@ -81,4 +85,76 @@ export default function WorkEntryDetail({
       </div>
     </div>
   );
+}
+
+function ContentBlockRenderer({
+  block,
+  locale,
+}: {
+  block: ContentBlock;
+  locale: string;
+}) {
+  switch (block.type) {
+    case "heading":
+      return (
+        <h2 className="text-white text-lg sm:text-xl font-bold pt-2">
+          {pickText(block.text, locale)}
+        </h2>
+      );
+
+    case "paragraph":
+      return (
+        <p className="text-white/80 text-sm sm:text-base leading-relaxed max-w-2xl">
+          {pickText(block.text, locale)}
+        </p>
+      );
+
+    case "media":
+      return (
+        <figure>
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              clipPath: "polygon(0 0, 100% 0, 100% 94%, 95% 100%, 0 100%)",
+            }}
+          >
+            {block.item.type === "video" ? (
+              isYouTubeUrl(block.item.src) ? (
+                <div className="relative w-full aspect-video">
+                  <iframe
+                    src={getYouTubeEmbedUrl(block.item.src) ?? undefined}
+                    title={block.caption ? pickText(block.caption, locale) : "Video"}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                // eslint-disable-next-line jsx-a11y/media-has-caption
+                <video
+                  src={block.item.src}
+                  controls
+                  className="w-full h-auto block"
+                />
+              )
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={block.item.src}
+                alt={block.caption ? pickText(block.caption, locale) : ""}
+                className="w-full h-auto block"
+              />
+            )}
+          </div>
+          {block.caption && (
+            <figcaption className="text-white/45 text-xs mt-2">
+              {pickText(block.caption, locale)}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    default:
+      return null;
+  }
 }

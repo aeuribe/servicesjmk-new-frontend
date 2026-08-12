@@ -19,7 +19,12 @@ import { WorkCard } from "./components/WorkCard";
  *
  * Textos fijos de interfaz → next-intl, namespace "inAction"
  * (ver es.json / en.json). Textos de cada trabajo (título,
- * descripción) → bilingües directamente en workEntries.ts.
+ * descripción) → bilingües directamente en work-entries.ts.
+ *
+ * Transiciones: usa las animaciones ya definidas en globals.css
+ * (animate-fade-in / @keyframes fadeIn) — nada nuevo que instalar.
+ * El bloque de resultados usa `key={activeCategory}` para que cada
+ * cambio de filtro se remonte y vuelva a desvanecerse/aparecer.
  */
 export default function InAction({
   entries = DEFAULT_ENTRIES,
@@ -73,20 +78,26 @@ export default function InAction({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="mb-16">
-          <p className="text-[#2563eb] text-xs font-semibold tracking-widest uppercase mb-3">
+        <div className="mb-16" style={{ animationDelay: "0s" }}>
+          <p className="animate-fade-in text-[#2563eb] text-xs font-semibold tracking-widest uppercase mb-3">
             {t("eyebrow")}
           </p>
-          <h1 className="uppercase text-white text-4xl sm:text-6xl font-bold mb-5">
+          <h1 className="title-fade-up uppercase text-white text-4xl sm:text-6xl font-bold mb-5">
             {t("title")}
           </h1>
           <div className="w-12 h-1 bg-[#2563eb] mb-6" />
-          <p className="text-white/60 text-sm sm:text-base max-w-2xl">
+          <p
+            className="animate-fade-in text-white/60 text-sm sm:text-base max-w-2xl"
+            style={{ animationDelay: "0.25s" }}
+          >
             {t("subtitle")}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div
+          className="flex flex-wrap gap-2 mb-10 animate-fade-in"
+          style={{ animationDelay: "0.15s" }}
+        >
           <FilterChip
             label={t("all")}
             active={!activeCategory}
@@ -102,35 +113,65 @@ export default function InAction({
           ))}
         </div>
 
-        {filteredEntries.length === 0 ? (
-          <p className="text-white/50 text-sm">{t("noEntries")}</p>
-        ) : (
-          <>
-            {featured && (
-              <FeaturedCard entry={featured} locale={locale} label={t("mostRecent")} />
-            )}
+        {/* La key fuerza un remount al cambiar de filtro, así el
+            fade-in vuelve a correr cada vez — efecto de transición
+            entre categorías, no solo en la carga inicial. */}
+        <div key={activeCategory ?? "all"} className="animate-fade-in">
+          {filteredEntries.length === 0 ? (
+            <p className="text-white/50 text-sm">{t("noEntries")}</p>
+          ) : (
+            <>
+              {featured && (
+                <FeaturedCard
+                  entry={featured}
+                  locale={locale}
+                  label={t("mostRecent")}
+                />
+              )}
 
-            <div className="columns-2 sm:columns-2 lg:columns-3 gap-3 sm:gap-5 mt-8 [column-fill:_balance]">
-              {rest.map((entry, i) => (
-                <WorkCard key={entry.slug} entry={entry} index={i} locale={locale} />
-              ))}
-            </div>
-
-            {entries.length > filteredEntries.length && (
-              <div className="flex justify-center mt-10">
-                <button
-                  className="text-white/70 border border-white/20 px-6 py-3 text-sm font-medium hover:border-[#2563eb] hover:text-white transition-colors"
-                  style={{
-                    clipPath: "polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%)",
-                  }}
-                >
-                  {t("loadMore")}
-                </button>
+              <div className="columns-2 sm:columns-2 lg:columns-3 gap-3 sm:gap-5 mt-8 [column-fill:_balance]">
+                {rest.map((entry, i) => (
+                  <WorkCard
+                    key={entry.slug}
+                    entry={entry}
+                    index={i}
+                    locale={locale}
+                  />
+                ))}
               </div>
-            )}
-          </>
-        )}
+
+              {entries.length > filteredEntries.length && (
+                <div className="flex justify-center mt-10">
+                  <button
+                    className="text-white/70 border border-white/20 px-6 py-3 text-sm font-medium hover:border-[#2563eb] hover:text-white transition-colors"
+                    style={{
+                      clipPath: "polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%)",
+                    }}
+                  >
+                    {t("loadMore")}
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes titleFadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .title-fade-up {
+          animation: titleFadeUp 0.7s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 }

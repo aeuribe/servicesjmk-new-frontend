@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CATEGORY_LABELS, pickText, type WorkEntry } from "../work-entries";
 import { PlayBadge } from "./PlayBadge";
 import { formatDate } from "../../../app/utils/formatDate";
+import { isYouTubeUrl, getYouTubeThumbnail } from "../../../app/utils/youtube";
 
 export function WorkCard({
   entry,
@@ -25,7 +26,11 @@ export function WorkCard({
     >
       <div className={`relative w-full ${aspect} bg-black`}>
         <Image
-          src={entry.media[0].src}
+          src={
+            entry.media[0].type === "video" && isYouTubeUrl(entry.media[0].src)
+              ? getYouTubeThumbnail(entry.media[0].src) ?? entry.media[0].src
+              : entry.media[0].src
+          }
           alt={pickText(entry.title, locale)}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
